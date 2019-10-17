@@ -1,0 +1,20 @@
+h1{ 
+    display: inline-block;
+    zoom: 1;
+    vertical-align: middle;
+    width: 160px;
+    height: 34px;
+    margin: 0 20px 0 0;
+    padding: 0;
+    font-size: 12px;
+    font-weight: normal;
+    background-image: set(url(/f/sns/19886d4…/pics/nav/logo_db.png) 1x, url(/f/sns/0f9e2db…/pics/nav/logo_db@2x.png) 2x);
+    overflow: hidden;
+    background: url(https://img3.doubanio.com/f/sns/19886d443852bee48de2ed91f4a3bdfdaf8c809c/pics/nav/logo_db.png) no-repeat 0 0;
+}
+h1 a{
+    display: block;
+    height: 34px;
+    line-height: 10em;
+}
+
