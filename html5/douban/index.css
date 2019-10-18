@@ -17,4 +17,10 @@ h1 a{
     height: 34px;
     line-height: 10em;
 }
+.secrch{
+    position: relative;
+    display: inline-block;
+    zoom: 1;
+    vertical-align: middle;
+}
 
