@@ -1,7 +1,9 @@
 {
   "pages": [
+    "pages/cart/cart",
     "pages/index/index",
     "pages/category/catgory"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -31,9 +33,9 @@
         "text": "分类"
       },
       {
-        "pagePath": "pages/index/index",
-        "iconPath": "image/22.png",
-        "selectedIconPath": "image/21.png",
+        "pagePath": "pages/cart/cart",
+        "iconPath": "image/32.png",
+        "selectedIconPath": "image/31.png",
         "text": "购物车"
       },
       {
