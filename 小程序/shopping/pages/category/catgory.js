@@ -1,24 +1,34 @@
-// pages/detail/index.js
-const Wxparse = require('../../wxParse/wxParse.js');
-const detail = require('./detail.js');
-
-
+// pages/category/category.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    article:''
+    category: [
+      { name: '果味', id: 'guowei' },
+      { name: '蔬菜', id: 'shucai' },
+      { name: '炒货', id: 'chaohuo' },
+      { name: '点心', id: 'dianxin' },
+      { name: '粗茶', id: 'cucha' },
+      { name: '淡饭', id: 'danfan' }
+    ],
+    curIndex: 0,
+    toView: 'guowei'
   },
-
+  switchTab(e) {
+    console.log(e)
+    this.setData({
+      curIndex: e.currentTarget.dataset.index
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    Wxparse.wxParse('article','html',detail.data.content,this,0);
+
   },
- 
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

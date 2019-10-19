@@ -1,24 +1,26 @@
-// pages/detail/index.js
-const Wxparse = require('../../wxParse/wxParse.js');
-const detail = require('./detail.js');
-
-
+// pages/index/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    article:''
+   imgUrls:[
+     "/image/b1.jpg",
+     "/image/b2.jpg",
+     "/image/b3.jpg"
+   ],
+   interval:3000,
+   duration:800
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    Wxparse.wxParse('article','html',detail.data.content,this,0);
+
   },
- 
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
