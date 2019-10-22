@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <script>
+    var a = {
+        user:'蜗牛',
+        fn:function(a){
+            console.log(this.user)
+            console.log(a + b)
+        }
+    }
+     var b = a.fn
+    //  b.call(a) //call方法将this的作用域从window指向a,适用于传参数   
+    //  b.apply(a)适用于传数组
+    //  b.bind(a) 改变后仍为函数
+     b()
+    </script> -->
+    <script>
+    function foo(a){
+        this.a = a
+    }
+    var bar = new foo(2)   //new绑定
+    console.log(bar)
+    
+    
+    </script>
+</body>
+</html>
