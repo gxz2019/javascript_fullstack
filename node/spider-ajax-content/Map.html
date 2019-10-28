@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn"></button>
+    <script>
+        //Map
+        //key value
+        const btn = document.getElementById('btn')
+        var map = {
+            name: 'lihua',
+            [btn]: 'dom node',
+            '3b': 'b val',
+            '3a': 'a val'
+        }
+
+        let map1 = new Map([
+            ['key', 'value']
+        ])
+        map1.set('key1', 'value1')
+        map1.get('key');
+        map1.set(() => { }, 'function');
+        //数组 Map.............
+        for (let x of map1) {
+            console.log(x)
+        }
+        // console.log(btn)
+        // console.log(Object.keys(map));
+        // console.log(map1)
+        //有什么用
+        //为什么ES6 要增加一个Map
+        //1.以前的key 只支持字符串
+        //2.以前的key 无序的
+
+        var map4 = {
+            lilei: 'dance',
+            lihua: 'sing',
+            lihzi: 'rap',
+            name: 'name',//优化
+        }
+        function doSomething(name) {
+            // name == lihua 输出 sing
+            // name == lilei 输出 dance
+            // name == lihzi 输出 rap
+            console.log(map4[name]);
+
+
+        }
+        doSomething('lihua')
+
+        ///map1.entries() [key,value]
+
+    </script>
+</body>
+
+</html>
