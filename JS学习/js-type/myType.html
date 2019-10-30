@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-        function isType(type,value){
+        function isType(type, value) {
             return Object.prototype.toString.call(value) === `[object ${type}]`
         }
-        console.log(isType('String','123'));
-        console.log(inType('Function',() => {}))
+        function isString(value) {
+            return isType('String', value)
+        }
+        function isFunction(value) {
+            return isType('Function', value)
+
+        }
+        function isNumber(value) {
+            return isType('Number', value)
+        }
+        function add(a,b) {
+            return a + b;
+        }
+        function add5(b){
+            return add(5,b)
+        }
+        //有没有什么东西能把所有函数的第一个参数 固定住
+        console.log(isType('String', '123'));
+        console.log(inType('Function', () => { }))
+
+        //函数式编程
+        //面向对象 
     </script>
 </body>
+
 </html>
