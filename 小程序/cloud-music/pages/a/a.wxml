@@ -23,9 +23,55 @@
 <view>
   <swiper indicator-dots="true" indicator-active-color="#FF3030" autoplay="true" duration="{{duration}}" interval="{{interval}}" circular="true">
     <block wx:for="{{imgUrls}}" wx:key="{{index}}">
-    <swiper-item>
-      <image class="lb" src="{{item}}" width="100%" />
-    </swiper-item>
+      <swiper-item>
+        <image class="lb" src="{{item}}" width="100%" />
+      </swiper-item>
     </block>
   </swiper>
 </view>
+<!-- 四个icon -->
+<view class="icon-bar">
+  <view class="icon1">
+    <navigator url="#" role="navigation">
+      <view class="icon2">
+        <image src="/images/shouyinji.png"></image>
+      </view>
+      <view class="iconname2">
+        <text>私人FM</text>
+      </view>
+    </navigator>
+  </view>
+  <view class="icon1">
+    <navigator url="#" role="navigation">
+      <view class="icon2">
+        <image src="/images/meirituijian.png"></image>
+      </view>
+      <view class="iconname2">
+        <text>每日推荐</text>
+      </view>
+    </navigator>
+  </view>
+  <view class="icon1">
+      <navigator url="#" role="navigation">
+        <view class="icon2">
+          <image src="/images/gedan.png">
+          </image>
+        </view>
+        <view class="iconname3">
+          <text>歌单</text>
+        </view>
+      </navigator>
+    </view>
+    <view class="icon1">
+      <navigator url="#" role="navigation">
+        <view class="icon2">
+          <image src="/images/paihangbang.png"></image>
+        </view>
+        <view class="iconname2">
+          <text>排行榜</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+<!-- 推荐歌单 -->
+<view></view>

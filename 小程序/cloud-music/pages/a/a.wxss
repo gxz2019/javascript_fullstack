@@ -1,83 +1,131 @@
-body{
+body {
   margin: 0;
   padding: 0;
 }
-.search-bar{
-  background-color: #FF3030;
+
+.search-bar {
+  background-color: #ff3030;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
+  border-top: none
+  
 }
-.search
-{
+
+.search {
   display: flex;
   flex-direction: row;
-  justify-content:space-between;
+  justify-content: space-between;
   align-items: center;
-  width:70%;
-  height:60rpx;
-  background-color:whitesmoke;
-  border:1rpx solid whitesmoke;
+  width: 70%;
+  height: 60rpx;
+  background-color: whitesmoke;
+  border: 1rpx solid whitesmoke;
   border-radius: 40rpx;
-  
 }
 
 /* 搜索框提示文字样式 */
-.search input
-{
-  font-size:27rpx;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  padding-left:30rpx; 
+
+.search input {
+  font-size: 27rpx;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-left: 30rpx;
 }
 
 /* 搜索框小图标 */
-.search image
-{ 
-  width:40rpx;
-  height:40rpx;
-  padding-right:20rpx;
+
+.search image {
+  width: 40rpx;
+  height: 40rpx;
+  padding-right: 20rpx;
 }
-.search1{
+
+.search1 {
   width: 15%;
   float: left;
-  
 }
-.a{
+
+.a {
   display: flex;
   width: 15%;
   float: left;
-  
 }
-.a-1{
-  height: 45rpx;
-  width: 45rpx
-}
-.a-image{
-  width: 100%;
-  height: 100%
-}
-.search-bar1{
+
+.a-1 {
   height: 45rpx;
   width: 45rpx;
-  float: right
 }
-.image{
+
+.a-image {
   width: 100%;
-  height: 100%
+  height: 100%;
 }
-.gexing{
+
+.search-bar1 {
+  height: 45rpx;
+  width: 45rpx;
+  float: right;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.gexing {
   width: 100%;
   height: 50rpx;
-  background-color: #FF3030;
+  background-color: #ff3030;
   text-align: center;
   font-size: 28rpx;
   line-height: 50rpx;
-  color: white
+  color: white;
 }
-.lb{
+
+.lb {
   width: 100%;
-  height: 100%
+  height: 100%;
 }
 
+.icon1 {
+  display: inline-block;
+  width: 150rpx;
+  height: 150rpx;
+  text-align: center;
+  margin: 20rpx 20rpx 20rpx 20rpx;
+  font-size: 24rpx;
+  background-color: #fff;
+  vertical-align: center;
+  position: relative;
+}
 
+.icon2 image {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.icon1:nth-child(4n) {
+  margin-right: 0;
+}
+
+.icon2 {
+  height: 120rpx;
+  width: 120rpx;
+  background-color: #ff3030;
+  border-radius: 50%;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+}
+.iconname2{
+  position: absolute;
+  margin-left: 15rpx;
+}
+.iconname3{
+  position: absolute;
+  margin-left: 38rpx
+}
+.icon-bar{
+  border-bottom:1px solid rgb(216,216,216,0.8) 
+}
