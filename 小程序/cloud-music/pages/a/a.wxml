@@ -1,15 +1,31 @@
-<!-- pages/a/a.wxml -->
-<div class="weui-search-bar" id="searchBar">
-  <form class="weui-search-bar__form">
-    <div class="weui-search-bar__box">
-      <i class="weui-icon-search"></i>
-      <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="搜索" required="" />
-      <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
-    </div>
-    <label class="weui-search-bar__label" id="searchText">
-      <i class="weui-icon-search"></i>
-      <span>搜索</span>
-    </label>
-  </form>
-  <a href="javascript:" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
-</div>
+<!-- 搜索栏 -->
+<view class="search-bar">
+  <view class="a">
+    <view class="a-1">
+      <image src="/images/tgsq.png" class="a-image"></image>
+    </view>
+  </view>
+  <view class='search'>
+    <input type='text' placeholder='输入你想要的内容' confirm-type='search'></input>
+    <image class="" src='/images/search.png'></image>
+  </view>
+  <view class="search1">
+    <view class="search-bar1">
+      <image src="/images/b1.png" class="image"></image>
+    </view>
+  </view>
+</view>
+<!-- 个性推荐栏 -->
+<view class="gexing">
+  <span>个性推荐</span>
+</view>
+<!-- 轮播图 -->
+<view>
+  <swiper indicator-dots="true" indicator-active-color="#FF3030" autoplay="true" duration="{{duration}}" interval="{{interval}}" circular="true">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+    <swiper-item>
+      <image class="lb" src="{{item}}" width="100%" />
+    </swiper-item>
+    </block>
+  </swiper>
+</view>

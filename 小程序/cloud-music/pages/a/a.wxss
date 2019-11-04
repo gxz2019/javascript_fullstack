@@ -1,1 +1,83 @@
-/* pages/a/a.wxss */
+body{
+  margin: 0;
+  padding: 0;
+}
+.search-bar{
+  background-color: #FF3030;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.search
+{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  width:70%;
+  height:60rpx;
+  background-color:whitesmoke;
+  border:1rpx solid whitesmoke;
+  border-radius: 40rpx;
+  
+}
+
+/* 搜索框提示文字样式 */
+.search input
+{
+  font-size:27rpx;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-left:30rpx; 
+}
+
+/* 搜索框小图标 */
+.search image
+{ 
+  width:40rpx;
+  height:40rpx;
+  padding-right:20rpx;
+}
+.search1{
+  width: 15%;
+  float: left;
+  
+}
+.a{
+  display: flex;
+  width: 15%;
+  float: left;
+  
+}
+.a-1{
+  height: 45rpx;
+  width: 45rpx
+}
+.a-image{
+  width: 100%;
+  height: 100%
+}
+.search-bar1{
+  height: 45rpx;
+  width: 45rpx;
+  float: right
+}
+.image{
+  width: 100%;
+  height: 100%
+}
+.gexing{
+  width: 100%;
+  height: 50rpx;
+  background-color: #FF3030;
+  text-align: center;
+  font-size: 28rpx;
+  line-height: 50rpx;
+  color: white
+}
+.lb{
+  width: 100%;
+  height: 100%
+}
+
+
