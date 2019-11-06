@@ -70,7 +70,7 @@ export default {
     flex: 0 0 80px;
     width: 80px;
     background: #f3f5f7;
-
+    z-index -1
     .menu-item {
       display: table;
       width: 56px;

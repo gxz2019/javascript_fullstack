@@ -82,10 +82,17 @@ body {
   line-height: 50rpx;
   color: white;
 }
+.b{
+
+  text-align:center
+}
 
 .lb {
-  width: 100%;
+  width: 95%;
   height: 100%;
+  border: none;
+  border-radius: 20px;
+  margin: 0 auto
 }
 
 .icon1 {
@@ -129,3 +136,49 @@ body {
 .icon-bar{
   border-bottom:1px solid rgb(216,216,216,0.8) 
 }
+.c{
+  position: relative;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+}
+h2{
+  font-weight: bold;
+  display: inline-block;
+}
+.jiantou{
+  position: absolute;
+  width: 20rpx;
+  height: 20rpx;
+  border-left: transparent;
+  border-right: 1px solid #909090;
+  border-top: 1px solid #909090;
+  border-bottom: transparent;
+  display: inline-block;
+  transform: rotate(45deg);
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+
+}
+.gedan{
+  width: 100%;
+  
+}
+.gedan-1{
+  width: 240rpx;
+  display: inline-block;
+}
+.gedan-3{
+  display: flex
+}
+.gedan-2{
+  width: 240rpx;
+  height: 240rpx;
+}
+.gedan-2 image{
+  width: 100%;
+  height: 100%
+}
+.gedan-3{
+  margin-bottom: 20rpx 
+}
+

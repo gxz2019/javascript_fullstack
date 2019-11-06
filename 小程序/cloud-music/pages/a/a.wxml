@@ -20,11 +20,11 @@
   <span>个性推荐</span>
 </view>
 <!-- 轮播图 -->
-<view>
-  <swiper indicator-dots="true" indicator-active-color="#FF3030" autoplay="true" duration="{{duration}}" interval="{{interval}}" circular="true">
-    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+<view class="b">
+  <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorcolor}}" indicator-active-color="{{indicatoractivecolor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+    <block wx:for="{{banner}}" wx:key="">
       <swiper-item>
-        <image class="lb" src="{{item}}" width="100%" />
+        <image class="lb" src="{{item.imageUrl}}" width="100%" />
       </swiper-item>
     </block>
   </swiper>
@@ -73,5 +73,21 @@
       </navigator>
     </view>
   </view>
-<!-- 推荐歌单 -->
-<view></view>
+<!-- 推荐歌单 导航栏-->
+<view class="c">
+<h2>推荐歌单</h2>
+<view class="jiantou"></view>
+</view>
+<!-- 歌单 -->
+<view class="gedan">
+  <view class="gedan-1">
+      <navigator url="#" role="navigation">
+        <view class="gedan-2">
+          <image src="/images/test.jpg"></image>
+        </view>
+        <view class="gedan-3">
+        <text class="text1">1</text>
+        </view>
+      </navigator>
+    </view>
+</view>

@@ -1,27 +1,45 @@
 // pages/a/a.js
+var common = require("../../utils/util.js");
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls:[
-      "/images/1.jpg",
-      "/images/2.jpg",
-      "/images/3.jpg",
-      "/images/4.jpg"
-    ],
+    banner:[],
+    indicatorDots:true,
+    indicatorcolor:'#ffffff',
+    indicatoractivecolor:'#DC4238',
+    autoplay:true,
     interval:3000,
-    duration:800
+    duration:800,
+    circular:true
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this;
+    wx.request({
+      url: 'http://neteasecloudmusicapi.zhaoboy.com/banner',
+      type: 'get',
+      header: {
+        'Content-Type': 'application/json'
+      },
+      success: function (res) {
+        console.log(res);
+        if (res.data.code == 200) {
+          that.setData({
+            banner: res.data.banners
+          })
+        }
+      }
+    })
   },
-
+  // getBanner() {
+    
+  // },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
