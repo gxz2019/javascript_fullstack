@@ -1,6 +1,7 @@
 // pages/a/a.js
-var common = require("../../utils/util.js");
-var app = getApp()
+
+// const app = getApp()
+// const change = require('../../utils/util')
 Page({
 
   /**
@@ -8,6 +9,7 @@ Page({
    */
   data: {
     banner:[],
+    hastaste:[],
     indicatorDots:true,
     indicatorcolor:'#ffffff',
     indicatoractivecolor:'#DC4238',
@@ -16,19 +18,24 @@ Page({
     duration:800,
     circular:true
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this;
+    this.getBanner()
+    this.getHastaste()
+    
+  },
+  getBanner(){
+    let that = this
     wx.request({
       url: 'http://neteasecloudmusicapi.zhaoboy.com/banner',
-      type: 'get',
-      header: {
-        'Content-Type': 'application/json'
+      header:{
+        'content-type':'application/json'
       },
       success: function (res) {
-        console.log(res);
+        // console.log(res);
         if (res.data.code == 200) {
           that.setData({
             banner: res.data.banners
@@ -37,16 +44,30 @@ Page({
       }
     })
   },
-  // getBanner() {
-    
-  // },
+  getHastaste(){
+    let that = this
+    wx.request({
+      url: 'https://netease.lzcdev.xyz/personalized?limit=6',
+      header: {
+        'content-type': 'application/json'
+      },
+      success:function(res){
+        if(res.data.code == 200){
+        that.setData({
+          hastaste: res.data.result
+        })
+        }
+      }
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
 
   },
-
+ 
   /**
    * 生命周期函数--监听页面显示
    */

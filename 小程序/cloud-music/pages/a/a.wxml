@@ -65,7 +65,7 @@
     <view class="icon1">
       <navigator url="#" role="navigation">
         <view class="icon2">
-          <image src="/images/paihangbang.png"></image>
+          <image src="/images/paihangbangfuben.png"></image>
         </view>
         <view class="iconname2">
           <text>排行榜</text>
@@ -80,14 +80,16 @@
 </view>
 <!-- 歌单 -->
 <view class="gedan">
+ <block wx:for="{{hastaste}}" wx:key="">
   <view class="gedan-1">
       <navigator url="#" role="navigation">
         <view class="gedan-2">
-          <image src="/images/test.jpg"></image>
+          <image src="{{item.picUrl}}" width="100%"></image>
         </view>
-        <view class="gedan-3">
-        <text class="text1">1</text>
+        <view class="text-gedan">
+            <text>{{item.name}}</text>
         </view>
       </navigator>
     </view>
+     </block>
 </view>

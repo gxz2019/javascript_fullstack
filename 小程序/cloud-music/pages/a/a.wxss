@@ -83,7 +83,6 @@ body {
   color: white;
 }
 .b{
-
   text-align:center
 }
 
@@ -164,21 +163,21 @@ h2{
   
 }
 .gedan-1{
-  width: 240rpx;
-  display: inline-block;
-}
-.gedan-3{
-  display: flex
+  float: left
 }
 .gedan-2{
-  width: 240rpx;
+  width: 250rpx;
   height: 240rpx;
+
 }
 .gedan-2 image{
-  width: 100%;
-  height: 100%
+  width: 95%;
+  height: 95%
 }
-.gedan-3{
-  margin-bottom: 20rpx 
+.text-gedan{
+  width: 240rpx;
+  margin-bottom: 30rpx;
+  font-size: 25rpx;
+  text-align: center
 }
 
