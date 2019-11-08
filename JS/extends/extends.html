@@ -32,11 +32,15 @@
         // new BuyItNow('red')
         // new BuyItNow('bule') 
         // new BuyItNow('red') 
+
+
+        //寄生组合式 继承 这也是ES6 extends 采用的继承
         function Btn(color) {
             this.color = color
         }
+        console.log(Btn.prototype)
         //语法糖 本质上还是function
-        console.log(typeof BuyItNow)
+        // console.log(typeof BuyItNow)
 
         function BIN(color) {
             //继承属性 
@@ -47,7 +51,9 @@
         //继承的其中一种方法
         //把父类的prototype对象 一个一个复制给BIN
         //不能够继承属性
+        // BIN.prototype.click =    
         BIN.prototype = Object.create(Btn.prototype)
+        BIN.prototype.constructor = BIN
         var b1 = new BIN('red')
         console.log(b1)
     </script>
