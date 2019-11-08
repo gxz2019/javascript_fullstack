@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <button></button> -->
+    <script>
+        // class Button {
+        //     constructor(color) {
+        //         this.color = color
+        //     }
+        // }
+        // class BuyItNow extends Button{
+        //     constructor(color) {
+        //         //supere指父类的构造函数
+        //         super(color)
+        //         this.innerHTML = '购买'
+        //         let button = document.createElement('button')
+        //         button.innerHTML = this.innerHTML
+        //         button.style.color = this.color 
+        //         document.body.appendChild(button)
+        //     }
+
+        //     click() {
+        //         console.log('buy is now')
+        //     }
+        // }   
+        // new BuyItNow('red')
+        // new BuyItNow('bule') 
+        // new BuyItNow('red') 
+        function Btn(color) {
+            this.color = color
+        }
+        //语法糖 本质上还是function
+        console.log(typeof BuyItNow)
+
+        function BIN(color) {
+            //继承属性 
+            Btn.call(this,color)
+            this.innerHTML = '购买'
+        }
+        //潜复制
+        //继承的其中一种方法
+        //把父类的prototype对象 一个一个复制给BIN
+        //不能够继承属性
+        BIN.prototype = Object.create(Btn.prototype)
+        var b1 = new BIN('red')
+        console.log(b1)
+    </script>
+</body>
+</html>
