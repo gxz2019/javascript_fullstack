@@ -169,16 +169,26 @@ h2{
 .gedan-2{
   width: 250rpx;
   height: 240rpx;
-
+  position: relative
 }
 .gedan-2 image{
   width: 95%;
-  height: 95%
+  height: 95%;
+  z-index: 0;
+  
 }
 .text-gedan{
   width: 240rpx;
+  height: 70rpx;
   margin-bottom: 30rpx;
   font-size: 25rpx;
   text-align: center
+}
+.erji{
+  color: #fff;
+  font-size: 26rpx;
+ position: absolute;
+ left: 120rpx;
+ top: 0rpx
 }
 

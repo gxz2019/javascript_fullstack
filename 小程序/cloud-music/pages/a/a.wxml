@@ -42,7 +42,7 @@
     </navigator>
   </view>
   <view class="icon1">
-    <navigator url="#" role="navigation">
+    <navigator url="../meirituijian/index" role="navigation">
       <view class="icon2">
         <image src="/images/meirituijian.png"></image>
       </view>
@@ -52,44 +52,45 @@
     </navigator>
   </view>
   <view class="icon1">
-      <navigator url="#" role="navigation">
-        <view class="icon2">
-          <image src="/images/gedan.png">
-          </image>
-        </view>
-        <view class="iconname3">
-          <text>歌单</text>
-        </view>
-      </navigator>
-    </view>
-    <view class="icon1">
-      <navigator url="#" role="navigation">
-        <view class="icon2">
-          <image src="/images/paihangbangfuben.png"></image>
-        </view>
-        <view class="iconname2">
-          <text>排行榜</text>
-        </view>
-      </navigator>
-    </view>
+    <navigator url="#" role="navigation">
+      <view class="icon2">
+        <image src="/images/gedan.png">
+        </image>
+      </view>
+      <view class="iconname3">
+        <text>歌单</text>
+      </view>
+    </navigator>
   </view>
+  <view class="icon1">
+    <navigator url="#" role="navigation">
+      <view class="icon2">
+        <image src="/images/paihangbangfuben.png"></image>
+      </view>
+      <view class="iconname2">
+        <text>排行榜</text>
+      </view>
+    </navigator>
+  </view>
+</view>
 <!-- 推荐歌单 导航栏-->
 <view class="c">
-<h2>推荐歌单</h2>
-<view class="jiantou"></view>
+  <h2>推荐歌单</h2>
+  <view class="jiantou"></view>
 </view>
 <!-- 歌单 -->
 <view class="gedan">
- <block wx:for="{{hastaste}}" wx:key="">
-  <view class="gedan-1">
+  <block wx:for="{{hastaste}}" wx:key="">
+    <view class="gedan-1">
       <navigator url="#" role="navigation">
         <view class="gedan-2">
           <image src="{{item.picUrl}}" width="100%"></image>
+          <text class="erji">🎧80万</text>
         </view>
         <view class="text-gedan">
-            <text>{{item.name}}</text>
+          <text>{{item.name}}</text>
         </view>
       </navigator>
     </view>
-     </block>
+  </block>
 </view>
