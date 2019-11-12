@@ -1,11 +1,10 @@
 {
   "pages": [
-    "pages/gedan/gedan",
     "pages/a/a",
     "pages/b/b",
     "pages/c/c",
-    "pages/meirituijian/index"
-    
+    "pages/meirituijian/index",
+    "pages/gedan/gedan"
   ],
   "window": {
     "backgroundTextStyle": "light",

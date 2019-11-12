@@ -1,26 +1,52 @@
 <template>
   <div>
     <div class="shopcart">
-      <div class="content">
+      <div class="content" @click="toggleList">
         <div class="content-left">
           <div class="logo-wrapper">
-            <div class="logo">
+            <div class="logo" :class="{'highlight' :totalPrice > 0}">
               <i class="icon-shopping"></i>
             </div>
-            <div class="num">2</div>
+            <div class="num" v-show="totalCount > 0">{{totalCount}}</div>
           </div>
-          <div class="price">￥100</div>
+          <div class="price" :class="{'highlight':totalPrice > 0}">￥{{totalPrice}}</div>
           <div class="desc">另需配送费￥{{deliveryPrice}}元</div>
         </div>
         <div class="content-right">
-          <div class="pay">￥{{minPrice}}元起送</div>
+          <div class="pay" :class="payClass">{{payDesc}}</div>
         </div>
       </div>
+      <transition name="fold">
+        <div class="shopcart-list" v-show="listshow">
+          <div class="list-header">
+            <h1 class="title">购物车</h1>
+            <span class="empty" @click="empty">清空</span>
+          </div>
+          <div class="list-content" ref="listContent">
+            <ul>
+              <li class="food" v-for="(item,index) in selectFoods" :key="index">
+                <span class="name">{{item.name}}</span>
+                <div class="price">
+                  <span>￥{{item.price * item.count}}</span>
+                </div>
+                <div class="cartcontrol-wrapper">
+                  <cartcontrol :food="item"></cartcontrol>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </transition>
     </div>
+    <transition name="fade">
+      <div class="list-mask" v-show="listshow" @click="hidelist"></div>
+    </transition>
   </div>
 </template>
 
 <script>
+import BScroll from "better-scroll";
+import cartcontrol from "@/components/cartcontrol/cartcontrol";
 export default {
   props:{
     selectFoods:{
@@ -35,6 +61,7 @@ export default {
       }
     
     },
+    
     deliveryPrice:{
       type:Number,
       default:0
@@ -42,6 +69,86 @@ export default {
     minPrice:{
       type:Number,
       default:0
+    },
+  },
+  data(){
+    return {
+      fold:true
+    }
+  },
+  components:{
+    cartcontrol
+  },
+  computed:{
+    totalCount(){
+      let count = 0;
+      this.selectFoods.forEach((food) => {
+        count += food.count
+      });
+      return count
+    },
+    totalPrice(){
+      let price1 = 0;
+      
+      this.selectFoods.forEach((food) => {
+        
+        price1 += food.price * food.count
+        // food.count++
+      });
+      return price1 
+    },
+    payDesc() {
+      if (this.totalPrice === 0) {
+        return `￥${this.minPrice}元起送`
+      }else if(this.totalPrice < this.minPrice){
+        let diff = this.minPrice - this.totalPrice
+        return `还差￥${diff}元起送`
+
+      }else{
+        return `去结算`
+      }
+    },
+    payClass(){
+      if(this.totalPrice < this.minPrice){
+        return 'not-enough'
+      }else{
+        return 'enough'
+      }
+    },
+    listshow(){
+      if(!this.totalCount){
+        this.fold = true
+        return false
+      }
+      let show = !this.fold
+      if(show){
+        this.$nextTick(() => {
+          if(!this.scroll){
+            this.scroll = new BScroll(this.$refs.listContent,{
+            click:true
+          })
+          }else{
+            this.scroll.refresh()
+          }
+        })
+      }
+      return show
+    }
+  },
+  methods:{
+    toggleList () {
+      if(!this.totalCount) {
+        return 
+      }
+      this.fold = !this.fold
+    },
+    empty() {
+      this.selectFoods.forEach((food) => {
+        food.count = 0
+      })
+    },
+    hidelist(){
+      this.fold = true
     }
   },
   mounted() {

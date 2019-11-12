@@ -85,7 +85,7 @@
       <navigator url="#" role="navigation">
         <view class="gedan-2">
           <image src="{{item.picUrl}}" width="100%"></image>
-          <text class="erji">🎧80万</text>
+          <text class="erji">🎧{{math.round(item.playCount/10000)}}万</text>
         </view>
         <view class="text-gedan">
           <text>{{item.name}}</text>

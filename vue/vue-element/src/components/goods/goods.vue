@@ -39,7 +39,7 @@
                   </div>
                   <div class="cartcontrol-wrapper">
                     <!-- 加号 -->
-                    <cartcontrol :food="food" @add="addFood"></cartcontrol> 
+                    <cartcontrol :food="food" @add="addFood"></cartcontrol>
                   </div>
                 </div>
               </li>
@@ -49,21 +49,23 @@
       </div>
     </div>
     <!-- 购物车 -->
-    <shopcart :selectFoods = "selectFoods" :deliveryPrice="seller.deliveryPrice" :minPrice="seller.minprice">
-      
-    </shopcart>
+    <shopcart
+      :selectFoods="selectFoods"
+      :deliveryPrice="seller.deliveryPrice"
+      :minPrice="seller.minPrice"
+    ></shopcart>
   </div>
 </template>
 
 <script>
 import BScroll from "better-scroll";
 import shopcart from "@/components/shopcar/shopcar";
-import cartcontrol from "@/components/cartcontrol/cartcontrol"
+import cartcontrol from "@/components/cartcontrol/cartcontrol";
 export default {
   name: "Goods",
-  props:{
-    seller:{
-      type:Object
+  props: {
+    seller: {
+      type: Object
     }
   },
   data() {
@@ -102,19 +104,19 @@ export default {
       }
       return 0;
     },
-    selectFoods(){
+    selectFoods() {
       let foods = [];
       for (let good of this.goods) {
         if (good.foods) {
           for (let food of good.foods) {
             if (food.count) {
-              foods.push(food)
+              foods.push(food);
             }
           }
         }
       }
 
-      return foods
+      return foods;
     }
   },
   methods: {
@@ -151,9 +153,7 @@ export default {
       }
       console.log(this.listHeight);
     },
-    addFood(){
-
-    }
+    addFood() {}
   }
 };
 </script>
