@@ -19,9 +19,9 @@
   <img src="" data-src="http://img63.ddimg.cn/topic_img/gys_0014426/dabingguai750315.jpg">
   <script>
     const a = new IntersectionObserver(
-      (entries,observer) => {
+      (entries, observer) => {
         entries.forEach(entry => {
-          if(entry.isIntersecting){
+          if (entry.isIntersecting) {
             const target = entry.target
             target.src = target.dataset.src
             observer.unobserve(target)

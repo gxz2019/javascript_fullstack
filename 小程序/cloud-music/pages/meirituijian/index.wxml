@@ -2,7 +2,7 @@
 <view class="first">
   <view class="rili">
     <view>
-      <h2>每日推荐</h2>
+      <!-- <h2>每日推荐</h2> -->
     </view>
     <image src="/images/rili.png"></image>
   </view>

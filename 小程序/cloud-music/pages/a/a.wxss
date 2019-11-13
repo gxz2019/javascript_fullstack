@@ -188,7 +188,7 @@ h2{
   color: #fff;
   font-size: 26rpx;
  position: absolute;
- left: 120rpx;
+ left: 90rpx;
  top: 0rpx
 }
 

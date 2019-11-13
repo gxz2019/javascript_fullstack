@@ -1,4 +1,5 @@
 <!-- 搜索栏 -->
+<wxs module="filter" src="./fn.wxs"></wxs>
 <view class="search-bar">
   <view class="a">
     <view class="a-1">
@@ -52,7 +53,7 @@
     </navigator>
   </view>
   <view class="icon1">
-    <navigator url="#" role="navigation">
+    <navigator url="../gedan/gedan" role="navigation">
       <view class="icon2">
         <image src="/images/gedan.png">
         </image>
@@ -85,7 +86,7 @@
       <navigator url="#" role="navigation">
         <view class="gedan-2">
           <image src="{{item.picUrl}}" width="100%"></image>
-          <text class="erji">🎧{{math.round(item.playCount/10000)}}万</text>
+          <text class="erji">🎧{{filter.numberfixed(item.playCount/10000)}}万</text>
         </view>
         <view class="text-gedan">
           <text>{{item.name}}</text>
