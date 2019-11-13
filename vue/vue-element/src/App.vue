@@ -19,6 +19,8 @@
 
 <script>
 import header from '@/components/header/header.vue'
+
+
 export default {
   name: 'App',
   data () {
@@ -27,7 +29,8 @@ export default {
     }
   },
   components: {
-    'v-header': header
+    'v-header': header,
+    
   },
   created () {
     this.$http.get('http://localhost:8080/static/seller.json')
