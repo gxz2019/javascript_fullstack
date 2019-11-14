@@ -11,7 +11,9 @@
         <div class="taidu">
           <span class="taidu-a">服务态度</span>
           <div class="star">
-            <span class="star-item on"></span>
+            <span class="star-item on">
+              
+            </span>
           </div>
           <span class="score">{{seller.serviceScore}}</span>
         </div>
@@ -36,18 +38,37 @@
         <span class="third-1">不满意6</span>
       </div>
       <div class="rating-third-2">
-        <span class="third-2"></span>
+        <span class="third-2">✔</span>
         <span class="text">只看有内容的评价</span>
       </div>
     </div>
     <!-- 第四部分 -->
-    <div></div>
-    <!-- 第五部分 -->
-    <div></div>
+    <div class="rating-forth">
+      <ul>
+        <li>
+          <div class="avator">
+            <img src="" alt="" width="28" height="28">
+          </div>
+          <div class="content">
+            <h1 class="name">3****c</h1>
+            <div class="star-wrapper">
+              <div class="star star-24"></div>
+              <span class="delivery">30</span>
+            </div>
+            <p class="text">不错，好喝都是大大大苏打大苏打实打实大的撒</p>
+            <div class="recommend">
+              <span class="icon-thumb_up"></span>
+              <span class="item">南瓜粥</span>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
+
 export default {
   name: "Rating",
   props: {
@@ -119,7 +140,7 @@ export default {
 .rating-third
   .rating-third-1
     // border 1px solid #000
-    margin 15px
+    margin 20px
     .third-1
       background #00a0dc
       margin 5px
@@ -127,5 +148,8 @@ export default {
       font-size 15px
       color #ffffff
       border-radius 5%
+  .rating-third-2
+    margin 40px 25px
+    // border 1px solid #000
 
 </style>

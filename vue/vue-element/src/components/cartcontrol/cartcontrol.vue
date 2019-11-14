@@ -25,11 +25,13 @@ export default {
             }else{
                 this.food.count++
             }
+             this.$emit('add',event.target)
         },
          decreasecart(){
         if(this.food.count) {
             this.food.count--
         }
+       
     }
     }
    
