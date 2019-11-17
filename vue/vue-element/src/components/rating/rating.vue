@@ -11,9 +11,9 @@
         <div class="taidu">
           <span class="taidu-a">服务态度</span>
           <div class="star">
-            <span class="star-item on">
-              
-            </span>
+              <span>
+                
+              </span>
           </div>
           <span class="score">{{seller.serviceScore}}</span>
         </div>
@@ -68,7 +68,7 @@
 </template>
 
 <script>
-
+// import ElementUI from 'element-ui';
 export default {
   name: "Rating",
   props: {

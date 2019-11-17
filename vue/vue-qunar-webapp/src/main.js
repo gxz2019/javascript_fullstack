@@ -3,16 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import axios from 'axios'
-// import ElementUI from 'element-ui';
+import './assets/styles/reset.css'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+// require styles
+import 'swiper/dist/css/swiper.css'
 
-
-
-import './common/stylus/index.styl'
-// Vue.use(ElementUI);
-// Vue.use(axios)
-Vue.prototype.$http = axios
-
+Vue.use(VueAwesomeSwiper)
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
