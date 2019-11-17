@@ -1,17 +1,24 @@
 <template>
   <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> -->
-    <div>
-      
-    </div>
+    <div class="star">
+    <span><img src="../star/star.png" alt=""></span>
+  </div>
+
 </template>
 
 <script>
 
 export default {
-    data() {
-      return {
-        value: 3.7
+    props:{
+      size:{
+        type:Number
+      },
+      score:{
+        type:Number
       }
+    },
+    computed:{
+
     }
 }
 </script>

@@ -12,7 +12,7 @@
           <span class="taidu-a">服务态度</span>
           <div class="star">
               <span>
-                
+                <star :size="48" :score="seller.score"></star>
               </span>
           </div>
           <span class="score">{{seller.serviceScore}}</span>
@@ -69,6 +69,7 @@
 
 <script>
 // import ElementUI from 'element-ui';
+import star from '../star/star'
 export default {
   name: "Rating",
   props: {
@@ -80,6 +81,9 @@ export default {
     return {
       ratings: []
     };
+  },
+  components:{
+    star
   }
 };
 </script>

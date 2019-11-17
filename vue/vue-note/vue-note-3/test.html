@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  <style>
+    .b{
+      width: 100px;height: 100px;
+      background-color: red;
+    }
+    .c{
+      background-color: blue;
+      width: 100px;height: 100px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 条件渲染 -->
+  <!-- v-if能控制元素的显示于隐藏 -->
+  <!-- v-else -->
+  <!-- v-show也能控制元素的显示与隐藏 -->
+<!-- 二者区别
+1.v-if控制的dom的移除与添加，v-show控制的dom的样式显示与隐藏(display：none)
+如果要频繁的切换显示/隐藏就用v-show，
+如果只需要判断一次就用v-if
+2.v-if可以写在template上，v-show不行，因为template不能添加样式 -->
+
+
+  <div id="app">
+    <button @click="a">{{text}}</button>
+    <div class="b" v-if="show"></div>
+    <div class="c" v-else></div>
+  </div>
+  <script>
+  const vm = new Vue({
+    el:'#app',
+    data:{
+      text:'隐藏',
+      show:false
+    },
+    methods:{
+      a() {
+        this.text = this.show ? '隐藏' : '显示'
+        this.show = !this.show
+      }
+    }
+  })
+  
+  </script>  
+</body>
+</html>

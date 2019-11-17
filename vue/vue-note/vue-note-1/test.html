@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+</head>
+<body>
+  <div id="app">{{a}}</div>
+  <script>
+    const A = new Vue({
+      el:'#app',//选择一个id为app的dom元素，可以使用VUE的语法
+      data:{
+        a:10
+      }
+    })
+    A.a=20;
+    A.a=30;
+    A.a=40;
+    console.log(A.a)
+    console.log(A.$el.innerHTML)//dom更新之前
+    A.$nextTick(() =>{
+      console.log(A.$el.innerHTML)
+    })
+  </script>
+</body>
+</html>

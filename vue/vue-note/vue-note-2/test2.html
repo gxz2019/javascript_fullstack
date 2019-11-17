@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  <style>
+    .red{
+      background-color: red;
+    }
+    .width{
+      width: 100px;
+    }
+    .green{
+      background-color: green;
+    }
+    .blue{
+      background-color: blue;
+    }
+    .yellow{
+      background-color: yellow;
+    }
+  </style>
+</head>
+<body>
+  <!-- vue指令 -->
+  <!-- 1.  v-bind绑定属性  简写:-->
+  <!-- class  -->
+  <!-- style -->
+
+  <!-- 2.v-on点击事件 -->
+  <div id="app">
+    <!-- <img v-bind:src="imgUrl" v-bind:alt="name" :style="{width: imgWidth}"> -->
+    <button @click="a">点击</button>
+    <h4 :class="h4ClassArr[h4Index]">{{ name }}</h4>
+  </div>
+  <script>
+    const vm = new Vue({
+      el:'#app',
+      data:{
+        name:"VUE学习",
+        imgUrl:"http://pic18.nipic.com/20120103/8993051_170340691334_2.jpg",
+        // h4Class:'red',
+        h4Flag:'true',
+        h4width:'width',
+        imgWidth:'200px',
+
+        h4ClassArr:['green','blue','yellow'],
+        h4Index:0,
+        h4Count:0
+      },
+      methods:{
+        a(e){
+          // console.log('a')
+          // this.h4Index = ++this.h4Count % 3;
+          console.log(e)
+          this.h4Count = this.h4Count + 1;
+          this.h4Index = this.h4Count % 3 
+        }
+      }
+    })
+  </script>
+</body>
+</html>
