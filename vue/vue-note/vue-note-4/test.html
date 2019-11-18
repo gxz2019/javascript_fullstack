@@ -15,15 +15,38 @@
 
 
   <div id="app">
-    <ul>
+    <!-- <ul>
       <li v-for="(item , index) in arr">{{ item }}</li> 
     </ul>
+    <h4 v-for="(item,index,key,value) in obj">{{item}} {{index}} {{key}} {{value}}</h4> -->
+    <!-- <ul>
+      <li v-for="(fruit,index) in fruitArr" :key="fruit">{{fruit}} {{index}}</li>
+    </ul>
+    <button @click="a"></button> -->
+    <ul>
+      <li v-for="item in arr" :key="item">{{item}}</li>
+    </ul>
+    <button @click="a"></button>
   </div>
   <script>
     const vm = new Vue({
       el:'#app',
       data:{
-        arr:['html','css','js']
+        arr:['html','css','js'],
+        obj:{
+          name:'gxz',
+          age:'22',
+          looks:'beaufiful'
+        },
+        fruitArr:[
+          'a','b','c'
+        ]
+        
+      },
+      methods:{
+        a() {
+          // this.fruitArr.reverse()
+        }
       }
     })
   </script>
