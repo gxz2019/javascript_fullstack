@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+
+</head>
+<body>
+  <div id="app">
+    <zujian1 v-for="item in todo" :key=""></zujian1>
+  </div>
+  <script>
+     Vue.component('zujian1',{
+      props:['todo'],
+      template:`
+        <h4>{{text}}</h4>
+      `
+    })
+    const vm = new Vue({
+      el:'#app',
+      data:{
+        fruitList:[
+          {id : 0,text:'苹果'},
+          {id : 1,text:'梨子'},
+          {id : 2,text:'香蕉'},
+          
+        ]
+      },
+      // components:{
+      //   zujian1
+      // }
+    })
+   
+  </script>  
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+
+</head>
+<body>
+  <!-- 计算属性和侦听器 -->
+  <!-- watch监听器 -->
+  <!-- computed计算属性 -->
+  <div id="app">
+    {{desc}}
+    {{looks}}
+  </div>
+  <script>
+    const vm = new Vue({
+      el:"#app",
+      data:{
+        name:'gxz',
+        age:21,
+        looks:'good'
+
+      },
+      computed:{
+        desc() {
+          return `姓名:${this.name} 年龄:${this.age}`
+        }
+      }
+    })
+  </script>
+</body>
+</html>

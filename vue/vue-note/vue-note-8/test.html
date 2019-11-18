@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+  
+</head>
+<body>
+  <!-- 组件的数据传递和属性校验 -->
+  <div id="app">
+    <my-Content :title="title" :content="content"></my-Content>
+  </div>
+  <script>
+    const vm = new Vue({
+      el:'#app',
+      data:{
+        title:'官方的说法是',
+        content:'大撒大撒大撒大三大四发放'
+      },
+      components:{
+        myContent:{
+          // props:['title','content'],
+          props:{
+            title:{
+              type:String
+            },
+            content:{
+              type:String
+            }
+          },
+          template:`
+          <div>
+            <h4>{{title}}</h4>
+              <p>{{content}}</p>
+            </div>
+          
+          `
+        }
+      }
+    })
+  </script>
+</body>
+</html>

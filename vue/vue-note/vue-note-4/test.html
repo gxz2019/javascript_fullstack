@@ -12,7 +12,18 @@
 <!-- 列表渲染 -->
 
 <!-- v-for -->
+<!-- arr:(item,index) in arr
+obj:(value,key,index) in obj
+num:num in number -->
 
+<!-- key值 只能是Number或String -->
+
+<!-- 1.不能通过索引的方式去改变数组，这样不会渲染 -->
+<!-- 2.不能通过更改长度的方式去改变数组，不会渲染 -->
+<!-- 3.数组变异方法：pop、shift、unshift、splice、sort、reverse、push -->
+
+<!-- 1.向对象内添加或者删除属性，不能渲染页面
+可以使用$.set方法 -->
 
   <div id="app">
     <!-- <ul>
@@ -23,8 +34,17 @@
       <li v-for="(fruit,index) in fruitArr" :key="fruit">{{fruit}} {{index}}</li>
     </ul>
     <button @click="a"></button> -->
+    <!-- <ul>
+      <li v-for="fruit in fruitArr" :key="fruit.id">{{fruit}}</li>
+    </ul> -->
+    <!-- <div v-if="show">
+      name: <input type="text" key="name">
+    </div>
+    <div v-else>
+      password: <input type="text" key="password">
+    </div> -->
     <ul>
-      <li v-for="item in arr" :key="item">{{item}}</li>
+      <li v-for="a in obj" :key="a">{{a}}</li>
     </ul>
     <button @click="a"></button>
   </div>
@@ -39,13 +59,21 @@
           looks:'beaufiful'
         },
         fruitArr:[
-          'a','b','c'
-        ]
+          {name:'s',id:1},
+          {name:'d',id:2},
+          {name:'g',id:3}
+        ],
+        show:true
         
       },
       methods:{
         a() {
           // this.fruitArr.reverse()
+          // this.fruitArr.reverse()
+          // this.show = !this.show
+          // this.arr.push('react')
+          // this.obj.name = 'diyi'
+          this.$set(this.obj,'saray',1000)
         }
       }
     })
