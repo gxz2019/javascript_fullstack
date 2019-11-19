@@ -10,11 +10,7 @@
       <div class="rating-first-right">
         <div class="taidu">
           <span class="taidu-a">服务态度</span>
-          <div class="star">
-              <span>
-                <star :size="48" :score="seller.score"></star>
-              </span>
-          </div>
+          <star :score="seller.serviceScore"></star>
           <span class="score">{{seller.serviceScore}}</span>
         </div>
         <div class="taidu">
