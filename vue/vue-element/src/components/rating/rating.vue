@@ -10,12 +10,12 @@
       <div class="rating-first-right">
         <div class="taidu">
           <span class="taidu-a">服务态度</span>
-          <star :score="seller.serviceScore"></star>
+          <star :size="24" :score="seller.serviceScore"></star>
           <span class="score">{{seller.serviceScore}}</span>
         </div>
         <div class="taidu">
           <span class="taidu-a">商品评分</span>
-          <div class="star"></div>
+          <star :size="24" :score="seller.foodScore"></star>
           <span class="score">{{seller.foodScore}}</span>
         </div>
         <div class="taidu">
@@ -34,27 +34,30 @@
         <span class="third-1">不满意6</span>
       </div>
       <div class="rating-third-2">
-        <span class="third-2">✔</span>
+        <span class="third-2" @click="a">
+          <img src="./img1.png" alt="" class="img1" v-if="show">
+          <img src="./img2.png" alt="" class="img1" v-else >
+        </span>
         <span class="text">只看有内容的评价</span>
       </div>
     </div>
     <!-- 第四部分 -->
     <div class="rating-forth">
       <ul>
-        <li>
+        <li v-for="(item,index) in ratings" :key="index" class="rating-item" v-show="show1">
           <div class="avator">
-            <img src="" alt="" width="28" height="28">
+            <img src="http://static.galileo.xiaojukeji.com/static/tms/default_header.png" alt="" width="28" height="28">
           </div>
-          <div class="content">
-            <h1 class="name">3****c</h1>
+          <div class="content" >
+            <h1 class="name">{{item.username}}</h1>
             <div class="star-wrapper">
-              <div class="star star-24"></div>
-              <span class="delivery">30</span>
+              <star :size="16" :score="item.score" class="star"></star>
+              <span class="delivery">{{item.deliveryTime}}</span>
             </div>
-            <p class="text">不错，好喝都是大大大苏打大苏打实打实大的撒</p>
+            <p class="text">{{item.text}}</p>
             <div class="recommend">
               <span class="icon-thumb_up"></span>
-              <span class="item">南瓜粥</span>
+              <span class="item" v-for="(item1,index) in item.recommend" :key="index">{{item1}}</span>
             </div>
           </div>
         </li>
@@ -71,15 +74,34 @@ export default {
   props: {
     seller: {
       type: Object
+    },
+    ratings:{
+      type:Object
     }
+  },
+    computed:{
+  },
+ created(){
   },
   data() {
     return {
-      ratings: []
+      show:true,
+      show1:''
     };
   },
   components:{
     star
+  },
+  methods:{
+    a(){
+      this.show = !this.show
+      if(this.show == false) {
+        this.show1 = 'item.text'
+      }else{
+        this.show1 == this.show
+      }
+     
+    }
   }
 };
 </script>
@@ -88,6 +110,7 @@ export default {
 .rating-first
   display flex 
   border-bottom 1px solid rgba(7, 17, 27, 0.1)
+  font-weight normal
   .rating-first-left 
     width 105px
     text-align: center
@@ -149,7 +172,65 @@ export default {
       color #ffffff
       border-radius 5%
   .rating-third-2
-    margin 40px 25px
-    // border 1px solid #000
+    padding-left 10px
+    height 35px
+    width 100%
+    // margin 30px
+    border-bottom 1px solid rgba(7,17,27,0.2)
+    line-height 35px
+    .third-2
+      .img1
+        width 17px;
+        height 17px
+.rating-forth
+  padding 0 18px
+  font-weight normal
+  .rating-item
+    display flex
+    padding 18px 0
+    position relative
+    .avator
+      flex 0 0 28px
+      width 28px
+      margin-right 12px
+      img
+        border-radius 50%
+    .content
+      position relative
+      flex 1
+      .name
+        margin-bottom 4px
+        line-height 12px
+        font-size 10px
+        color #07111b
+      .star-wrapper
+        margin-bottom 6px
+        font-size 0
+        .delivery
+          display inline-block
+          vertical-align top
+          line-height 12px
+          font-size 10px
+          color #93999f
+        .star
+          display inline-block
+      .text
+        margin-bottom 8px
+        line-height 18px
+        color #07111b
+        font-size 12px
+      .recommend
+        .icon-thumb_up
+          color #00a0dc
+        .item
+          padding 0 6px
+          border 1px solid rgba(7,17,27,.1)
+          border-radius 1px
+          color #93999f
+          background #fff
+
+
+
+
 
 </style>

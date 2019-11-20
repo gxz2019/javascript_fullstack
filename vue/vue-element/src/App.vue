@@ -13,7 +13,9 @@
         <router-link to="/seller">商家</router-link>
       </div>
     </div>
-    <router-view :seller="seller" />
+    <router-view :seller="seller" :ratings="ratings" />
+    <!-- <router-view :rating="rating" /> -->
+
   </div>
 </template>
 
@@ -25,7 +27,8 @@ export default {
   name: 'App',
   data () {
     return {
-      seller: {}
+      seller: {},
+      ratings:{}
     }
   },
   components: {
@@ -40,6 +43,15 @@ export default {
           // this.seller = res.data.data
           // 数组合并用concat(), 对象合并用Object.assigin()
           this.seller = Object.assign({}, this.seller, res.data.data)
+        }
+      })
+      this.$http.get('http://localhost:8080/static/ratings.json')
+      .then((res) => {
+        console.log(res)
+        if (res.data.errno === 0) {
+          // this.seller = res.data.data
+          // 数组合并用concat(), 对象合并用Object.assigin()
+          this.ratings = Object.assign({}, this.ratings, res.data.data)
         }
       })
   }

@@ -7,16 +7,23 @@
       <router-link to="/user" slot="right-icon"></router-link>
       <i class="icon">&#xe63c;</i>
     </v-header>
-    <!-- <router-view/> -->
+    <!-- tab -->
+    <v-tab></v-tab>
+    <v-side></v-side>
+    <router-view/>
   </div>
 </template>
 
 <script>
 import header from '@/components/header'
+import side from '@/components/side'
+import tab from '@/components/tab'
 export default {
   name: 'App',
   components:{
-    'v-header':header
+    'v-header':header,
+    'v-side':side,
+    'v-tab':tab
   }
 }
 </script>
