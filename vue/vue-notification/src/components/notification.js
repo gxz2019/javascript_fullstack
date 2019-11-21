@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-import Notification from './Notification.vue'
+import Notification from './Notification.vue' 
 
 // new Swiper()
 // new Gcode()
