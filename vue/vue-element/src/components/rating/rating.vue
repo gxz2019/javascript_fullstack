@@ -29,9 +29,9 @@
     <!-- 第三部分 -->
     <div class="rating-third">
       <div class="rating-third-1">
-        <span class="third-1">全部24</span>
-        <span class="third-1">满意18</span>
-        <span class="third-1">不满意6</span>
+        <span @click="b" :class="ClassArr[index1]">{{}}</span>
+        <span @click="b" :class="ClassArr[index1]">{{}}</span>
+        <span @click="b" :class="ClassArr[index1]">{{}}</span>
       </div>
       <div class="rating-third-2">
         <span class="third-2" @click="a">
@@ -44,7 +44,7 @@
     <!-- 第四部分 -->
     <div class="rating-forth">
       <ul>
-        <li v-for="(item,index) in ratings" :key="index" class="rating-item" v-show="show1">
+        <li v-for="(item,index) in ratings" :key="index" class="rating-item" v-show="show1(item.rateType,item.text)">
           <div class="avator">
             <img src="http://static.galileo.xiaojukeji.com/static/tms/default_header.png" alt="" width="28" height="28">
           </div>
@@ -85,8 +85,11 @@ export default {
   },
   data() {
     return {
-      show:true,
-      show1:''
+      show:false,
+      ClassArr:['blue','black'],
+      index1:0,
+      indexCount:0,
+      desc:[]
     };
   },
   components:{
@@ -95,12 +98,20 @@ export default {
   methods:{
     a(){
       this.show = !this.show
-      if(this.show == false) {
-        this.show1 = 'item.text'
-      }else{
-        this.show1 == this.show
+    },
+    b(){
+      this.indexCount = this.indexCount + 1,
+      this.index1 = this.indexCount % 2
+
+    },
+   
+    show1(type,text){
+      if(this.show === false){
+        return true
       }
-     
+      if(this.show === true && type === 0 && text) {
+        return true
+      }
     }
   }
 };
@@ -164,8 +175,15 @@ export default {
   .rating-third-1
     // border 1px solid #000
     margin 20px
-    .third-1
-      background #00a0dc
+    .blue
+      background blue
+      margin 5px
+      padding 10px
+      font-size 15px
+      color #ffffff
+      border-radius 5%
+    .black
+      background black
       margin 5px
       padding 10px
       font-size 15px
