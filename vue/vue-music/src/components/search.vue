@@ -1,7 +1,7 @@
 <template>
   <div class="search">
     <div class="search-box-wrapper">
-      <searchbox @query="onQueryChange"></searchbox>
+      <searchbox @query="onQueryChange" ref="searchBox"></searchbox>
     </div>
     <!-- 热门搜索和搜索历史 -->
     <div class="shortcut-wrapper">
@@ -22,17 +22,21 @@
           <div class="search-history">
             <h1 class="title">
               <span class="text">搜索历史</span>
-              <span class="clear">
+              <span class="clear" @click="clearSearchHistory">
                 <i class="icon">&#xe612;</i>
               </span>
             </h1>
             <!-- 搜索历史列表 -->
-            <searchList :searches="searchHistory"></searchList>
+            <searchList :searches="searchHistory" @select="saveSearch" @delete="deleteSearchHistory"></searchList>
           </div>
         </div>
 
       </scroll>
     </div>
+    <!--搜索 result -->
+      <div class="search-result">
+        <suggest :query="query"></suggest>
+      </div>
   </div>
 </template>
 
@@ -41,7 +45,9 @@ import searchBox from '@/components/searchBox'
 import scroll from '@/components/scroll'
 import api from '@/api/index.js'
 import searchList from '@/components/searchList'
-import { mapGetters } from 'vuex'
+import { mapGetters ,mapActions } from 'vuex'
+import { searchMixin } from '@/common/mixin'
+import suggest from '@/components/suggest'
 export default {
   data(){
     return {
@@ -53,17 +59,22 @@ export default {
   components:{
     'searchbox':searchBox,
     'scroll':scroll,
-    'searchList':searchList
+    'searchList':searchList,
+    'suggest':suggest
   },
   computed:{
     ...mapGetters([
       'searchHistory'
     ])
   },
+  mixins:[searchMixin],
   methods:{
-    onQueryChange(e){
-      console.log(e)
-    },
+    // onQueryChange(e){
+    //   console.log(e)
+    // },
+    // clearSearchHistory() {
+      
+    // },
     _getHotKey() {
       api.HotSearchKey().then((res) => {
         // console.log
@@ -122,6 +133,12 @@ export default {
             .icon
               font-size 18px
               color hsla(0, 0%, 100%, 0.3)
+  .search-result
+    position fixed
+    width 100%
+    top px2rem(360px)
+    bottom 0
+    
 
       
 

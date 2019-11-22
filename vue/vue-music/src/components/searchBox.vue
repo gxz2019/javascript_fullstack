@@ -1,8 +1,8 @@
 <template>
   <div class="search-box">
     <i class="icon icon-search">&#xe638;</i>
-    <input type="text" class="box" :placeholder="placeholder" v-model="query">
-    <i class="icon icon-dismiss"></i>
+    <input type="text" class="box" :placeholder="placeholder" v-model="query" ref="query">
+    <i class="icon icon-dismiss" v-show="query" @click="clear">&#xe656;</i>
   </div>
 </template>
 
@@ -19,6 +19,17 @@ export default {
     data() {
       return{
         query:''
+      }
+    },
+    methods:{
+      blur() {
+        this.$refs.query.blur()
+      },
+      clear() {
+        this.query = ''
+      },
+      setQuery(query) {
+        this.query = query
       }
     },
   
