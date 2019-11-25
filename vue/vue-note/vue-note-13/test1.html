@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #class{
+      width: 200px;
+                height: 100px;
+                background: red;
+    }
+  </style>
+</head>
+<body>
+  <!-- 事件属性event.target -->
+  <div id="class">
+    <span>我爱JS</span>
+  </div>
+  <script>
+   
+      document.getElementById('class').onclick =  function(e) {
+        console.log(e.target);
+                    console.log(e.target.id);
+                    console.log(e.target.tagName);
+                    console.log(e.target.nodeName);
+                    console.log(e.target.classList);
+                    console.log(e.target.className);
+                    console.log(e.target.innerHTML);
+                    console.log(e.target.innerText);
+      }
+    
+  </script>
+</body>
+</html>
