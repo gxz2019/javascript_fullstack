@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+</head>
+<body>
+   <div id="app">
+    <ul>
+      <li v-for="num in list" :key="num" v-show="num.text">{{num.id}}</li>
+    </ul>
+   </div>
+   <script>
+   const vm = new Vue({
+     el:'#app',
+     data() {
+       return {
+         list:[
+           {id:1,text:''},{id:2,text:'dsa'},{id:3,text:'dsdsdsa'},{id:4,text:'dsadasdas'}
+         ]
+       }
+     }
+   })
+   </script>
+</body>
+</html>

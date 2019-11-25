@@ -34,7 +34,10 @@ const actions = {
   },
   clearSearchHistory({commit}){
     commit(types.COM_CLEAR_SEARCH_HISTORY)
-  }
+  },
+  // selectPlaySong({}) {
+
+  // }
 }
 
 const getters = {

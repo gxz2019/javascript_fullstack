@@ -10,6 +10,7 @@
     <!-- tab -->
     <v-tab></v-tab>
     <v-side></v-side>
+    <play></play>
     <router-view/>
   </div>
 </template>
@@ -18,12 +19,14 @@
 import header from '@/components/header'
 import side from '@/components/side'
 import tab from '@/components/tab'
+import play from '@/components/paly'
 export default {
   name: 'App',
   components:{
     'v-header':header,
     'v-side':side,
-    'v-tab':tab
+    'v-tab':tab,
+    'play':play
   }
 }
 </script>

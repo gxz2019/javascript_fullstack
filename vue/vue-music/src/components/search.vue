@@ -4,7 +4,7 @@
       <searchbox @query="onQueryChange" ref="searchBox"></searchbox>
     </div>
     <!-- 热门搜索和搜索历史 -->
-    <div class="shortcut-wrapper">
+    <div class="shortcut-wrapper" v-show="!query">
       <scroll class="shortcut" :data="shortcut" ref="shortcut">
         <div>
           <!-- 热门搜索 -->
@@ -34,8 +34,8 @@
       </scroll>
     </div>
     <!--搜索 result -->
-      <div class="search-result">
-        <suggest :query="query"></suggest>
+      <div class="search-result" v-show="query">
+        <suggest :query="query" @select="saveSearch" @listScroll="blurInput" ref="suggest"></suggest>
       </div>
   </div>
 </template>
