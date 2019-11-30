@@ -6,8 +6,8 @@ var pool = mysql.createPool({
   host:config.database.HOST,
   user:config.database.USERNAME,
   password:config.database.PASSWORD,
-  database:config.database,
-  port:config.database.PORT,
+  database:config.database.DATABASE,
+  port:config.database.PORT
 })
 
 //创建一个统一连接数据库的方法
