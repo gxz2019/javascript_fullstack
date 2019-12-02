@@ -1,0 +1,39 @@
+/* pages/position/position.wxss */
+.position{
+  position: relative;
+  text-align: center;
+}
+.icon-arrow-left{
+  position: absolute;
+  left: 25rpx;
+}
+.icon-zhuye{
+  position:absolute;
+  left: 75rpx;
+}
+.search{
+  text-align: center;
+  width: 100%;
+  /* height: 80rpx; */
+  box-sizing: border-box;
+}
+form{
+  text-align: center;
+  /* margin: 30rpx; */
+  /* display: inline-block; */
+  /* width: 600rpx; */
+  background-color: darkgray;
+  border-radius: 20px;
+  /* height: 60rpx; */
+}
+
+.icon-sousuo{
+  /* line-height: 60rpx; */
+  display: inline-block;
+  margin: 20rpx;
+}
+.Input1{
+  display: inline-block;
+  /* line-height: 60rpx; */
+  margin: 20rpx;
+}

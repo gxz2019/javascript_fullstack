@@ -1,0 +1,16 @@
+<view style="height:{{navTop + 'px'}}">
+</view>
+<view class="position">
+  <i class="iconfont icon-arrow-left"></i>
+  <i class="iconfont icon-zhuye"></i>
+  <span class="position-span">目的地切换</span>
+</view>
+  <view class="search">
+    <!-- <i class="iconfont icon-sousuo"></i> -->
+  <form>
+    <i class="iconfont icon-sousuo"></i>
+    <span>搜索目的地</span>
+  </form>
+  </view>
+    
+  
