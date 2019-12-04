@@ -3,15 +3,12 @@
 <view class="position">
   <i class="iconfont icon-arrow-left"></i>
   <i class="iconfont icon-zhuye"></i>
-  <span class="position-span">目的地切换</span>
+  <span class="position-span">马蜂窝旅游</span>
 </view>
   <view class="search">
-  <navigator url="/pages/search/search">
-   <i class="iconfont icon-sousuo"></i>
+  <form >
+    <i class="iconfont icon-sousuo"></i>
     <input type="search" placeholder="搜索目的地"class="search-input"></input>
-  
-  </navigator>
+  </form>
   </view>
 
-    
-  

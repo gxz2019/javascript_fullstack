@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/position/position",
     "pages/index/index",
+    "pages/position/position",
     "pages/title/title",
-    "components/title/title"
-    
+    "components/title/title",
+    "pages/search/search"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,18 +1,19 @@
 <view class="search">
   <view class="position">
     <!-- <span>西藏</span> -->
-    <navigator class="" target="" url="" hover-class="navigator-hover" open-type="navigate">
-    <span>西藏</span>
-      
+    <navigator class="" target="" url="/pages/position/position" hover-class="navigator-hover" open-type="navigate">
+      <span>西藏</span>
+
     </navigator>
-      
+
     <i class="iconfont icon-lower-triangle">
     </i>
   </view>
-  <view class="search-bar">
-    <form>
-      <i class="iconfont icon-sousuo"></i>
-    <input type="text" placeholder="搜索目的地/景点/攻略" class="search-input" />
-    </form>
-  </view>  
+  <view class="search">
+  <navigator url="/pages/search/search">
+   <i class="iconfont icon-sousuo"></i>
+    <input type="search" placeholder="搜索目的地/景点/攻略"class="search-input"></input>
+  
+  </navigator>
+  </view>
 </view>

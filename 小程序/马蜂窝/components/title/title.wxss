@@ -11,34 +11,24 @@
   line-height: 50rpx;
   display: inline;
 }
-.search-bar{
+.search{
   position: relative;
-  /* width: 400rpx; */
-  display: inline-block;
-  box-sizing: border-box;
-  /* border: 1px solid #000; */
-  background-color: #fff;
-  border-radius: 20rpx;
-  line-height: 45rpx;
-  margin-left: 10rpx;
+  margin: 20rpx;
+  background-color: #CDCDB4;
+  text-align: center;
   height: 60rpx;
-  width: 420rpx
-
+  line-height: 60rpx;
+  border-radius: 20px
 }
-form{
-  /* position: relative; */
-    -webkit-box-flex: 1;
-    /* -webkit-flex: auto; */
-    flex: auto;
-    background-color: #FFFFFF;
-    border-radius: 4px
+.icon-sousuo{
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 20rpx
+  
 }
 .search-input{
+  /* line-height: 60rpx; */
+  margin: 10rpx;
   display: inline-block;
-  vertical-align: middle;
-  /* position: absolute; */
-  /* margin-left: 100rpx */
-  position: absolute;
-  left: 60rpx
-
 }
