@@ -43,6 +43,11 @@ let findUser = function (username,userpwd) {
   return allServices.query(_sql)
 }
 
+//注册登录
+// let insertUser = function (username,userpwd,nickname) {
+//   let _sql = `insert info users values ("${username}","${userpwd}","${nickname}");`
+// }
+
 
 module.exports = {
   getAllusers,
