@@ -6,6 +6,16 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
+    wx.showLoading({
+      title: '加载中',
+      mask: true,
+      complete(){
+        setTimeout(() => {
+          wx.hideLoading()
+        },1500)
+        
+      }
+    })
 
     // 登录
     wx.login({

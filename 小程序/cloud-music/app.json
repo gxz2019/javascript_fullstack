@@ -1,14 +1,16 @@
 {
   "pages": [
     "pages/a/a",
+    "pages/search/search",
     "pages/b/b",
     "pages/c/c",
     "pages/meirituijian/index",
     "pages/gedan/gedan"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#FF3030",
+    "navigationBarBackgroundColor": "#008c8c",
     "navigationBarTitleText": "网易云音乐",
     "navigationBarTextStyle": "white",
     "backgroundColor": "black",

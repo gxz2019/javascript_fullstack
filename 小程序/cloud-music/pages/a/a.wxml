@@ -6,10 +6,12 @@
       <image src="/images/tgsq.png" class="a-image"></image>
     </view>
   </view>
-  <view class='search'>
+  
+  <view class='search' bindtap="goToSearch">
     <input type='text' placeholder='输入你想要的内容' confirm-type='search'></input>
     <image class="" src='/images/search.png'></image>
   </view>
+  
   <view class="search1">
     <view class="search-bar1">
       <image src="/images/b1.png" class="image"></image>
@@ -18,7 +20,7 @@
 </view>
 <!-- 个性推荐栏 -->
 <view class="gexing">
-  <span>个性推荐</span>
+  <span>Cloud-Music</span>
 </view>
 <!-- 轮播图 -->
 <view class="b">
