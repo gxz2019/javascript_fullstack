@@ -5,15 +5,84 @@ Page({
    * 页面的初始数据
    */
   data: {
-    title:''
+    title:'',
+    show:false,
+    hotDetail:[],
+    searchList:[]
   },
-  searchValue(event) {
-    this.title = event.detail.
+  // searchValue(e) {
+  //   // console.log(e.detail.value)
+  //   this.setData({
+  //     title: e.detail.value
+  //   })
+  // },
+  clearInput() {
+    this.setData({
+      title:''
+    })
   },
   goToback() {
     wx.navigateBack({
       url:'/pages/a/a'
     })
+    this.setData({
+      title:''
+    })
+  },
+
+  //请求热搜
+  getHotDetail(){
+    let that = this
+    wx.request({
+      url:'http://musicapi.leanapp.cn/search/hot/detail',
+      header:{
+        'content-type':'application/json'
+      },
+      success:function (res){
+        // console.log(res.data.result.hots)
+        // console.log(that.hotDetail)
+        if(res.data.code === 200) {
+          that.setData({
+            hotDetail:res.data.result.hots
+          })
+        } 
+       
+      }
+    })
+  },
+  //请求搜索结果
+  getHot:function(e) {
+    let limit = 50;
+    let that = this
+    console.log(e.detail.value)
+    that.setData({
+      title:e.detail.value
+    })
+    wx.request({
+      url:'http://musicapi.leanapp.cn/search/suggest',
+      // method:'POST',
+      header: {
+        'content-type': 'application/json'
+      },
+      data:{
+        keywords:e.detail.value,
+        // limit:50
+        // type: 'mobile'
+        Key:limit
+      },
+      success:function(res) {
+        // let arr=[]
+        console.log(res.data)
+        // if(res.data.code === 200){
+         that.setData({
+          searchList:res.data.result.songs
+          // console.log()
+         })
+        //  console.log(that.data.searchList)
+        // }
+      }
+    })
+    // console.log(this.searchList)
   },
 
 
@@ -21,7 +90,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getHotDetail()
+    // this.getHot()
+    // console.log(this.searchList)
   },
 
   /**
@@ -42,6 +113,7 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
+    // console.log(this.searchList)
 
   },
 

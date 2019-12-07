@@ -24,7 +24,7 @@
           <van-action-sheet v-model="show" :actions="actions" @select="onSelect" cancel-text="取消"
           @cancel="onCancel" />
         </div>
-        <div class="publish-btn">发布笔记</div>
+        <div class="publish-btn" @click="publish">发布笔记</div>
       </div>
     </div>
 </template>
@@ -86,7 +86,9 @@ export default {
               ]
             }
 
-      }
+      },
+      List:[]
+      
     }
   },
   components:{
@@ -96,8 +98,9 @@ export default {
     onEditorBlur() {},
     onEditorFocus() {},
     onEditorChange() {},
-    onRead() {
-
+    onRead(file) {
+      console.log(file)
+      this.preImg = file.content
     },
     onSelect(item) {
       // console.log(item)
@@ -109,6 +112,29 @@ export default {
     },
     selectType() {
       this.show = true
+    },
+    publish() {
+      let curUserId = JSON.parse(sessionStorage.getItem('userInfo')).id;
+      let nickname = JSON.parse(sessionStorage.getItem('userInfo')).nickname;
+
+      this.$http({
+        method:'post',
+        url:'http://localhost:3000/users/insertNote',
+        data:{
+          note_content:this.content,
+          head_img:this.preImg,
+          title:this.title,
+          note_type:this.selectCon,
+          useId: curUserId,
+          nickname:nickname
+        }
+      }).then(res => {
+        console.log(res)
+        this.$toast(res.data.mess)
+        setTimeout(() => {
+          this.$router.push({path:'/noteClass'})
+        },1000)
+      })
     }
   }
 }

@@ -41,7 +41,7 @@ Page({
         'content-type':'application/json'
       },
       success: function (res) {
-        // console.log(res);
+        console.log(res);
         if (res.data.code == 200) {
           that.setData({
             banner: res.data.banners

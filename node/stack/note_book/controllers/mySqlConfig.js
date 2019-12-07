@@ -68,6 +68,13 @@ let findNoteDetailById = function(id) {
     let _sql = `select * from note where id="${id}";`
     return allServices.query(_sql)
 }
+//发表笔记
+let insertNote = function(options) {
+    let _sql = `insert into note set c_time=?,m_time=?,note_content=?,head_img=?,title=?,note_type=?,useId=?,nickname=?;`
+    return allServices.query(_sql,options)
+}
+
+
 
 module.exports ={
     getAllusers,
@@ -75,5 +82,6 @@ module.exports ={
     findUser,
     insertUser,
     findNoteListByType,
-    findNoteDetailById
+    findNoteDetailById,
+    insertNote
 }

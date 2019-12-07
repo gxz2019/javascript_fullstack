@@ -1,15 +1,40 @@
 <view>
-<view class="search">
+  <view class="search">
     <view class="search-bar">
-        <input type="search" placeholder="搜索"
-          value="{{title}}" bindinput="searchValue"
-        ></input>
-        </view>
-        <view class="search-button" bindtap="goToback">
-        <span>取消</span>
+      <input type="search" placeholder="搜索" value="{{title}}" bindinput="getHot" focus="true"></input>
+      <text wx:if="{{title.length > 0}}" bindtap="clearInput">×</text>
     </view>
-</view>
-<view>
-
-</view>
+    <view class=" search-button " bindtap="goToback">
+      <span>取消</span>
+    </view>
+  </view>
+  <view>
+    <view class="search-result">
+      <view class="search-result1" wx:if="{{!title.length > 0}}">
+        <view class="result-span1" style="color:#008c8c">
+          <span>热门搜索</span>
+        </view>
+        <view class="result-div" wx:for="{{hotDetail}}" wx:key="">
+          <view class="hot-title">
+            <span class="hottitle">{{item.first}}</span>
+          </view>
+          <view class="hot-image" wx:if="{{item.iconType > 0}}">
+            <image src="/images/hot.png" alt=""  />
+          </view>
+        </view>
+          
+      </view>
+      <view class="search-result2" wx:else>
+        <view class="result2-title">
+          <span>搜索“{{title}}”</span>
+        </view>
+          <view class="result2-title2" wx:for="{{searchList}}" wx:key="">
+            <span>{{item.name}}</span>
+            <span>{{item.id}}</span>
+          </view>
+            
+      </view>
+        
+    </view>
+  </view>
 </view>
