@@ -4,8 +4,9 @@
   
 }
 .background {
-  filter: blur(5px);
-  filter: brightness(60%);
+  /* filter: blur(5px); */
+  filter: brightness(26%);
+  /* filter: opacity(50%); */
 
   position: fixed;
   left: 0;
@@ -29,7 +30,7 @@
 .title-1{
   color: #ffffff;
 }
-.title-2{
+.title-2{ 
   color: #ffffff;
   font-size: 28rpx;
 }
@@ -47,6 +48,25 @@
   position: absolute;
   margin: auto;
   right: 0;left: 0;bottom: 0;top: 0;
+  animation-play-state:paused;
+  /* animation: ; */
+}
+@keyframes first{
+  0%{
+    transform: rotateZ(0deg);
+  }
+  25%{
+    transform: rotateZ(90deg);
+  }
+  50%{
+    transform: rotateZ(180deg);
+  }
+  75%{
+    transform: rotateZ(270deg);
+  }
+  100%{
+    transform: rotateZ(360deg);
+  }
 }
 .song-img{
   width: 100%;

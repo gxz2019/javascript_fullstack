@@ -3,21 +3,30 @@
     <view class="title" wx:for="{{headerList}}" wx:key="">
       {{item.name}}
     </view>
+    <view class="title1" style="transform:translateX({{slideOffset}}rpx);">
+    </view>
   </view>
-    <swiper class="swiper">
-      <swiper-item class="swiper-item" item-id="">
-        <view class="item"> 
-          dasdadas
+    <swiper class="swiper"  bindchange="changeline">
+      <block wx:for="{{headerList}}" wx:key="">
+      <swiper-item class="swiper-item" item-id="{{item.name}}"  circular="{{circular}}"> 
+        <view class="item" wx:for="{{mvList}}" wx:key="" bindtap="goMv" data-id="{{item.id}}"> 
+          <view class="item-container" style="background-image:url({{item.cover}})">
+            <!-- <image class="" src="" /> -->
+              <view class="item-title">
+                <span>{{index + 1}}</span>
+              </view>
+                <view class="item-title1">
+                  <span>{{item.name}}-{{item.artistName}}</span>
+                </view>
+                  <view class="item-title2">
+                    <span>▶{{item.playCoun}}万</span>
+                  </view>
+                    
+          </view>
+            
         </view>
-      </swiper-item>
-      <swiper-item class="swiper-item" item-id="">
-        <view class="item">
-          13213123
-        </view>
-          
-      </swiper-item>
-        
-        
+      </swiper-item> 
+      </block>     
     </swiper>
       
 </view>

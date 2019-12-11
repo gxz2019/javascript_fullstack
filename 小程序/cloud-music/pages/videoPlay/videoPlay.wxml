@@ -1,0 +1,25 @@
+<view class="videoBar">
+<video class="video" src="{{MvUrl}}" controls="true" autoplay="false" 
+ show-fullscreen-btn="true" show-center-play-btn="true" poster="{{MvList.cover}}" 
+ enable-play-gesture="true" auto-pause-if-navigate="true" cover>
+</video>
+</view>
+<view class="text">
+  <view class="title">
+    <h3>麻雀</h3>
+  </view>
+  <view class="img" bindtap="showP">
+    <image class="title-img" src="../../images/bottom.png" />
+  </view>
+</view>
+<view class="text1">
+  <span>发行:2019-12-04  |  播放: 194万</span>
+</view>
+<view class="text2" wx:if="{{show}}">
+  <p>dasdadasdasdada</p>
+</view>
+  
+  
+  
+
+  

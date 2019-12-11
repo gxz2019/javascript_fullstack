@@ -85,8 +85,8 @@ body{
   margin: 0;
 }
 .background{
-  filter: blur(10px);
-  filter: brightness(60%);
+  /* filter: blur(10px); */
+  filter: brightness(30%);
   position: fixed;
   left: 0;
   top: 0;

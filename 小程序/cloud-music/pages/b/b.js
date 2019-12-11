@@ -14,25 +14,25 @@ Page({
     songdata:{},
     songAuthor:{},
     songpicList:{},
-    show:''
+    show:true
   },
   play(e) {
     var that = this;
     audioPlay.play();
-    audioPlay.src = that.audioRul;
-    audioPlay.autoplay = true;
+    // audioPlay.src = that.audioRul;
+    // audioPlay.autoplay = true;
     audioPlay.onPlay((res) => {
       that.updataTime(that)
     });
     that.setData({
-      show:false
+      show:!that.data.show
     })
   },
   pause(){
     var that = this
     audioPlay.pause();
     that.setData({
-      show:true
+      show: !that.data.show
     })
   },
   updataTime:function(that) {
@@ -91,10 +91,11 @@ Page({
         }
         audioPlay.src = audioRul;
         // audioPlay.pause();
+    audioPlay.autoplay = false;
       }
     })
-    audioPlay.src = that.audioRul;
-    audioPlay.autoplay = true;
+    // audioPlay.src = that.audioRul;
+    // audioPlay.autoplay = true;
     wx.request({
       url:'http://neteasecloudmusicapi.zhaoboy.com/song/detail',
       data:{

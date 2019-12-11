@@ -8,9 +8,9 @@
       <view class="title-2">
         <span>{{songAuthor.name}}</span>
       </view>
-    </view>
+    </view> 
     <view class="background2">
-      <view class="bg-img">
+      <view class="bg-img" style="animation: first 20s infinite">
         <image class="song-img" src="{{songpicList.picUrl}}" />
       </view>
     </view>
@@ -23,10 +23,10 @@
         <!-- <span>{{duration}}</span> -->
       </view>
       <view class="btn">
-        <view bindtap="play" class="btn1" wx:if="{{show}}">
+        <view bindtap="play" class="btn1" wx:if="{{show}}" style="animation-play-state:paused">
           <image src="../../images/bofang.png" class="image1" />
         </view>
-        <view bindtap='pause' class="btn1" wx:else>
+        <view bindtap='pause' class="btn1" wx:else style="animation-play-state:paused;">
           <image src="../../images/zanting.png" class="image1" />
         </view>
       </view>
