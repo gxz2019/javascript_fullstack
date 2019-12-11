@@ -1,11 +1,35 @@
-<view>
-  <ul>
-  <li>1</li>
-  <li>2</li>
-  <li>3</li>
-  <li>4</li>
-  <li>5</li>
-  </ul>
-
-
+<view class="radio">
+  <view style="background-image:url({{songpicList.picUrl}})" class="background"></view>
+  <view class="content">
+    <view class="radio-title">
+      <view class="title-1">
+        <span>{{songdata.name}}</span>
+      </view>
+      <view class="title-2">
+        <span>{{songAuthor.name}}</span>
+      </view>
+    </view>
+    <view class="background2">
+      <view class="bg-img">
+        <image class="song-img" src="{{songpicList.picUrl}}" />
+      </view>
+    </view>
+    <view class="slide">
+      <view class="slide-bar">
+        <!-- <span>{{duration}}</span> -->
+        <!-- <span>{{curTimeVal}}</span> -->
+        <slider class="drag" step="1" value="{{curTimeVal}}" max="{{duration}}" 
+        backgroundColor="#373636" activeColor="#FF1744" bindchange="slideBar"  />
+        <!-- <span>{{duration}}</span> -->
+      </view>
+      <view class="btn">
+        <view bindtap="play" class="btn1" wx:if="{{show}}">
+          <image src="../../images/bofang.png" class="image1" />
+        </view>
+        <view bindtap='pause' class="btn1" wx:else>
+          <image src="../../images/zanting.png" class="image1" />
+        </view>
+      </view>
+    </view>
+  </view>
 </view>

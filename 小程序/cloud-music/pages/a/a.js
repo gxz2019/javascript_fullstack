@@ -23,7 +23,14 @@ Page({
       url: '/pages/search/search',
     })
   },
-
+  goto:function(e){
+    console.log(e)
+    const ID = e.currentTarget.dataset.id;
+    // const ITEM = e.currentTarget.dataset.item
+    wx.navigateTo({
+      url:`/pages/tuijiangedan/tuijiangedan?id=${ID}`
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
@@ -41,7 +48,7 @@ Page({
         'content-type':'application/json'
       },
       success: function (res) {
-        console.log(res);
+        // console.log(res);
         if (res.data.code == 200) {
           that.setData({
             banner: res.data.banners

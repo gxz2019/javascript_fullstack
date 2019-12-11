@@ -29,6 +29,13 @@ Page({
       title:''
     })
   },
+  goToSong(e) {
+    let ID = e.currentTarget.dataset.id;
+    console.log(ID);
+    wx.navigateTo({
+      url:`/pages/b/b?id=${ID}`
+    })
+  },
 
   //请求热搜
   getHotDetail(){
@@ -52,37 +59,27 @@ Page({
   },
   //请求搜索结果
   getHot:function(e) {
-    let limit = 50;
+    // let limit = 50;
     let that = this
     console.log(e.detail.value)
     that.setData({
       title:e.detail.value
     })
     wx.request({
-      url:'http://musicapi.leanapp.cn/search/suggest',
-      // method:'POST',
+      url:'http://neteasecloudmusicapi.zhaoboy.com/search',
       header: {
         'content-type': 'application/json'
       },
       data:{
         keywords:e.detail.value,
-        // limit:50
-        // type: 'mobile'
-        Key:limit
       },
       success:function(res) {
-        // let arr=[]
         console.log(res.data)
-        // if(res.data.code === 200){
          that.setData({
           searchList:res.data.result.songs
-          // console.log()
          })
-        //  console.log(that.data.searchList)
-        // }
       }
     })
-    // console.log(this.searchList)
   },
 
 
@@ -91,8 +88,6 @@ Page({
    */
   onLoad: function (options) {
     this.getHotDetail()
-    // this.getHot()
-    // console.log(this.searchList)
   },
 
   /**

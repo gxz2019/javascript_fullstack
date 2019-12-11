@@ -23,14 +23,15 @@
           </view>
         </view>
           
-      </view>
+      </view> 
       <view class="search-result2" wx:else>
         <view class="result2-title">
           <span>搜索“{{title}}”</span>
         </view>
-          <view class="result2-title2" wx:for="{{searchList}}" wx:key="">
-            <span>{{item.name}}</span>
-            <span>{{item.id}}</span>
+          <view class="result2-title2" wx:for="{{searchList}}" wx:key="" 
+          data-id="{{item.id}}" bindtap="goToSong">
+            <span>🔍   {{item.name}}</span>
+            <!-- <span>{{item.id}}</span> -->
           </view>
             
       </view>

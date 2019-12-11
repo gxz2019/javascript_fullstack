@@ -19,9 +19,9 @@
   </view>
 </view>
 <!-- 个性推荐栏 -->
-<view class="gexing">
+<!-- <view class="gexing">
   <span>Cloud-Music</span>
-</view>
+</view> -->
 <!-- 轮播图 -->
 <view class="b">
   <swiper indicator-dots="{{indicatorDots}}" indicator-color="{{indicatorcolor}}" indicator-active-color="{{indicatoractivecolor}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
@@ -83,9 +83,9 @@
 </view>
 <!-- 歌单 -->
 <view class="gedan">
-  <block wx:for="{{hastaste}}" wx:key="">
-    <view class="gedan-1">
-      <navigator url="#" role="navigation">
+  <block wx:for="{{hastaste}}" wx:key="" >
+    <view class="gedan-1" bindtap="goto" data-id="{{item.id}}">
+      <!-- <navigator url="" role="navigation"> -->
         <view class="gedan-2">
           <image src="{{item.picUrl}}" width="100%"></image>
           <text class="erji">🎧{{filter.numberfixed(item.playCount/10000)}}万</text>
@@ -93,7 +93,7 @@
         <view class="text-gedan">
           <text>{{item.name}}</text>
         </view>
-      </navigator>
+      <!-- </navigator> -->
     </view>
   </block>
 </view>

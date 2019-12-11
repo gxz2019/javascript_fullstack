@@ -1,0 +1,24 @@
+<view class="container">
+  <view class="header">
+    <view class="title" wx:for="{{headerList}}" wx:key="">
+      {{item.name}}
+    </view>
+  </view>
+    <swiper class="swiper">
+      <swiper-item class="swiper-item" item-id="">
+        <view class="item"> 
+          dasdadas
+        </view>
+      </swiper-item>
+      <swiper-item class="swiper-item" item-id="">
+        <view class="item">
+          13213123
+        </view>
+          
+      </swiper-item>
+        
+        
+    </swiper>
+      
+</view>
+  

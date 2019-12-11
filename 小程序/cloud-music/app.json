@@ -1,12 +1,14 @@
 {
   "pages": [
-    "pages/a/a",
-    "pages/search/search",
+    "pages/video/video",
     "pages/b/b",
+    "pages/a/a",
+    "pages/tuijiangedan/tuijiangedan",
+    "pages/search/search",
     "pages/c/c",
     "pages/meirituijian/index",
     "pages/gedan/gedan"
-    
+
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -24,11 +26,12 @@
         "selectedIconPath": "images/a1.png",
         "text": "乐库"
       },
+    
       {
-        "pagePath": "pages/b/b",
-        "iconPath": "images/c.png",
-        "selectedIconPath": "images/b1.png",
-        "text": ""
+        "pagePath": "pages/video/video",
+        "iconPath": "images/video1.png",
+        "selectedIconPath": "images/video.png",
+        "text": "MV"
       },
       {
         "pagePath": "pages/c/c",

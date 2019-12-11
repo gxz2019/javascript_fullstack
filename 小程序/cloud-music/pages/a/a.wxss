@@ -9,8 +9,7 @@ body {
   justify-content: center;
   align-items: center;
   width: 100%;
-  border-top: none
-  
+  border-top: none;
 }
 
 .search {
@@ -84,7 +83,10 @@ body {
 }
 
 .b{
-  text-align:center
+  text-align:center;
+  /* margin-top: 10px; */
+  background-color: #008c8c;
+  padding-top: 10px;
 }
 
 .lb {

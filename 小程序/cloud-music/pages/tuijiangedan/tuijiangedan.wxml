@@ -1,0 +1,39 @@
+<view class="songList">
+  <view class="first">
+    <view class="background" style="background-image:url({{dataList.coverImgUrl}})"></view>
+    <view class="background1">
+      <view class="first-1">
+        <!-- 第一部分左边img -->
+        <view class="img">
+          <image class="img-1" src="{{dataList.coverImgUrl}}" />
+          <span class="img-2">🎧104万</span>
+        </view>
+        <!-- 第一部分右边的content -->
+        <view class="content">
+          <view class="content1">
+            <span>{{dataList.name}}</span>
+          </view>
+          <view class="content2">
+            <img src="" alt="" />
+            <span>网易云音乐 ></span>
+          </view>
+        </view>
+      </view>
+      <view class="second">
+      <view class="second-1" wx:for="{{songList}}" wx:key="{{index}}" data-id="{{item.id}}" bindtap="goSong">
+        <view class="second-title">
+          <span>{{index + 1}}</span>
+        </view>
+        <view class="second-content">
+          <view>
+            <span class="content2">{{item.name}}</span>
+          </view>
+          <!-- <view class="content-3">
+            <span class="content2">孙燕姿-我要的幸福</span>
+          </view> -->
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
