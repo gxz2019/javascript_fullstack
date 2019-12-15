@@ -23,6 +23,11 @@ Page({
       url: '/pages/search/search',
     })
   },
+  goPlay() {
+    wx.navigateTo({
+      url: '../b/b',
+    })
+  },
   goto:function(e){
     console.log(e)
     const ID = e.currentTarget.dataset.id;

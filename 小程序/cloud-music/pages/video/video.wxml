@@ -1,3 +1,4 @@
+<wxs module="filter" src="./fn1.wxs"></wxs>
 <view class="container">
   <view class="header">
     <view class="title" wx:for="{{headerList}}" wx:key="">
@@ -19,7 +20,7 @@
                   <span>{{item.name}}-{{item.artistName}}</span>
                 </view>
                   <view class="item-title2">
-                    <span>▶{{item.playCoun}}万</span>
+                    <span>▶{{filter.numberfixed(item.playCount/10000)}}万</span>
                   </view>
                     
           </view>

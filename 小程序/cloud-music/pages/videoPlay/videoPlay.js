@@ -10,10 +10,10 @@ Page({
     show:false
   },
   showP(){
-    var that = this;
-    that.setData({
-      show:!that.show
+    this.setData({
+      show:!this.data.show
     })
+    console.log(this.data.show)
   },
 
   /**

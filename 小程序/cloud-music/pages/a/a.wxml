@@ -12,7 +12,7 @@
     <image class="" src='/images/search.png'></image>
   </view>
   
-  <view class="search1">
+  <view class="search1" bindtap="goPlay">
     <view class="search-bar1">
       <image src="/images/b1.png" class="image"></image>
     </view>

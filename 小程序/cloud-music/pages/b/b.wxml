@@ -10,8 +10,10 @@
       </view>
     </view> 
     <view class="background2">
-      <view class="bg-img" style="animation: first 20s infinite">
+    <view class="circle" style="animation-play-state:{{!show?'running':'paused'}} !important">    
+      <view class="bg-img" style="animation-play-state:{{!show?'running':'paused'}} !important">
         <image class="song-img" src="{{songpicList.picUrl}}" />
+      </view>
       </view>
     </view>
     <view class="slide">
@@ -23,10 +25,10 @@
         <!-- <span>{{duration}}</span> -->
       </view>
       <view class="btn">
-        <view bindtap="play" class="btn1" wx:if="{{show}}" style="animation-play-state:paused">
+        <view bindtap="play" class="btn1" wx:if="{{show}}">
           <image src="../../images/bofang.png" class="image1" />
         </view>
-        <view bindtap='pause' class="btn1" wx:else style="animation-play-state:paused;">
+        <view bindtap='pause' class="btn1" wx:else>
           <image src="../../images/zanting.png" class="image1" />
         </view>
       </view>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+</head>
+<body>
+  <div id="app">
+    <helloworld :updateTitle='updateTitle'>
+      <!-- <slot name="123"></slot> -->
+    </helloworld>
+  </div>
+  <script>
+  const vm = new Vue({
+    el:'#app',
+    data:{
+      a:1,
+      // message:'我是父组件赋予的值13465'
+      title: '我是父组件dsadsa',
+    },
+    methods:{
+      // message() {
+      //   this.message = message
+      // }
+      updateTitle(value) {
+            this.title = value;
+        }
+    },
+    components:{
+      helloworld:{
+        // name:helloworld,
+        template:`
+          <div>
+            {{b}}
+            <h1 @click="changeTitle">{{title}}</h1>
+          </div>
+        `,
+        data() {
+          return {
+            b:10,
+          }
+        },
+        props:{
+          // msg:''
+          title: {
+            type: String,
+            default: '我是父组件'
+        }
+        },
+        methods:{
+          // click() {
+          //   this.b = 2
+          // }
+          changeTitle() {
+            this.$emit('updateTitle', '我是子组件');
+        }
+        },
+        // mounted() {
+        //   this.$emit('msg',msg)
+        // }
+      }
+    }
+  })
+  console.log(vm.a)
+  vm.a = 5
+  console.log(vm.a)
+  </script>
+</body>
+</html>

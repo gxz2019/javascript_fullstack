@@ -53,7 +53,6 @@ body{
   /* border-bottom:1px solid gray; */
   height: 130rpx;
   /* border-bottom:0.1px solid gray; */
-
 }
 .second-1{
   padding: 20rpx;
@@ -85,8 +84,8 @@ body{
   margin: 0;
 }
 .background{
-  /* filter: blur(10px); */
-  filter: brightness(30%);
+  filter: blur(15px);
+  transform: scale(1.5);
   position: fixed;
   left: 0;
   top: 0;
@@ -95,6 +94,10 @@ body{
   z-index: 1;
 }
 .background1{
-  position: relative;
-  z-index: 2;
+  /* position: relative; */
+  /* z-index: 2; */
+  position: sticky;
+  top: 0;
+  z-index: 200;
+
 }

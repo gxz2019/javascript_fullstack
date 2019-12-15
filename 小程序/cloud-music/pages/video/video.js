@@ -1,6 +1,9 @@
 // pages/video/video.js
 // let half;
 let width
+// const map = {
+//   0: 0
+// }
 Page({
 
   /**
@@ -15,12 +18,27 @@ Page({
   },
   changeline(e) {
     // let width;
+    var that = this
     console.log(e)
     let current = e.detail.current;
     let area = e.detail.currentItemId
     // console.log(area)
-    this.setData({
+    that.setData({
       Area:area
+    })
+    wx.request({
+      url:'http://neteasecloudmusicapi.zhaoboy.com/top/mv',
+      data:{
+        limit:30,
+        area:area
+      },
+      success:function(res){
+        console.log(res.data.data)
+        that.setData({
+          mvList:res.data.data,
+
+        })
+      }
     })
     // console.log(this.data.Area)
     if(current === 0){

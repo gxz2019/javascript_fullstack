@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+
+</head>
+<body>
+    <div id="app">
+      <Child :updateTitle='updateTitle'></Child>
+    </div>
+    <script>
+      const vm = new Vue({
+        el:"#app",
+        data() {
+          return {
+            title:'我是父组件dasdasd'
+          }
+        },
+        methods:{
+          updateTitle(value) {
+            this.title = value;
+        }
+        },
+        components:{
+          Child:{
+            template:`
+          <header>
+    <h1 @click="changeTitle">{{title}}</h1>
+  </header>
+          `,
+          props:{
+            title: {
+            type: String,
+            default: '我是父组件'
+        }
+          },
+          methods: {
+        changeTitle() {
+            this.$emit('updateTitle', '我是子组件');
+        }
+    }
+          }
+        }
+      })
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+var filter = {
+  numberfixed: function (num) {
+    return parseInt(num)
+  }
+}
+module.exports = {
+  numberfixed: filter.numberfixed
+}

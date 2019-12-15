@@ -19,6 +19,7 @@ Page({
   play(e) {
     var that = this;
     audioPlay.play();
+    // document.querySelector('bg-img').css('animation-play-state',paused);
     // audioPlay.src = that.audioRul;
     // audioPlay.autoplay = true;
     audioPlay.onPlay((res) => {

@@ -4,10 +4,8 @@
   
 }
 .background {
-  /* filter: blur(5px); */
-  filter: brightness(26%);
-  /* filter: opacity(50%); */
-
+  filter: blur(15px);
+  transform: scale(1.5);
   position: fixed;
   left: 0;
   top: 0;
@@ -40,6 +38,46 @@
   position: relative;
   
 }
+.circle{
+  animation: second 5s infinite;
+  border-radius: 100%;
+  position: absolute;
+  margin: auto;
+  right: 0;left: 0;bottom: 0;top: 0;
+  backface-visibility: hidden; 
+}
+@keyframes second{
+  0%{
+    width: 510rpx;
+    height: 510rpx;
+    border: 1px solid rgba(0, 141, 188, 1)
+  }
+  25%{
+    width: 610rpx;
+    height: 610rpx;
+    border: 1px solid rgba(0, 141, 188, 0.8)
+  }
+  50%{
+    width: 700rpx;
+    height: 700rpx;
+    border: 1px solid rgba(0, 141, 188, 0.6)
+  }
+  75%{
+    width: 750rpx;
+    height: 750rpx;
+    border: 1px solid rgba(0, 141, 188, 0.4)
+  }
+  99%{
+    width: 600rpx;
+    height: 600rpx;
+    border: 1px solid rgba(0, 141, 188, 0.1)
+  }
+  100%{
+    width: 610rpx;
+    height: 610rpx;
+    border: 1px solid rgba(0, 141, 188, 0)
+  }
+}
 .bg-img{
   width: 500rpx;
   height: 500rpx;
@@ -48,21 +86,12 @@
   position: absolute;
   margin: auto;
   right: 0;left: 0;bottom: 0;top: 0;
-  animation-play-state:paused;
-  /* animation: ; */
+  animation: first 15s infinite;
+  backface-visibility: hidden;
 }
 @keyframes first{
   0%{
     transform: rotateZ(0deg);
-  }
-  25%{
-    transform: rotateZ(90deg);
-  }
-  50%{
-    transform: rotateZ(180deg);
-  }
-  75%{
-    transform: rotateZ(270deg);
   }
   100%{
     transform: rotateZ(360deg);
