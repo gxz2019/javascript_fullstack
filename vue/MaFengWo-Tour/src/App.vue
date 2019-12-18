@@ -21,4 +21,19 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+h1, h2 {
+  font-weight: normal;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+li {
+  display: inline-block;
+  /* margin: 0 px; */
+}
+a {
+  color: #42b983;
+}
 </style>

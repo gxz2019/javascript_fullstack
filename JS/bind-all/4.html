@@ -1,36 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+
 <body>
   <script>
-  Function.prototype.myBind = function(oThis, ...aArgs) {
+    Function.prototype.myBind = function (oThis, ...aArgs) {
       var fToBind = this;
-      var fBound = function(...bArgs) {
+      var fBound = function (...bArgs) {
         //拿到所有的参数
-        return  fToBind.apply(oThis,aArgs.concat(bArgs));
+        //绑定了this,没有考验优先级
+        //如果被new 调用 this 指向 new 完的实例
+        //否则 就是第一个参数 oThis
+        let isNew = this instanceof fBound
+        return fToBind.apply(isNew ? this : oThis, aArgs.concat(bArgs));
       }
+      //fBound没有 prototype.abc
+      //继承一下
+      fBound.prototype = Object.create(this.prototype)
       return fBound;
     }
     function sum(a, b, c) {
       this.a = 789;
       return a + b + c;
     }
+    sum.prototype.abc = function () { }
     let obj = {};
     // 第一步调用
     var a = sum
-    .myBind(obj, 1);
+      .myBind(obj, 1);
     // 第二步调用
     a(2, 3);
-    console.log(a(2,3))
+    console.log('原型对象', a.prototype.abc)
+    console.log(a(2, 3))
     let c = new a();
     console.log(obj)
 
-  
+
   </script>
 </body>
+
 </html>
