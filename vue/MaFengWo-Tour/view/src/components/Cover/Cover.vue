@@ -62,7 +62,7 @@ img{
   width: 3rem;
   height: 3rem;
   border-radius: 100%;
-  border: 1px solid #000;
+  /* border: 1px solid #000; */
   color: black;
   position: absolute;
   margin: auto;

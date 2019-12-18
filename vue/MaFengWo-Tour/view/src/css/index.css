@@ -1,0 +1,181 @@
+
+body{
+  font-family:'PingFangSC-Light',Arial,Helvetica,sans-serif,"Hiragino Sans GB";
+  color: #474747
+}
+.header {
+  position: relative;
+}
+.search-bar {
+  flex: 6;
+}
+.icon {
+  flex: 0.8;
+  margin-bottom: 1rem;
+}
+.icon-a {
+  color: #ffa800;
+  text-decoration: none;
+  position: absolute;
+  bottom: 0.2rem;
+}
+.banner-img {
+  height: 11rem;
+  background-size: cover;
+  position: relative;
+}
+.banner-title {
+  position: absolute;
+  color: #ffffff;
+  bottom: 0;
+}
+ul {
+  margin-top: 1rem;
+}
+.icon {
+  /* width: 100%; */
+  padding: 0.1rem;
+  /* display: flex; */
+  /* margin-top: 1rem; */
+}
+.icon-bar {
+  position: relative;
+  /* display: flex; */
+}
+.icon-bgc {
+  width: 5.6rem;
+  height: 5.6rem;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box;
+  /* background-color: #ffa800;
+  border-radius: 30%; */
+  /* margin-bottom: 1rem */
+}
+.icon-item {
+  width: 3rem;
+  height: 3rem;
+  display: table_cell;
+  margin: 0 auto;
+  vertical-align: middle;
+  text-align: center;
+  border-radius: 41%;
+  margin-bottom: 0.4rem;
+}
+img {
+  width: 60%;
+  height: 60%;
+  /* margin: 0 auto; */
+  transform: translateY(0.5rem);
+}
+.guideflow{
+  background: #ffffff;
+  /* font-size: 24px; */
+}
+.guideflow-title{
+  /* font-size: 24px; */
+  height: 1rem;
+  margin-left: 0.4rem;
+  margin-bottom: 0.2rem;
+  width: 9.5rem;
+  display: flex;
+  align-items: center;
+  background: #ffffff;
+  z-index: 1000;
+
+}
+.text{
+    font-family: PingFang SC;
+    padding-left: 5px;
+    /* border-left: #ffdb53 solid 3px; */
+    /* height: 1rem; */
+    border-radius: 2px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: .533rem;
+    background: #fff;
+}
+/* .content{
+
+} */
+.guideflow-content-title{
+     padding: .6rem 3rem 0 0.8rem;
+    font-size: 1.2rem;
+    color: #111;
+    height: 4rem;
+    line-height: 1.2em;
+    max-height: 2.6rem;
+    position: relative;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tag{
+  position: absolute;
+  right: 0;
+  top: 0.8rem;
+  line-height: 1em
+}
+.tag img{
+  height: 1.3rem;
+  width: auto;
+}
+.clearfix .bd dl{
+  padding: 0.48rem 0.8rem 0.8rem;
+  margin: 0
+}
+dt{
+  width: 8rem;
+  float: left;
+  padding-left: 0.7rem;
+  margin-right: 1rem
+}
+dt img{
+  width: 8rem;
+  height: 6rem;
+}
+dd{
+  margin-left: 7.7rem;
+  color: #999;
+  height: 5rem;
+  position: relative;
+}
+.summary{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.3em;
+    font-size: 0.9rem;
+    padding: .3rem 0 0;
+    margin-top: 0.4rem
+}
+.extra{
+  font-size: 0.9rem;
+  position: relative;
+  margin: 0;
+}
+.author{
+  vertical-align: middle;
+  position: absolute;
+  bottom: -2.8rem;
+  left: 2rem;
+}
+.author-img{
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+  float:right;
+  border-radius: 50%;
+  position: absolute;
+  top: -0.5rem;
+  right: -1.5em;
+}
+.extra-title{
+  position: absolute;
+  bottom: -2rem;
+  left: 2rem;
+}
