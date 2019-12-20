@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,7 +17,7 @@
         <li></li>
     </ul>
     <script>
-        fetch('http://localhost:3000')
+        fetch('http://localhost:3001')
             .then(res => res.json())
             .then(data => {
                 // console.log('data',data)
@@ -26,7 +25,8 @@
                 console.log(ulNode)
                 let html = data.map(movie => {
                     return `<li>
-                    <img src="${movie.picUrl}" />
+                    <img src="${movie.img1}" />
+                    <img src="${movie.img2}" />
                     <span>
                         ${movie.star}/${movie.title}/${movie.inq}
                         </span>

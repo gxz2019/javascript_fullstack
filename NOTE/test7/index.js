@@ -24,8 +24,6 @@
 // test(1,2)
 function sum() {
   console.log('dasdas')
-  // return 100
-  return 
 }
 var num = sum()
 console.log(num)

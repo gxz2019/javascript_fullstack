@@ -16,21 +16,26 @@ function doubanSpider(url,cb){
         // console.log(html)
         const $ = cheerio.load(html);
         let movies = [];
-        $('li .item').each(function () {
+        $('.tn-warpper').each(function () {
             //拿到每一个电影
-            const picUrl = $('.pic img', this).attr('src');
-            const title = $('.info .title', this).text();
-            const star = $('.star .rating_num', this).text();
-            const inq = $('.inq', this).text();
+            // const picUrl = $('.pic img', this).attr('src');
+            // const title = $('.tn-wrapper dl dt a', this).text();
+            const img1 = $('dl dt a', this).text();
+            // const title1 = $('.tn-wrapper dl dd a', this).text();
+            // const title2 = $('.tn-wrapper .tn-extra .tn-user a', this).text();
+            // const title3 = $('.clearfix .author', this).text();
+            // const img2 = $('.tn-wrapper .tn-extra .tn-nums', this).text();
             // console.log({ picUrl })
             // console.log({ title })
             // console.log({ star })
             // console.log({ inq })
             movies.push({
-                picUrl,
-                title,
-                star,
-                inq
+                // title,
+                img1,
+                // title1,
+                // title2,
+                // title3,
+                // img2
             })
         })
         cb(movies)
@@ -41,7 +46,7 @@ function doubanSpider(url,cb){
 
 
 http.createServer((req,res)=>{
-    doubanSpider('https://movie.douban.com/top250?start=25&filter=',(data) =>{
+    doubanSpider('https://www.mafengwo.cn/',(data) =>{
         //text/plain 纯文本
         //text/html html
         //mime 类型
@@ -53,7 +58,7 @@ http.createServer((req,res)=>{
         res.end(JSON.stringify(data))//把一个对象变成字符串
     })
     
-}).listen(3000,() => {
+}).listen(3001,() => {
     console.log('server is running 3000')
 })
 
