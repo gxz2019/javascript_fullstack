@@ -1,5 +1,5 @@
 import _ from 'loadsh'
-import './style/index.css'
+// import './style/index.css'
 import './style/leo.scss'
 
 function createElement() {

@@ -1,9 +1,0 @@
-div {
-  color: red; }
-
-.box {
-  background-color: yellow;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-

@@ -19,4 +19,20 @@ webpack 模块支持语法:
 autoprefixer 进行浏览器的部分兼容补全
 
 # 抽取样式 将css单独打包
+# npm i mini-css-extract-plugin --save-dev
 
+# 压缩打包
+- 压缩css (optimize-css-assets-webpack-plugin)
+- 压缩js (uglifyjs-webpack-plugin)
+
+
+# 为css js 文件添加hash值,防止缓存
+
+# 为html打包
+- html-webpack-plugin
+
+# 清理目录
+- clean-webpack-plugin
+
+# webpack 处理图片优化
+- file-loader 
