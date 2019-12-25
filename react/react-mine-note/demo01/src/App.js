@@ -28,7 +28,7 @@ class App extends Component{
           {
             this.state.intmList.map((item,index) => {
               return (
-                <Test content={item} key={index+item} index={index} deleteItem={this.deleteItem.bind(this)} />
+                <Test content={item} key={index+item} index={index} deleteItem={this.deleteItem.bind(this)} avname="波多野结衣" />
               )
             })
           }
