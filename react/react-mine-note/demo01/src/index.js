@@ -1,7 +1,9 @@
-import React from 'react'
+////入口文件
+
+
+import React from 'react';
 import ReactDOM from 'react-dom'
-import App from './App'
+// import App from './App'
+import A from './xiaojiejie'
 
-
-//JSX  javascript and xml 
-ReactDOM.render(<App />,document.getElementById('root'))
+ReactDOM.render(<A />,document.getElementById('root'))
