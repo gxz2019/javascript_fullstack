@@ -1,2 +1,2 @@
 document.getElementById('app')
-.innerHTML = 'hello cache'
+.innerHTML = 'hello cache';
