@@ -1,0 +1,121 @@
+<template>
+  <div class="container">
+    <div class="header">
+      <div class="logo">
+        <img src="../../assets/images/logo123.png" alt="">
+      </div>
+    </div>
+    <div class="title">
+      <h3>会员登录</h3>
+    </div>
+    <div class="input-bar">
+      <ul>
+        <li>
+          <div class="input" style="border-bottom:none">
+            <input type="text" placeholder="您的邮箱/手机号">
+          </div>
+        </li>
+        <li>
+          <div class="input">
+            <input type="text" placeholder="您的密码">
+          </div>
+        </li>
+      </ul>
+      <div class="password">
+        <span>忘记密码?</span>
+      </div>
+    </div>
+    <div class="sign">
+      登录
+    </div>
+    <div class="sign sign1">
+      快速注册
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+
+}
+</script>
+
+<style scoped>
+.container{
+  width: 100%;
+  height: 100%;
+  /* margin: 0.5rem */
+  text-align: center;
+}
+.header{
+  width: 90%;
+  height: 4rem;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  /* margin: 1rem; */
+  border-bottom: 2px solid #ffba33
+}
+.logo{
+  width: 7.2rem;
+  height: 2rem;
+}
+img{
+  width: 100%;
+  height: 100%;
+}
+.title{
+  margin: 1rem
+}
+h3{
+  font-weight: normal;
+  color: #ffba33
+}
+.input-bar{
+  width: 100%;
+  position: relative
+}
+.input{
+  border: 1px solid #dadada;
+  /* border-radius: 0.1rem; */
+  height: 2.8rem;
+  width: 22rem;
+  /* color: #dadada; */
+}
+input::-webkit-input-placeholder{
+  color: #dadada;
+  opacity: 1;
+}
+input{
+  border: none;
+  height: 2.4rem;
+  width: 100%;
+  text-indent: 11px;
+  font-size: 1rem;
+  line-height: 1rem;
+  /* opacity: 0.5; */
+}
+.password{
+  position: absolute;
+  right: 0.6rem;
+  font-size: 0.6rem;
+  opacity: 0.5;
+}
+.sign{
+  color: #ffffff;
+  background-color:#ffba33;
+  margin:2rem 1.5rem 1rem 1.5rem ;
+  font-size: 1.2rem;
+  height: 2rem;
+  line-height: 2rem;
+  border-radius: 5px;
+}
+.sign1{
+  /* margin:0 */
+  margin: 0 1.5rem 1rem 1.5rem;
+  background-color: #fff;
+  border: 1px solid #ffba33;
+  color: #ffba33
+}
+</style>

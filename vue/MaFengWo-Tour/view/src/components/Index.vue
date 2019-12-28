@@ -4,8 +4,8 @@
     <div class="header">
       <logo>
         <Search slot="search"></Search>
-        <div slot="icon" class="icon">
-          <a href class="icon-a">登录</a>
+        <div slot="icon" class="icon" @click="goToDL">
+          <a class="icon-a">登录</a>
         </div>
       </logo>
     </div>
@@ -224,6 +224,11 @@ export default {
   components: {
     logo,
     Search
+  },
+  methods:{
+    goToDL() {
+      this.$router.push({path:'/register'})
+    }
   }
 };
 </script>
