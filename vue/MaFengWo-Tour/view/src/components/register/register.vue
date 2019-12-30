@@ -6,7 +6,8 @@
       </div>
     </div>
     <div class="title">
-      <h3>会员登录</h3>
+      <h3 v-if="show">会员登录</h3>
+      <h3 v-else>快速注册</h3>
     </div>
     <div class="input-bar">
       <ul>
@@ -22,21 +23,34 @@
         </li>
       </ul>
       <div class="password">
-        <span>忘记密码?</span>
+        <span v-if="show">忘记密码?</span>
+        <span v-else @click="sign">已是会员?点击登录</span>
       </div>
     </div>
-    <div class="sign">
+    <div class="sign" @click="sign" :class="show ? 'b': 'a'">
       登录
     </div>
-    <div class="sign sign1">
-      快速注册
+    <div class="sign sign1" @click="register" :class="show ? 'a':'b'">
+      注册
     </div>
   </div>
 </template>
 
 <script>
 export default {
-
+  data() {
+    return {
+      show:true
+    }
+  },
+  methods:{
+    register() {
+      this.show = false
+    },
+    sign() {
+      this.show = true
+    }
+  }
 }
 </script>
 
@@ -103,8 +117,6 @@ input{
   opacity: 0.5;
 }
 .sign{
-  color: #ffffff;
-  background-color:#ffba33;
   margin:2rem 1.5rem 1rem 1.5rem ;
   font-size: 1.2rem;
   height: 2rem;
@@ -114,8 +126,14 @@ input{
 .sign1{
   /* margin:0 */
   margin: 0 1.5rem 1rem 1.5rem;
+}
+.a{
   background-color: #fff;
   border: 1px solid #ffba33;
   color: #ffba33
+}
+.b{
+  color: #ffffff;
+  background-color:#ffba33;
 }
 </style>
