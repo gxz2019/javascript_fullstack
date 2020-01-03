@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Cover from '../components/Cover/Cover'
 import Index from '@/components/Index'
 import Register from '@/components/register/register'
+import User from '@/components/User/user'
 
 Vue.use(Router)
 
@@ -27,6 +28,14 @@ export default new Router({
       component: Register,
       meta:{
         title:'注册登录'
+      }
+    },
+    {
+      path: '/User',
+      name: 'User',
+      component: User,
+      meta:{
+        title:'用户'
       }
     }
   ]

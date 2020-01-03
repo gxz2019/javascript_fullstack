@@ -106,8 +106,8 @@ input{
   height: 2.4rem;
   width: 100%;
   text-indent: 11px;
-  font-size: 1rem;
-  line-height: 1rem;
+  font-size: 1.2rem;
+  line-height: 2.4rem;
   /* opacity: 0.5; */
 }
 .password{
