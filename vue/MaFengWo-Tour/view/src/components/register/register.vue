@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div class="header">
-      <div class="logo">
+      <div class="logo" @click="toIndex">
         <img src="../../assets/images/logo123.png" alt="">
       </div>
     </div>
@@ -33,11 +33,28 @@
     <div class="sign sign1" @click="register" :class="show ? 'a':'b'">
       注册
     </div>
+    {{count1}}
+    <button @click="addAction">add</button>
   </div>
 </template>
 
 <script>
+import store from '@/vuex/store'
+import { mapState,mapMutations,mapGetters,mapActions } from 'vuex'
 export default {
+  store,
+//    methods:mapMutations([
+//         'add','reduce'
+// ]),
+  computed:{
+    ...mapState(
+    // count:state => state.count
+    ['count1']  //传入count的值
+  ),
+    ...mapGetters([  //对count进行监听，改变即加100
+      'count1'
+    ])
+  },
   data() {
     return {
       show:true
@@ -49,7 +66,13 @@ export default {
     },
     sign() {
       this.show = true
-    }
+    },
+    ...mapMutations([  //给button赋予点击事件
+      'add','toIndex'
+    ]),
+    ...mapActions([
+      'addAction'
+    ])
   }
 }
 </script>
