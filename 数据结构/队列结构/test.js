@@ -52,18 +52,20 @@ function a(name) {
     // console.log(arguments[i])
     s.enqueue(arguments[i])
   }
-  while(!s.size() === 1) {
+  while(s.size() > 1) {
     let item = s.front()
-    console.log(item)
+    // console.log(item)
     if(n % 5 === 0) {
       s.dequeue()
     }else{
       s.dequeue()
-      s.enqueue()
+      s.enqueue(item)
     }
     n++
   }
-  return s.items
+  let endName = s.front()
+  let arr = Array.from(arguments)
+  return arr.indexOf(endName)
 }
 
-console.log(a(10,50,660,50))
+console.log(a(1,2,3,4))
