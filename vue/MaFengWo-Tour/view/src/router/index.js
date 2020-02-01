@@ -4,6 +4,7 @@ import Cover from '../components/Cover/Cover'
 import Index from '@/components/Index'
 import Register from '@/components/register/register'
 import User from '@/components/User/user'
+import Hotel from '@/components/Hotel/Hotel'
 
 Vue.use(Router)
 
@@ -36,6 +37,14 @@ export default new Router({
       component: User,
       meta:{
         title:'用户'
+      }
+    },
+    {
+      path: '/Hotel',
+      name: 'Hotel',
+      component: Hotel,
+      meta:{
+        title:'酒店'
       }
     }
   ]

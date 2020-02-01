@@ -4,7 +4,7 @@
       {{num}}
     </div>
     <div class="logo">
-      <img src="../../assets/images/logo.jpg" alt="">
+      <!-- <img src="../../assets/images/logo.jpg" alt=""> -->
     </div>
     <div class="icon" @click="goIndex">
       <img src="../../assets/images/right.png" alt="">

@@ -11,7 +11,6 @@ x = [1,'2']
 //   return para
 // }
 
-
 function swap<T,U>(tuple:[T,U]) {
   return [tuple[0],tuple[1]]
 }

@@ -21,14 +21,15 @@
       <div class="icon-bar">
         <ul>
           <li v-for="(item,index) in iconList" :key="index">
-            <div class="icon-bgc">
-              <a href>
+            <router-link :to="item.name">
+               <div class="icon-bgc">
                 <div class="icon-item" :style="{backgroundColor:item.color}">
                   <img :src="item.icon" alt />
                 </div>
                 <div class="icon-title" :style="{color:item.color}">{{item.title}}</div>
-              </a>
             </div>
+            </router-link>
+           
           </li>
         </ul>
       </div>
@@ -106,42 +107,50 @@ export default {
         {
           title: "找攻略",
           icon: require("../assets/images/gonglve.png"),
-          color: "#ff9d00"
+          color: "#ff9d00",
+          name:"gonglve"
         },
         {
           title: "看游记",
           icon: require("../assets/images/youji1.png"),
-          color: "#feca2b"
+          color: "#feca2b",
+          name:"youji"
         },
         {
           title: "问达人",
           icon: require("../assets/images/wen.png"),
-          color: "#42d6ba"
+          color: "#42d6ba",
+          name:"daren"
         },
         {
           title: "结伴",
           icon: require("../assets/images/jieban.png"),
-          color: "#f94a87"
+          color: "#f94a87",
+          name:"jieban"
         },
         {
           title: "酒店",
           icon: require("../assets/images/jiudian.png"),
-          color: "#32a2f1"
+          color: "#32a2f1",
+          name:"Hotel"
         },
         {
           title: "去旅行",
           icon: require("../assets/images/qulvhang.png"),
-          color: "#fd4e4e"
+          color: "#fd4e4e",
+          name:"lvxing"
         },
         {
           title: "机票",
           icon: require("../assets/images/jipiao.png"),
-          color: "#acce0e"
+          color: "#acce0e",
+          name:"jipiao"
         },
         {
           title: "当地玩乐",
           icon: require("../assets/images/wanle.png"),
-          color: "#b160df"
+          color: "#b160df",
+          name:"wanle"
         }
       ],
       liList:[]
