@@ -4,7 +4,7 @@
       <input type="text" placeholder="搜索"  @input="bindInput">
     </div>
     <scroll-view :scroll-y="true" class="addcont" style="height:500rpx">
-      <div class="result" v-for="(item,index) in tips" :key="index">
+      <div class="result" v-for="(item,index) in tips" :key="index" @click="getResult(item.name)">
         {{item.name}}
       </div>
     </scroll-view>
@@ -17,7 +17,8 @@
 </template>
 
 <script>
-import amapFile from '../../utils/amap-wx'
+import amapFile from '../../utils/amap-wx';
+import { mapMutations } from 'vuex';
 export default {
   data() {
     return {
@@ -32,6 +33,7 @@ export default {
     this.getMapaddress()
   },
   methods:{
+    ...mapMutations(['update']),
     getMapaddress() {
       let _this = this
       var myAmapFun = new amapFile.AMapWX({
@@ -42,14 +44,14 @@ export default {
         iconWidth:22,
         iconHeight:32,
         success:function(data) {
-          console.log(data)
+          // console.log(data)
           let marker = [
             {
               id:data[0].id,
               latitude:data[0].latitude,
               longitude:data[0].longitude,
               width:data[0].width,
-              height:data[0].height
+              height:data[0].height,
             }
           ]
           _this.markers = marker;
@@ -64,21 +66,28 @@ export default {
       })
     },
     bindInput(e) {
-      console.log(e.mp.detail.value)
+      // console.log(e.mp.detail.value)
       var _this = this;
       _this.keywords = e.mp.detail.value
       var myAmapFun = new amapFile.AMapWX({key:'b69fa42f707e033a718d666cc5ee4c2e'});
       myAmapFun.getInputtips({
         keywords:_this.keywords,
         success:function (data) {
-          console.log(data.tips)
+          // console.log(data.tips)
           _this.tips = data.tips
         }
       })
+    },
+    getResult(cityName) {
+      this.update({cityName:cityName})
+      wx.navigateBack({
+        delta: 1
+      });
+        console.log(cityName)
     }
   }
 }
-</script>
+</script> 
 
 <style lang="less" scoped>
 @import "./style.less";
