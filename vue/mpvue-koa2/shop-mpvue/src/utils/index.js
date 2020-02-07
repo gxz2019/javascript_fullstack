@@ -31,32 +31,31 @@ function request(url,method,data,header = {}) {
   });
   return new Promise((resolve,reject) => {
     wx.request({
-      url:host+ url,
-      method:method,
-      data:data,
-      header:{
-        "content-type":"application/json"
+      url: host + url,
+      method: method,
+      data: data,
+      header: {
+        "content-type": "application/json"
       },
-      success:function(res) {
-        wx.hideLoading({
-        })
+      success (res) {
+        wx.hideLoading();
         resolve(res.data)
       },
-      fail:function(error) {
-        wx.hideLoading()
+      fail (error) {
+        wx.hideLoading();
         reject(false)
       },
-      complete:function() {
-        wx.hideLoading()
+      complete () {
+        wx.hideLoading();
       }
     })
   })
 }
 
-export function get(rul,data) {
+export function get(url,data) {
   return request(url,'GET',data)
 }
-export function post(rul,data) {
+export function post(url,data) {
   return request(url,'POST',data)
 }
 

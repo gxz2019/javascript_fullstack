@@ -6,7 +6,9 @@
     "pages/topic/main",
     "pages/category/main",
     "pages/cart/main",
-    "pages/my/main"
+    "pages/my/main",
+    "pages/categroylist/main",
+    "pages/branddetail/main"
   ],
   "permission":{
     "scope.userLocation":{
