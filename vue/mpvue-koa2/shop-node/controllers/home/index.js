@@ -30,6 +30,7 @@ module.exports = async (ctx) => {
     parent_id: 0
   }).select()
   const newCategoryList = []
+  
 
   for (let i = 0; i < categoryList.length; i++) {
     let item = categoryList[i]
@@ -45,10 +46,10 @@ module.exports = async (ctx) => {
     newCategoryList.push({
       'id': item.id,
       'name': item.name,
-      'goodsList': categoryGoods
+      'goodsList': categoryGoods,
     })
   }
-
+  
   ctx.body = {
     'banner': banner,
     'channel': channel,
@@ -56,6 +57,6 @@ module.exports = async (ctx) => {
     'newGoods': newGoods,
     'hotGoods': hotGoods,
     'topicList': topicList,
-    'newCategoryList': newCategoryList
+    'newCategoryList': newCategoryList,
   }
 }

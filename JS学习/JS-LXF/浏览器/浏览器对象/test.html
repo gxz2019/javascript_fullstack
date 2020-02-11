@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <dl id="drink-menu" style="border:solid 1px #ccc;padding:6px;">
+    <dt>摩卡</dt>
+    <dd>热摩卡咖啡</dd>
+    <dt>酸奶</dt>
+    <dd>北京老酸奶</dd>
+    <dt>果汁</dt>
+    <dd>鲜榨苹果汁</dd>
+</dl>
+  <script>
+    //window对象不但可以充当全局作用域
+    //而且表示浏览器窗口
+    console.log(window)
+    //浏览器宽高
+    console.log(window.innerWidth,window.innerHeight)
+    
+    //navigator对象表示浏览器的信息
+    //最常有的属性包括：
+    console.log(navigator.appName)
+    console.log(navigator.appVersion)
+    console.log(navigator.language)
+    console.log(navigator.platform)
+    console.log(navigator.userAgent)
+
+    // document对象表示当前页面，由于HTML在‘
+    //浏览器中以DOM形式表示为树状结构，
+    // document对象就是整个DOM树的根节点
+    // document.title = 'sdsadas'
+    // document.title = '123456'
+
+    var drinks = document.getElementsByTagName('dt')
+    // console.log(drinks[1].innerHTML)
+    for(let i = 0;i < drinks.length;i++) {
+      console.log(drinks[i].innerHTML)
+    }
+    console.log(document.cookie)
+  </script>
+</body>
+</html>
