@@ -64,7 +64,76 @@
 
 //return 
 
-function test() {
-  return 123
+// function test() {
+//   return 123
+// }
+// console.log(test())
+
+//练习
+//1.
+function scream(animal) {
+  switch (animal) {
+    case 'dog':
+      console.log('汪汪汪!')
+      break;
+    case 'cat':
+      console.log('喵喵喵!')
+      break
+    case 'duck':
+      console.log('嘎嘎嘎!')
+      break
+  }
 }
-console.log(test())
+scream('dog')
+
+//2.
+
+function reserve(str) {
+  var str1 =''
+  for(let i = str.length -1;i >= 0;i--) {
+    str1 += transfer(str[i])
+  }
+  console.log(str1) 
+}
+reserve('123')
+function transfer(str) {
+  switch (str) {
+    case '1':
+      return '一';
+    case '2':
+      return '二';
+    case '3':
+      return '三';
+  }
+}
+
+//3.阶层
+function stratum(num) {
+  if(num == 1){
+    return 1
+  }else{
+    return num * stratum(num -1)
+  }
+}
+console.log(stratum(10))
+
+//4.斐波那契数列
+//①
+function fbnq(a,b,n) {
+  var nums = [a,b]
+  var i= 2
+  while(i < n) {
+
+    nums[i] = nums[i -1] + nums[i -2]
+    i++
+  } 
+  return nums
+}
+console.log(fbnq(1,1,50))
+//②递归
+function result(n){
+  if(n==1||n==2){
+      return 1
+  };
+  return result(n-2)+result(n-1);
+}
