@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //1.
+    var x = 1;
+    if(function f() {}) {
+      
+      x += typeof(f)
+      
+    }
+    document.write(x)
+
+    // GO{
+    //   x:1;
+    //   f:function
+    // }
+    // function f() {
+
+    // }
+    // f ? console.log(true) : console.log(false)
+    // document.write(1 + typeof(f))
+
+      // (window.foo || (window.foo == 'bar'))
+      // console.log(window.foo)
+
+
+  </script>
+</body>
+</html>

@@ -122,14 +122,20 @@
       // demo(1)
       // console.log(a)  // 100
       // console.log(f)  //123
+
+
+
       var str = false + 1
-      document.write(str)
+      document.write(str)  //1
       var demo = false == 1;
-      document.write(demo);
-      if(typeof(a)&&-true+(+undefined)+""){
+      document.write(demo);  //false
+      if(typeof(a)&&-true+(+undefined)+""){  //"undefined"&& -1 + NaN + ""  == "undefined" && "NaN"  == true
         document.write('基础扎实');
       }
-      !!" "+!!" " - !!false||document.write('你觉得能打印，你就只猪')
+      if(11 + "11" * 2 == 33) {  //11 + 22 == 33 == true
+        document.write('基础扎实');
+      }
+      !!" "+!!"" - !!false||document.write('你觉得能打印，你就只猪') //true + false - false || 打印 == true || 打印 == true
   </script>
 </body>
 </html>

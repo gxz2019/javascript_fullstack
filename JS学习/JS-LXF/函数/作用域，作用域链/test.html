@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>dask</title>
+</head>
+<body>
+  <script>
+    //函数也是一种对象
+    // function test() {
+
+    // }
+    // console.log(test.name)  //test
+    //当函数执行时，会创建一个称为执行期上下文的内部对象，一个执行期上下文定义了一个函数执行时
+    //的环境，函数每次执行时对应的执行上下文都是独一无二的，所以多次调用一个函数会导致创建多个
+    //执行上下文，当函数执行完毕，她所产生的执行上下文被销毁
+
+    function a() {
+      function b() {
+        var b = 234;
+      }
+        var a = 123;
+        b()
+    }
+    var glob = 100;
+    console.log(a)
+    
+    
+
+  </script>
+</body>
+</html>
