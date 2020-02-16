@@ -20,19 +20,73 @@
     // demo()   //123
 
     //*******
-    function a() {
-      var num = 100;
-      function b() {
-        num ++;
-        console.log(num)
+    // function a() {
+    //   var num = 100;
+    //   function b() {
+    //     num ++;
+    //     console.log(num)
+    //   }
+    //   return b
+    // }
+    // var demo = a();
+    // demo(); //101
+    // demo();  //102
+
+    //***************
+    //闭包  当内部函数被保存在外部时，将产生闭包。闭包会导致原有作用域链不释放，造成内存泄漏
+    // function add() {
+    //   var count = 0;
+    //   function demo() {
+    //     count++;
+    //     console.log(count);
+    //   }
+    //   return demo
+    // }
+    // var counter = add()
+    // counter()   // == demo()            //1
+    // counter()  //2
+    //*****
+    // function test() {
+    //   var num = 100;
+    //   function a() {
+    //     num ++;
+    //     console.log(num)
+    //   }
+    //   function b() {
+    //     num --;
+    //     console.log(num)
+    //   }
+    //   return [a,b]
+    // }
+    // var myArr = test()
+    // myArr[0]()  //101
+    // myArr[1]()  //100
+
+    //****************
+    //立即执行函数
+    // (function () {
+    //   console.log('dasdas')
+    // }())
+
+
+
+    //***************
+    function test() {
+      var arr =[]
+      for(var i = 0;i<10;i++){
+        (function (index) {
+          arr[index] = function () {
+            console.log(i)
+          }
+        }(i))
       }
-      return b
+      return arr
     }
-    var demo = a();
-    demo(); //101
-    demo();  //102
-
-
+    // console.log(test())
+    var myArr = test()
+    for(let j = 0;j< myArr.length;j++) {
+      myArr[j]()
+    }
   </script>
 </body>
 </html>
