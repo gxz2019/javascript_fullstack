@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
+
 <body>
+  <div>
+    <div></div>
+  </div>
   <script>
     // function a() {
     //   function b() {
@@ -33,6 +38,7 @@
     // demo();  //102
 
     //***************
+    //funchifhhasdhjasffasfjopsafjopjfpasjfas
     //闭包  当内部函数被保存在外部时，将产生闭包。闭包会导致原有作用域链不释放，造成内存泄漏
     // function add() {
     //   var count = 0;
@@ -72,11 +78,11 @@
 
     //***************
     function test() {
-      var arr =[]
-      for(var i = 0;i<10;i++){
+      var arr = []
+      for (var i = 0; i < 10; i++) {
         (function (index) {
           arr[index] = function () {
-            console.log(i)
+            console.log(i);
           }
         }(i))
       }
@@ -84,9 +90,11 @@
     }
     // console.log(test())
     var myArr = test()
-    for(let j = 0;j< myArr.length;j++) {
+    for (let j = 0; j < myArr.length; j++) {
       myArr[j]()
     }
   </script>
+
 </body>
+
 </html>

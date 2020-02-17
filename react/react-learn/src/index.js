@@ -1,6 +1,6 @@
 //入口
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import App from './App.jsx'
 
-ReactDOM.render(<App name="aaa" />,document.querySelector('#root'))
+ReactDOM.render(<App  />,document.querySelector('#root'))
