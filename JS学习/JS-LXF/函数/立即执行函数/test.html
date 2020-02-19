@@ -76,21 +76,40 @@
 
 
 
-    //***************
+    //***************闭包
+    // function test() {
+    //   var arr = []
+    //   for (var i = 0; i < 10; i++) {
+    //     arr[i] = function () {
+    //       document.write(i+' ')
+    //     }
+    //   }
+    //   return arr
+    // }
+    // // console.log(test())
+    // var myArr = test()
+    // for (let j = 0; j < 10; j++) {
+    //   myArr[j]()
+    // }
+
+    //上面的解决闭包1.将第一个循环的var改成let
+    //2.
     function test() {
       var arr = []
-      for (var i = 0; i < 10; i++) {
-        (function (index) {
-          arr[index] = function () {
-            console.log(i);
-          }
-        }(i))
+      for(var i = 0;i < 10;i++) {
+        // (function (j) {
+        //   arr[j] = function () {
+        //     console.log(j)
+        //   }
+        // }(i))
+        (arr[i] = function() {
+          console.log(i)
+        }())
       }
       return arr
     }
-    // console.log(test())
-    var myArr = test()
-    for (let j = 0; j < myArr.length; j++) {
+    var myArr = test()   //myArr == arr
+    for(var j = 0;j < 10;j++) {
       myArr[j]()
     }
   </script>
