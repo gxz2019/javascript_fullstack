@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .a {
+    width: 500px;
+    height: 500px;
+    position: relative;
+    background-color: blueviolet;
+    display: flex;
+  justify-content: center;
+  align-items: center;   /*垂直*/
+    
+    /* align-items: center; */
+  }
+
+  .b {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    text-align: center;
+    /* margin: 0 auto;
+    position: absolute; 
+    top:50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px; */
+    
+  }
+
+  span {
+    line-height: 100px;
+  }
+</style>
+
+<body>
+  <!-- 水平居中 -->
+  <!-- 1. 行内或者具有行内元素性质的元素(比如文字或者链接)text-align: center;写在父元素上 -->
+  <!-- 2.单个块状元素   margin：0 auto；  -->
+
+  <!-- 垂直居中 -->
+  <!-- 1.行内或者具有行内元素性质的元素（比如文字或者链接  line-height == height -->
+  <!-- 2.块状元素   一。知道高度： -->
+  <div class="a">
+    <div class="b">
+      <span>1111</span>
+    </div>
+  </div>
+</body>
+
+</html>

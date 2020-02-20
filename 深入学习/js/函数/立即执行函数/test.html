@@ -5,11 +5,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    
+    div{
+      width: 200px;height: 200px;background-color: red;
+      text-align: center;
+      margin: 0 auto;
+    }
+    span{
+      color: aqua;
+    }
+  </style>
 </head>
 
 <body>
   <div>
-    <div></div>
+    <div>
+      <span>132</span>
+    </div>
   </div>
   <script>
     // function a() {
@@ -87,31 +100,43 @@
     //   return arr
     // }
     // // console.log(test())
-    // var myArr = test()
+    // var myArr = test()   //arr
     // for (let j = 0; j < 10; j++) {
-    //   myArr[j]()
+    //   myArr[j]()   //arr[j]
     // }
 
     //上面的解决闭包1.将第一个循环的var改成let
-    //2.
-    function test() {
-      var arr = []
-      for(var i = 0;i < 10;i++) {
-        // (function (j) {
-        //   arr[j] = function () {
-        //     console.log(j)
-        //   }
-        // }(i))
-        (arr[i] = function() {
-          console.log(i)
-        }())
+    //2.用闭包解决闭包
+    // function test() {
+    //   var arr = []
+    //   for(var i = 0;i < 10;i++) {
+    //     (function (a) {
+    //       arr[a] = function () {
+    //         console.log(a)
+    //       }
+    //       // console.log('aaaa')
+    //     }(i))
+    //   }
+    //   return arr
+    // }
+    // test()
+    // var myArr = test()   //myArr == arr
+    // for(var j = 0;j < 10;j++) {
+    //   myArr[j]()
+    // }
+
+    //*****************
+    function a() {
+      function b() {
+        var bbb = 234;
+        // document.write(aaa)
       }
-      return arr
+      var aaa = 123;
+      return b
     }
-    var myArr = test()   //myArr == arr
-    for(var j = 0;j < 10;j++) {
-      myArr[j]()
-    }
+    var glob = 100; 
+    var demo = a();   // == b
+    demo();   // == b()
   </script>
 
 </body>
