@@ -23,3 +23,12 @@
 //   c:function c() {};
 //   a:undefined
 // }
+
+
+
+// AO{
+//   e:2,
+//   b:123,
+//   c:func c,
+//   a:10
+// }

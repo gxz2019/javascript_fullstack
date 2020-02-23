@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // var Gxz = {
+    //   name:'gxz',
+    //   age:20,
+    //   health:100,
+    //   smoke:function () {
+    //     console.log('smoke!!!')
+    //     this.health ++
+    //   },
+    //   drink:function () {
+    //     console.log('drink!!!')
+    //     this.health --
+    //   }
+    // }
+
+    //对对象的增删改查
+    
+    // //增加属性
+    // Gxz.wife =  'aaa'
+
+    // //查看属性
+    // Gxz.age
+
+    // //修改属性
+    // Gxz.age = 50
+
+    // //删除属性
+    // delete Gxz.age
+    // console.log(Gxz)
+
+
+
+    // var Gxz = {
+    //   prepareWife : 'xiaowang',
+    //   name:'GUOXIANZGHE',
+    //   sex:'male',
+    //   gf:'xiaohong',
+    //   wifi:'',
+    //   divorce : function () {
+
+    //   },
+    //   getMarried: function () {
+
+    //   }
+    // }
+    
+
+    //对象的创建方法
+    //1.var obj = {}  plainObject 对象字面量/对象直接量
+    //2.构造函数
+    //  1）系统自带的构造函数 new Object()
+    //  2) 自定义
+
+    // var obj = new Object()
+    // console.log(obj)
+    // function Car(color) {
+    //   this.color = color
+    //   this.name = 'BMW';
+    //   this.height = 1400;
+    //   this.lang = 4900;
+    //   this.weight = 1000;
+    //   this.health = 100;
+    //   this.run = function () {
+    //     this.health --
+    //   }
+    // }
+    // var Car1 = new Car('red')
+
+    //构造函数内部原理
+    //当使用new时，在构造函数前面会var this = {}   最后会return this  
+
+
+    //包装类
+    // var str = 'abc';
+    // str += 1;
+    // var test = typeof(str);
+    // if(test.length == 6) {
+    //   test.sign = "typeOf的返回结果可能为String";
+    // }
+    // document.write(test.signx)   
+
+
+    // var a = 5;
+    // function test() {
+    //   a = 0;
+    //   console.log(a)//0
+    //   console.log(this.a) //5
+    //   var a;
+    //   console.log(a) //0
+    // }
+    // test()   
+    // new test()
+
+    // function Person(name,age,sex) {
+    //   var a = 0;
+    //   this.name = name;
+    //   this.age = age;
+    //   this.sex = sex;
+    //   function sss() {
+    //     a ++;
+    //     console.log(a);
+    //   }
+    //   this.say = sss;
+    // }
+    // var oPerson = new Person();
+    // oPerson.say(); //1
+    // oPerson.say(); //2
+    // var oPerson1 = new Person();
+    // oPerson1.say() //1
+
+    // var x = 1,y=z=0;
+    // function add(n) {
+    //   return n= n+1;
+    // }
+    // y = add(x); //2
+    // function add(n) {
+    //   return n = n + 3;
+    // }
+    // z = add(x)
+
+    // console.log(x,y,z)  //1,4,4
+
+    function foo(x) {
+      console.log(arguments)
+      return x
+    }
+    
+    foo(1,2,3,4,5)
+  </script>
+</body>
+</html>

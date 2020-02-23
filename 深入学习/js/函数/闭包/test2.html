@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- <ul>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+    <li>a</li>
+  </ul> -->
+  <script>
+    // function test() {
+    //   var li = document.getElementsByTagName('li');
+    //   for (var i = 0; i < li.length; i++) {
+    //     // console.log(`<li>a${i}</li>`)
+    //     (function (j) {
+    //       console.log(`<li>a${i}</li>`)
+    //       li[j].onclick = function () {
+    //         console.log(j)
+    //       }
+    //     }(i))
+    //   }
+    // }
+    // test()
+
+
+
+    //用闭包形成一个累加器
+    // function test() {
+    //   var num = 0
+    //   return function b() {
+    //     num++
+    //     console.log(num)
+    //   }
+    // }
+    // var c = test()
+    // c()
+    // c()
+    // c()
+
+    //做缓存
+    // function test() {
+    //  var food = "apple";
+    //  var obj = {
+    //    eatFood : function () {
+    //      if(food != "") {
+    //        document.write(food)
+    //        food = ""
+    //      }else{
+    //        document.write("没有food")
+    //      }
+    //    },
+    //    pushFood : function (myFood) {
+    //      food = myFood
+    //    }
+    //  }
+    //  return obj
+    // }
+    // var b = test()
+    // b.eatFood()
+    // b.eatFood()
+    // b.pushFood('bear')
+    // b.eatFood()
+    // b.eatFood()
+
+    // a = 100;
+    // function demo(e) {
+    //   function e() {};
+    //   arguments[0] = 2;
+    //   document.write(e);  //func e
+    //   if(a) {
+    //     var b = 123;
+    //     function c() {
+    //       // console.log()                                     
+    //     }
+    //   }
+    //   var c;
+    //   a = 10;
+    //   var a;
+    //   document.write(b);  //undefined
+    //   f = 123;
+    //   document.write(c)  //undefined
+    //   document.write(a)  //10
+    // }
+    // var a;
+    // demo(1);
+    // document.write(a)  //100
+    // document.write(f)  //123
+
+    // function test(str) {
+    //   var num = 0
+    //   for(let i = 0;i < str.length;i++) {
+    //     if(str.charCodeAt(i) <= 255) {
+    //       num ++
+    //     }else{
+    //       num = num+2
+    //     }
+    //   }
+    //   console.log(`str的字节长度为${num}`)
+    // }
+    // test('撒')
+    // // var s = 'ssjsaj'
+    // // console.log(s.charCodeAt(5))
+
+
+    // var f = (
+    //   function f() {
+    //     return '1'
+    //   },
+    //   function g() {
+    //     return 2
+    //   }
+    // )();
+    // console.log(typeof f)
+
+    x = 1;
+    if (function f() {}) {
+      x += typeof f;
+    } 
+    console.log(x)
+  </script>
+</body>
+
+</html>

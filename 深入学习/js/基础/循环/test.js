@@ -45,11 +45,14 @@
 //用do...while...循环  与while不同的是，他是在循环完成后判断条件
 
 var n = 0;
-do{
+do {
   n = n + 1
-}while(n<50){
+} while (n < 50) {
   console.log(n)
 }
+console.log(console.log())
+
+
 
 
 
