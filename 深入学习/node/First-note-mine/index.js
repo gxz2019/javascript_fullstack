@@ -44,11 +44,11 @@
 
 // // console.log(a.b)
 // console.log(b)
-var b = {}
-b = function test() {
+// var b = {}
+// b = function test() {
 
-}
-console.log(b)
+// }
+// console.log(b)
 // var a = {
 //   b:{}
 // }
@@ -56,6 +56,37 @@ console.log(b)
   
 // }
 // console.log(a.b)
+
+// hello.js
+// const hello = function () {
+// 	console.log('Hello world');
+// }
+// module.exports = {
+// 	hello
+// }
+// // 头尾封装后的js代码
+// (function (exports, require, module, __filename, __dirname) {
+//     const hello = function () {
+//         console.log('Hello world');
+//     }
+//     module.exports = {
+//         hello
+//     }
+// })
+
+
+// const hello = function () {
+//   console.log('hello')
+// }
+// exports.hello = {
+//   hello
+// }
+// console.log(exports === module.exports)
+if (typeof(window) === 'undefined') {
+  console.log('node.js');
+} else {
+  console.log('browser');
+}
 
 
 
