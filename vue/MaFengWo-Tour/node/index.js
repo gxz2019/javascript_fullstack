@@ -1,8 +1,11 @@
 const Koa = require('koa')
 const app = new Koa()
-app.use(async(ctx) => {
-  ctx.body = `<h1>hello world</h1>`
-})
-.listen(3000,() => {
-  console.log('[server is running]')
+const router = require('./routes/index')
+
+
+
+app.use(router.routes())
+
+app.listen(3000,() => {
+  console.log('3000端口已启动')
 })

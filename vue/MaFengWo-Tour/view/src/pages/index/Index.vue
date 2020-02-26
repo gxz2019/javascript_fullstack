@@ -88,21 +88,12 @@
 // import axios from 'axios'
 import logo from "./component/logo";
 import Search from "./component/Search";
+import {url} from '../../api/index'
 export default {
   name: "Index",
   data() {
     return {
-      bannerList: [
-        {
-          img: require("@/assets/images/banner1.png")
-        },
-        {
-          img: require("@/assets/images/banner2.png")
-        },
-        {
-          img: require("@/assets/images/banner3.png")
-        }
-      ],
+      bannerList: [],
       iconList: [
         {
           title: "找攻略",
@@ -160,24 +151,20 @@ export default {
     logo,
     Search
   },
+  mounted() {
+    this.getData()
+  },
   methods:{
     goToDL() {
       this.$router.push({path:'/register'})
+    },
+     getData() {
+       this.$api.getData(() => {
+         
+       })
     }
   },
-  // created() {
-  //  this.$http({
-  //     method:'get',
-  //     url:'https://www.easy-mock.com/mock/5e086c5565f0e56ed07c7dea/index/index',
-  //   })
-  //   .then((response) => {
-  //     // console.log(response)
-  //     this.liList = response.data.liList
-  //   })
-  //   .catch((error) => {
-  //     console.log(error)
-  //   })
-  // }
+  
 };
 </script>
 <style scoped>

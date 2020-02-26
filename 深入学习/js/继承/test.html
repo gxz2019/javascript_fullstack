@@ -20,7 +20,7 @@
       F.prototype = orign.prototype;
       target.prototype = new F()
       target.prototype.constuctor = target;
-      target.prototype.uber = orign.prototype
+      // target.prototype.uber = orign.prototype
     }
     extend(Son,Father)
     var son = new Son()
