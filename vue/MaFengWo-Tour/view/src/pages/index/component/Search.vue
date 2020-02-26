@@ -3,7 +3,7 @@
     <div class="search">
       <form action="">
         <input type="search" placeholder="搜索目的地/攻略/游记">
-        <img src="../../assets/images/searc.png" alt="">
+        <img src="@/assets/images/searc.png" alt="">
       </form>
     </div>
   </div>

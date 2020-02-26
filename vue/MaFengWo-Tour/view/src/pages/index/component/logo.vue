@@ -1,7 +1,7 @@
 <template>
   <div class="logo">
     <div class="img">
-    <img src="../../assets/images/logo2.png" alt="">
+    <img src="@/assets/images/logo2.png" alt="">
     </div>
     <slot name="search"></slot>
     <slot name="icon"></slot>

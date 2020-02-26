@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //手动实现一个对象的继承
+
+    //圣杯模式
+    Father.prototype.name = 'gxz'
+    function Father() {}
+    function Son() {}   //如何使得Son拥有Father的name}
+
+
+    function extend(target,orign) {
+      function F() {}
+      F.prototype = orign.prototype;
+      target.prototype = new F()
+      target.prototype.constuctor = target;
+      target.prototype.uber = orign.prototype
+    }
+    extend(Son,Father)
+    var son = new Son()
+    var father = new Father()
+
+ 
+  </script>
+</body>
+</html>

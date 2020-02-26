@@ -86,69 +86,69 @@
 
 <script>
 // import axios from 'axios'
-import logo from "../components/logo/logo";
-import Search from "../components/search/Search";
+import logo from "./component/logo";
+import Search from "./component/Search";
 export default {
   name: "Index",
   data() {
     return {
       bannerList: [
         {
-          img: require("../assets/images/banner1.png")
+          img: require("@/assets/images/banner1.png")
         },
         {
-          img: require("../assets/images/banner2.png")
+          img: require("@/assets/images/banner2.png")
         },
         {
-          img: require("../assets/images/banner3.png")
+          img: require("@/assets/images/banner3.png")
         }
       ],
       iconList: [
         {
           title: "找攻略",
-          icon: require("../assets/images/gonglve.png"),
+          icon: require("@/assets/images/gonglve.png"),
           color: "#ff9d00",
           name:"gonglve"
         },
         {
           title: "看游记",
-          icon: require("../assets/images/youji1.png"),
+          icon: require("@/assets/images/youji1.png"),
           color: "#feca2b",
           name:"youji"
         },
         {
           title: "问达人",
-          icon: require("../assets/images/wen.png"),
+          icon: require("@/assets/images/wen.png"),
           color: "#42d6ba",
           name:"daren"
         },
         {
           title: "结伴",
-          icon: require("../assets/images/jieban.png"),
+          icon: require("@/assets/images/jieban.png"),
           color: "#f94a87",
           name:"jieban"
         },
         {
           title: "酒店",
-          icon: require("../assets/images/jiudian.png"),
+          icon: require("@/assets/images/jiudian.png"),
           color: "#32a2f1",
           name:"Hotel"
         },
         {
           title: "去旅行",
-          icon: require("../assets/images/qulvhang.png"),
+          icon: require("@/assets/images/qulvhang.png"),
           color: "#fd4e4e",
           name:"lvxing"
         },
         {
           title: "机票",
-          icon: require("../assets/images/jipiao.png"),
+          icon: require("@/assets/images/jipiao.png"),
           color: "#acce0e",
           name:"jipiao"
         },
         {
           title: "当地玩乐",
-          icon: require("../assets/images/wanle.png"),
+          icon: require("@/assets/images/wanle.png"),
           color: "#b160df",
           name:"wanle"
         }
@@ -165,23 +165,23 @@ export default {
       this.$router.push({path:'/register'})
     }
   },
-  created() {
-   this.$http({
-      method:'get',
-      url:'https://www.easy-mock.com/mock/5e086c5565f0e56ed07c7dea/index/index',
-    })
-    .then((response) => {
-      // console.log(response)
-      this.liList = response.data.liList
-    })
-    .catch((error) => {
-      console.log(error)
-    })
-  }
+  // created() {
+  //  this.$http({
+  //     method:'get',
+  //     url:'https://www.easy-mock.com/mock/5e086c5565f0e56ed07c7dea/index/index',
+  //   })
+  //   .then((response) => {
+  //     // console.log(response)
+  //     this.liList = response.data.liList
+  //   })
+  //   .catch((error) => {
+  //     console.log(error)
+  //   })
+  // }
 };
 </script>
 <style scoped>
-@import "../css/index.css";
+@import "../../css/index.css";
 </style>
 
 

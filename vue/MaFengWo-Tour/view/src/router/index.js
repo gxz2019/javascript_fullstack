@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Cover from '../components/Cover/Cover'
-import Index from '@/components/Index'
-import Register from '@/components/register/register'
-import User from '@/components/User/user'
-import Hotel from '@/components/Hotel/Hotel'
+import Cover from '../pages/Cover/Cover'
+import Index from '@/pages/index/Index'
+import Register from '@/pages/register/register'
+import User from '@/pages/User/user'
+import Hotel from '@/pages/Hotel/Hotel'
 
 Vue.use(Router)
 

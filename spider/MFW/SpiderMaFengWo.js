@@ -16,11 +16,11 @@ function Spider(url,cb) {
       let item = [];
       $('a').each(function () {
         // const img1 = $('.r-pic img',this).attr('src');
-        const text1 = $('.title',this).text();
+        const text1 = $('.title',this).text().trim();
         const img1 = $('.clearfix dt img',this).attr('src');
-        const text2 = $('.clearfix dd .summary',this).text();
-        const text3 = $('.clearfix dd .extra',this).text();
-        const text4 = $('.clearfix dd .extra .author',this).text();
+        const text2 = $('.clearfix dd .summary',this).text().trim();
+        const text3 = $('.clearfix dd .extra',this).text().trim();
+        const text4 = $('.clearfix dd .extra .author',this).text().trim();
         const img2 = $('.clearfix dd .extra .author img',this).attr('src')
 
         if(text1 !== '') {
