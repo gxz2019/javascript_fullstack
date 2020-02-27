@@ -19,7 +19,7 @@ function Spider(url,cb) {
         const text1 = $('.title',this).text().trim();
         const img1 = $('.clearfix dt img',this).attr('src');
         const text2 = $('.clearfix dd .summary',this).text().trim();
-        const text3 = $('.clearfix dd .extra',this).text().trim();
+        const text3 = $('.clearfix dd .extra',this).text().trim().substring(0,6);
         const text4 = $('.clearfix dd .extra .author',this).text().trim();
         const img2 = $('.clearfix dd .extra .author img',this).attr('src')
 
