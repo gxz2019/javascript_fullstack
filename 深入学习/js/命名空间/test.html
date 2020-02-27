@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var name = 'daadad'
+    var init = (function () {
+      var name = 'gxz';
+      function className() {
+        console.log(name)
+      }
+      return function () {
+        className()
+      }
+    }())
+    init()  //  ==== function() { calssName() }() === className()  
+    //形成了一个闭包，使得变量（name）私有化,不污染全局变量
+
+    //闭包的作用
+    //1.实现共有变量     eg.函数累加器
+    //2.可以做缓存       eg.储存
+    //3.可以实现封装     eg.属性私有化
+    //4.模块化开发       eg.防止污染变量
+
+
+  </script>
+</body>
+</html>
