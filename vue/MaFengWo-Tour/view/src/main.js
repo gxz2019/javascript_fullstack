@@ -5,10 +5,9 @@ import App from './App'
 import router from './router'
 import { Swipe,SwipeItem,Icon,Field,ActionSheet,Toast,Panel,Uploader} from 'vant'
 import 'vant/lib/index.css'
-import BScroll from 'better-scroll'
+import BScroll from "better-scroll";
 import axios from 'axios'
-// import api from './api/index'
-// import Vueaxios from 'vue-axios'
+import store from './store'
 Vue.prototype.$http= axios
 Vue.config.productionTip = false
 Vue.use(Swipe).use(SwipeItem).use(Icon).use(Field).use(ActionSheet).use(Toast).use(Panel).use(Uploader).use(axios)
@@ -17,6 +16,7 @@ Vue.use(Swipe).use(SwipeItem).use(Icon).use(Field).use(ActionSheet).use(Toast).u
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

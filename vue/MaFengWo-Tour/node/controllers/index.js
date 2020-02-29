@@ -5,8 +5,12 @@ module.exports = async (ctx)  => {
   var page=1;
   const banner = await knex('mfw_index_banner').select()
   const strategy = await knex('mfw_index_strategy').select()
+  const hotCities = await knex('mfw_index_hotcities').select()
+  const cities = await knex('mfw_index_cities').select()
   ctx.body = {
     'banner' : banner,
-    'strategy':strategy
+    'strategy':strategy,
+    'hotCities':hotCities,
+    'cities':cities
   }
 } 

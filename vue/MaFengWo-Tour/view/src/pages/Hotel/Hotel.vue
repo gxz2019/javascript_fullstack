@@ -1,15 +1,24 @@
 <template>
-  <div>
-    <div></div>
+  <div class="hotel">
+    <Header />
+    <HotelSearch />
   </div>
 </template>
 
 <script>
+import Header from './component/header'
+import HotelSearch from './component/HotelSearch'
 export default {
-
+  data() {
+    return {
+    }
+  },
+  components:{
+    Header,HotelSearch
+  }
 }
 </script>
 
-<style>
-
+<style lang="less" scoped>
+@import './Hotel.less';
 </style>

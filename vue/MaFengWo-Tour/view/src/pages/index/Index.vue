@@ -1,5 +1,5 @@
 <template>
-  <div class="hello" ref="bsCroll">
+  <div class="hello">
     <!-- <h1>欢迎来到马蜂窝</h1> -->
     <div class="header">
       <logo>

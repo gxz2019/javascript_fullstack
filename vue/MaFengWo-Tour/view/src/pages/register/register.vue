@@ -39,21 +39,9 @@
 </template>
 
 <script>
-import store from '@/vuex/store'
-import { mapState,mapMutations,mapGetters,mapActions } from 'vuex'
 export default {
-  store,
-//    methods:mapMutations([
-//         'add','reduce'
-// ]),
   computed:{
-    ...mapState(
-    // count:state => state.count
-    ['count1']  //传入count的值
-  ),
-    ...mapGetters([  //对count进行监听，改变即加100
-      'count1'
-    ])
+  
   },
   data() {
     return {
@@ -67,12 +55,6 @@ export default {
     sign() {
       this.show = true
     },
-    ...mapMutations([  //给button赋予点击事件
-      'add','toIndex'
-    ]),
-    ...mapActions([
-      'addAction'
-    ])
   }
 }
 </script>
