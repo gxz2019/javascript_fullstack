@@ -6,4 +6,3 @@ npm install -g moduleName # -g 的意思是将模块安装到全局，具体安�
 npm install -save moduleName # -save 的意思是将模块安装到项目目录下，并在package文件的dependencies节点写入依赖。
  
 npm install -save-dev moduleName # -save-dev 的意思是将模块安装到项目目录下，并在package文件的devDependencies节点写入依赖。
-ge

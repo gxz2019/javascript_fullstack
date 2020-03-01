@@ -4,6 +4,9 @@ const mutatitons = {
   },
   returnLast() {
     this.$router.push({path:'/Hotel'})
+  },
+  transmitIndex(state,index) {
+    state.letter = index
   }
 }
 export default mutatitons

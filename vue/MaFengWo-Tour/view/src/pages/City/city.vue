@@ -1,8 +1,9 @@
 <template>
-  <div>
+  <div class="city">
     <Header @homeRun="run" />
     <HeaderBar />
     <List :hotCities="hotCities" :cities="cities" />
+    <Alphabet :cities="cities"></Alphabet>
   </div>
 </template>
 
@@ -10,9 +11,11 @@
 import Header from './component/header';
 import HeaderBar from './component/HeaderBar';
 import List from './component/list';
+import Alphabet from './component/alphabet'
 export default {
   components:{
-    Header,HeaderBar,List
+    Header,HeaderBar,List,
+    Alphabet
   },
   data() {
     return {
@@ -53,5 +56,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-
+.city{
+  height: 100%;
+  // overflow: hidden;
+}
 </style>

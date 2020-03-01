@@ -1,69 +1,60 @@
 <template>
-  <div class="list">
-    <div ref="listView">
-      <div class="hot">
+  <div>
+    <Scroll ref="scroll" :data="cities" class="list" > 
+    <div class="hot">
+      <div class="hot-city">
+        <span>热门城市</span>
+      </div>
+      <div class="hot-city-item">
+        <div
+          class="hot-item"
+          v-for="(item,index) in hotCities"
+          :key="index"
+          @click="handleCityChange(item.name)"
+        >
+          <span>{{item.name}}</span>
+        </div>
+      </div>
+      <div class="city-contont" v-for="(item,index)  in cities" :key="index" :ref="index">
         <div class="hot-city">
-          <span>热门城市</span>
+          <span>{{index}}</span>
         </div>
         <div class="hot-city-item">
           <div
             class="hot-item"
-            v-for="(item,index) in hotCities"
-            :key="index"
-            @click="handleCityChange(item.name)"
+            v-for="(city) in item"
+            :key="city.id"
+            @click="handleCityChange(city.name)"
           >
-            <span>{{item.name}}</span>
+            <span>{{city.name}}</span>
           </div>
         </div>
-        <div>
-          <div class="city-contont" v-for="(item,index)  in cities" :key="index" :ref="index">
-            <div class="hot-city">
-              <span>{{index}}</span>
-            </div>
-            <div class="hot-city-item">
-              <div
-                class="hot-item"
-                v-for="(city) in item"
-                :key="city.id"
-                @click="handleCityChange(city.name)"
-              >
-                <span>{{city.name}}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="list-shortcut">
-        <ul>
-          <li
-            v-for="(item, index) in shortcutList"
-            class="item"
-            :data-index="index"
-            :key="item.id"
-            
-            :class="{'current': currentIndex === index}"
-          >{{ item }}</li>
-        </ul>
       </div>
     </div>
+    </Scroll>
   </div>
 </template>
 
 <script>
 import { mapMutations } from "vuex";
-// import BScroll from "better-scroll";
+import Scroll from "@/pages/Common/scroll.vue";
+import { mapState } from 'vuex'
 export default {
+  components: {
+    Scroll
+  },
   props: {
     hotCities: Array,
     cities: Object
   },
   data() {
     return {
-      scrollY:0,
-      currentIndex: 0
-    }
+      scrollY: 0,
+      currentIndex: 0,
+    };
   },
   computed: {
+    ...mapState(['letter']),
     shortcutList() {
       var res = [];
       for (let i = 0; i <= 25; i++) {
@@ -87,29 +78,30 @@ export default {
       this.changCity(name);
       this.$router.push({ path: "/Hotel" });
     },
-    initScroll() {
-      this.scroll = new BScroll(this.$refs.listView, {
-        probeType: 3,
-        click: true
-      })
-      this.scroll.on('scroll', (pos) => {
-        this.scrollY = pos.y
-      })
-      console.log('111')
+    handLetterClick(i) {
+      this.letter = i;
     }
   },
-  // mounted() {  
-  //   setTimeout(() => {
-  //     this.initScroll()
-  //   },20)
-  // }
+  watch:{
+    letter() {
+      if(this.letter) {
+        this.scroll.scrollToElement(this.letter)
+      }
+    }
+  }
 };
 </script>
 
 <style lang="less" scoped>
+
 .list {
+  width: 100%;
+  height: calc(100vh - 1rem);
+  //  overflow: hidden;
   .hot {
     width: 100%;
+    
+    // height: calc(100vh -0.1rem);
     .hot-city {
       // width: 100%;
       height: 2.1rem;
@@ -157,28 +149,6 @@ export default {
         transform: scaleY(0.5);
         background-color: #c8c7cc;
       }
-    }
-  }
-  .list-shortcut{
-    position: absolute;
-    z-index: 30;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 20px;
-    padding: 20px 0;
-    border-radius: 10px;
-    text-align: center;
-    background: rgba(167, 167, 167, 0.5);
-    font-family:Helvetica;
-    .item{
-      padding: 3px;
-      line-height: 1;
-      color: black;
-      font-size: 11px;
-      &.current {
-        color: #C20C0C;
-    }
     }
   }
 }

@@ -1,46 +1,69 @@
-
+<template>
+  <div class="list-shortcut">
+        <ul>
+          <li
+            v-for="(item, index) in shortcutList"
+            class="item"
+            :key="item.id"
+            :class="{'current': currentIndex === index}" @click="handLetterClick(index)"
+          >{{ item }}</li>
+        </ul>
+      </div>
+</template>
 
 <script>
+// import BScroll from 'better-scroll'
+import { mapMutations } from 'vuex'
 export default {
-  props: { cities: Object },
+  props:{
+    cities:Object
+  },
+  data() {
+    return {
+     currentIndex: 0,
+    }
+  },
+  methods:{
+    ...mapMutations(['transmitIndex']),
+    handLetterClick(i) {
+    this.transmitIndex(i)
+  }
+  },
   computed: {
-    alphabet() {
+    shortcutList() {
       var res = [];
       for (let k in this.cities) {
         res.push(k);
       }
+      res.unshift('热')
       return res;
-    }
+    },
   },
-  created() {
-    // //初始化better-scroll等dom加载完毕
-    // setTimeout(() => {
-    //   this.initScroll();
-    // }, 20);
-  },
-  methods:{
-    initScroll() {
-      console.log('1111')
-    }
-  }
+  
 };
 </script>
 
 <style lang="less" scoped>
-.alphabet {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 2.5rem;
-  width: 1.2rem;
-  right: 0;
-  bottom: 0;
-  background-color: aqua;
-  .item {
+.list-shortcut {
+    position: fixed;
+    z-index: 30;
+    right: 0;
+    top: 60%;
+    transform: translateY(-50%);
+    width: 20px;
+    padding: 20px 0;
+    border-radius: 10px;
     text-align: center;
-    line-height: 1.2rem;
-    font-size: 0.8rem;
+    background: rgba(167, 167, 167, 0.5);
+    font-family: Helvetica;
+    .item {
+      padding: 3px;
+      line-height: 1;
+      color: black;
+      font-size: 11px;
+      &.current {
+        color: #c20c0c;
+      }
+    }
   }
-}
 </style>
