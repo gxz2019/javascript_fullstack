@@ -90,7 +90,7 @@ export default {
       //滚动到指定位置
       this.scroll && this.scroll.scrollTo.apply(this.scroll, arguments);
     },
-    scrollToElement() {
+    scrollToElement(el) {
       //滚动到指定的目标元素。
       this.scroll && this.scroll.scrollToElement.apply(this.scroll, arguments);
     }

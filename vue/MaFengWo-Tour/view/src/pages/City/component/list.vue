@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Scroll ref="scroll" :data="cities" class="list" > 
+    <Scroll ref="wrapper" :data="cities" class="list" > 
     <div class="hot">
       <div class="hot-city">
         <span>热门城市</span>
@@ -15,7 +15,7 @@
           <span>{{item.name}}</span>
         </div>
       </div>
-      <div class="city-contont" v-for="(item,index)  in cities" :key="index" :ref="index">
+      <div class="city-contont" v-for="(item,index)  in cities" :key="index" ref="index">
         <div class="hot-city">
           <span>{{index}}</span>
         </div>
@@ -84,9 +84,10 @@ export default {
   },
   watch:{
     letter() {
-      if(this.letter) {
-        this.scroll.scrollToElement(this.letter)
-      }
+      // console.log(this.letter)
+      // console.log(this.$refs.wrapper.scroll)
+      console.log(this.$refs.index[this.letter])
+      this.$refs.wrapper.scroll.scrollToElement(this.$refs.index[this.letter],300)
     }
   }
 };

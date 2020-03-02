@@ -26,6 +26,7 @@ export default {
   methods:{
     ...mapMutations(['transmitIndex']),
     handLetterClick(i) {
+      this.currentIndex = i
     this.transmitIndex(i)
   }
   },
@@ -35,7 +36,6 @@ export default {
       for (let k in this.cities) {
         res.push(k);
       }
-      res.unshift('热')
       return res;
     },
   },

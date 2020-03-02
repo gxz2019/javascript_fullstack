@@ -27,14 +27,14 @@ export default {
       background-color: #c8c7cc;
     }
   .header-tab{
+    z-index: -1;
     width: 100%;
     height: 2.5rem;
     background-color: #00BCD4;
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
-    
+    position: sticky;
     .item{
       color: #fff;
       font-weight: 300;

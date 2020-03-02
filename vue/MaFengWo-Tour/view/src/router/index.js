@@ -5,7 +5,8 @@ import Index from '@/pages/index/Index'
 import Register from '@/pages/register/register'
 import User from '@/pages/User/user'
 import Hotel from '@/pages/Hotel/Hotel'
-import City from '@/pages/City//city'
+import City from '@/pages/City/city'
+import HotelPages from '@/pages/Hotelpages/hotelpages'
 
 Vue.use(Router)
 
@@ -54,6 +55,14 @@ export default new Router({
       component: City,
       meta:{
         title:'城市选择'
+      }
+    },
+    {
+      path: '/hotelpages',
+      name: 'HotelPages',
+      component: HotelPages,
+      meta:{
+        title:'酒店页面'
       }
     }
   ]

@@ -30,6 +30,9 @@ export default {
     align-items: center;
     justify-content: center;
     position: relative;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
     .img{
       width: 3rem;
       height: 3rem;
