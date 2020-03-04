@@ -2,8 +2,8 @@ const mutatitons = {
   changCity(state,city) {
     state.city = city
   },
-  returnLast() {
-    this.$router.push({path:'/Hotel'})
+  changDate(state,date) {
+    state.date = date 
   },
   transmitIndex(state,index) {
     state.letter = index

@@ -26,7 +26,7 @@
                 <span>入住</span>
               </div>
               <div class="hotel-date-input" @click="handDate">
-                <span>{{Month1}}月{{Day1}}日</span>
+                <span>{{date.Month1}}月{{date.Day1}}日</span>
               </div>
             </div>
             <div class="hotel-time-info">
@@ -37,7 +37,7 @@
                 <span>离店</span>
               </div>
               <div class="hotel-date-input">
-                <span>{{Month2}}月{{Day2}}日</span>
+                <span>{{date.Month2}}月{{date.Day2}}日</span>
               </div>
             </div>
           </div>
@@ -63,19 +63,17 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
+import { mapState,mapMutations } from 'vuex'
 export default {
   computed: {
     ...mapState(['city']),
+    ...mapState(['date'])
   }
   ,
   data() {
     return {
       show:false,
-      Month1:(new Date()).getMonth() + 1,
-      Day1:(new Date()).getDate(),
-      Month2:(new Date()).getMonth() + 1,
-      Day2:(new Date()).getDate()+1
+      
     }
   },
   methods:{
@@ -96,12 +94,15 @@ export default {
       }
       return day
     },
+    ...mapMutations(['changDate']),
     onConfirm(date) {
       this.show = false;
-      this.Month1 = date[0].getMonth() + 1;
-      this.Day1 = date[0].getDate()
-      this.Month2 = date[1].getMonth() + 1
-      this.Day2 = date[1].getDate()
+      var date1 = {}
+      date1.Month1 = date[0].getMonth() + 1;
+      date1.Day1 = date[0].getDate()
+      date1.Month2 = date[1].getMonth() + 1
+      date1.Day2 = date[1].getDate()
+      this.changDate(date1)
     }
   }
 }
