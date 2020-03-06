@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+
+</style>
+<body>
+  <!-- <div>1111</div> -->
+<script>
+  var num = 0;
+  var div= document.createElement('div')
+  document.body.appendChild(div)
+  div.style.width = '100px';
+  div.style.height = '100px';
+  div.style.backgroundColor = 'red';
+  setInterval(() => {
+    num%2==0?div.style.backgroundColor='red':div.style.backgroundColor='green'
+    num++
+  }, 500);
+
+
+</script>
+</body>
+</html>

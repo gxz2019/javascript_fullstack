@@ -21,9 +21,20 @@
     //     }
     //   }
     // }
-      const Person = function () {}
-      const p = new Person()
-      console.log(p instanceof Person)
+      // const Person = function () {}
+      // const p = new Person()
+      // console.log(p instanceof Person)
+
+      function Person(name,age) {
+        this.name = name;
+        this.age = age
+      }
+      function A(name,age,sex) {
+        Person.call(this,name,age)
+        this.sex = sex
+      }
+      
+
 
   </script>
 </body>
