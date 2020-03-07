@@ -10,17 +10,22 @@
 </style>
 <body>
   <!-- <div>1111</div> -->
+  <div style="width: 100px;height: 100px;background-color: aquamarine;"></div>
 <script>
-  var num = 0;
-  var div= document.createElement('div')
-  document.body.appendChild(div)
-  div.style.width = '100px';
-  div.style.height = '100px';
-  div.style.backgroundColor = 'red';
-  setInterval(() => {
-    num%2==0?div.style.backgroundColor='red':div.style.backgroundColor='green'
-    num++
-  }, 500);
+  // var num = 0;
+  // var div= document.createElement('div')
+  // document.body.appendChild(div)
+  // div.style.width = '100px';
+  // div.style.height = '100px';
+  // div.style.backgroundColor = 'red';
+  // setInterval(() => {
+  //   num%2==0?div.style.backgroundColor='red':div.style.backgroundColor='green'
+  //   num++
+  // }, 500);
+    var div = document.getElementsByTagName('div')[0];
+    div.addEventListener('mouseleave',(e) => {
+      console.log(e)
+    })
 
 
 </script>

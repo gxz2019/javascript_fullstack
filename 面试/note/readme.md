@@ -35,7 +35,6 @@ caleY)
 				Div 设置: transform: translate(-50%，-50%);position: absolute;top: 50%;left: 50%;
 	3.display：table-cell   父盒子设置:display:table-cell; text-align:center;vertical-align:middle;
 				Div 设置: display:inline-block;vertical-align:middle;
-		
 五、浮动 https://juejin.im/post/5a954add6fb9a06348538c0d
 	特性：浮动元素影响的不仅是自己，他会影响周围元素对其进行环绕
       为什么要清除浮动？（解决父元素高度坍陷问题）
