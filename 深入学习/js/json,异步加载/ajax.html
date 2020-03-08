@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    //封装一个AJAX请求
+    //1.创建一个XMLHttpRequest对象
+    //2.连接服务器
+    //3.发送请求
+    //4.接受响应数据
+    
+
+
+    //fetch 请求
+    fetch('http://localhost:8080')
+    .then((resolve) => {
+      return  resolve.json()
+    },() => {})
+    .then((data) => {
+      console.log(data)
+    })
+  </script>
+</body>
+</html>
