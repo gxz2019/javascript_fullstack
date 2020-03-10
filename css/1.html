@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // function foo() {
+    //   setTimeout(function() {console.log(this)},50)
+    //   console.log(this)
+    // }
+    // var a = 1;
+    // var obj = {
+    //   a:2
+    // }
+    // foo.call(obj)
+
+    // function foo() {
+    //   return () => {
+    //     return () => {
+    //       return () => {
+    //         console.log('id:', this.id);
+    //       };
+    //     };
+    //   };
+    // }
+    // // f=() => {
+    // //   return () => {
+    // //     return () => {
+    // //       console.log('id:',this.id)
+    // //     }
+    // //   }
+    // // }
+    // //  t1 = () => {console.log()}
+    // var f = foo.call({ id: 1 });
+    // var t1 = f.call({ id: 2 })()();   //id:1
+    // var t2 = f().call({ id: 3 })();   //1
+    // var t3 = f()().call({ id: 4 })   //1
+
+
+    (function () {
+      return [
+        (() => this.x).bind({ x: 'inner' })()
+      ];
+    }).call({ x: 'outer' });
+    //['outer']
+
+  </script>
+</body>
+
+</html>
