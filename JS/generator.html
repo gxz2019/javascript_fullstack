@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    //  0 1 1 2 3 5 8 13 21 34 ...
+    // function test(num) {
+    //   if(num == 1) {
+    //     return 0
+    //   }
+    //   if(num == 2) {
+    //     return 1
+    //   }
+    //   return test(num-1) + test(num-2)
+    // }
+
+    // function test(num) {
+    //   let a = 0,b=1,arr=[a,b]
+    //   while(arr.length < num) {
+    //     [a,b] = [b,a+b]
+    //     arr.push(b)
+    //   }
+    //   return arr
+    // }
+    // console.log(test(5))
+
+    
+
+function next_id() {
+  var current_id = 0;
+    current_id ++;
+    return current_id;
+}
+console.log(next_id())
+console.log(next_id())
+console.log(next_id())
+
+// function test() {
+//   var id = 0;
+//   return function() {
+//     id = id + 1
+//     console.log(id)
+//   }
+// }
+// var f = test()
+// f()
+// f()
+// f()
+// f()
+// function* next_id() {
+//     var num = 1;
+//     while(true){
+//         yield num++;
+//     }
+// }
+// console.log(next_id().next())
+// console.log(next_id().next())
+// console.log(next_id().next())
+// console.log(next_id().next())
+  </script>
+</body>
+
+</html>
