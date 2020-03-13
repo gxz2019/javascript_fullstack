@@ -7,12 +7,12 @@ class TodoLsit extends Component {
   constructor(props) {
     super(props)
     this.state=store.getState()
+    store.subscribe(() => {
+      this.setState(store.getState())
+    })
   }
   componentDidMount() {
-    const action = {
-      type:'getData',
-      data:getData()
-    }
+    const action = getData()
     store.dispatch(action)
   }
   getValue = (e) =>{
@@ -23,7 +23,7 @@ class TodoLsit extends Component {
     return (
       <div>
         <TodoLsitUi getValue={this.getValue} data={this.state.data} />
-      </div>
+      </div> 
     );
   }
 }
