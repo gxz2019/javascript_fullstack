@@ -1,0 +1,164 @@
+<script>
+  // setTimeout(() => {
+  //   console.log(111)
+  // },0)
+  // console.log(222)
+//     function test(callback) {
+//       console.log(1)
+//     }
+//     function callback() {
+//       console.log('callback')
+//     }
+
+// test()
+// const promise = new Promise((resolve,reject) => {
+
+// }).then(
+//   (resolve) => {},
+//   (reject) => {}
+//   )
+// function timeout(ms) {
+//   return new Promise((resolve,reject) => {
+//     setTimeout(resolve,ms,'done')
+//   })
+// }
+// timeout(1000).then((value) => {
+//   console.log(value)
+// })
+
+
+//异步实现图片加载
+// function loadImageAsync(url) {
+//   return new Promise((resolve,reject) => {
+//     const image = new Image()
+//     image.onload = function () {
+//       resolve(image)
+//     };
+//     image.onerror = function () {
+//       reject(new Error('Could not load image'+url))
+//     };
+//     image.src = url
+//   })
+// }
+// loadImageAsync('./123.jpg').then((value) => {
+//   document.body.appendChild(value)
+// })
+
+//封装AJAX异步请求
+// function ajax(url) {
+//   const promise = new Promise((resolve,reject) => {
+//     const client = new XMLHttpRequest();
+//     client.open('GET',url)
+//     client.onreadystatechange = function() {
+//       if(this.readyState !== 4) {
+//         return ;
+//       }
+//       if(this.status == 200){
+//         resolve(this.response)
+//       }else{
+//         reject(new Error('cuowule'))
+//       }
+//     }
+//     client.responseType = "json";
+//     client.setRequestHeader("Accept", "application/json");
+//     client.send()
+//   })
+//   return promise
+// }
+
+// ajax('http://localhost:4000/list').then((res) => {
+//   console.log(res)
+// })
+
+// function ajax(url) {
+//   const promise = new Promise((resolve,reject) => {
+//     const client = new XMLHttpRequest()
+//     client.open('GET',url)
+//     client.onreadystatechange = ()=> {
+//       // if(this.readyState !== 4){
+//       //   return 
+//       // }
+//       // if(this.status == 200){
+//       //   // resolve(this.response)
+//       //   console.log(this)
+//       // }else{
+//       //   reject(new Error('!!!'))
+//       // }
+//       let that = client
+//       console.log(that)
+//     }
+//     client.responseType = "json";
+//     //     client.setRequestHeader("Accept", "application/json");
+//     client.send()
+    
+//   })
+//   return promise
+// }
+// ajax('http://localhost:4000/list').then((res) => {
+//   console.log(res)
+// })
+
+// let a = () => {
+//   console.log(this)
+// }
+// a()
+// let a = {
+//   b:() => {
+//     console.log(this)
+//   }
+// }
+// a.b
+
+// var obj = {
+//   func:() => {
+//     console.log(this)
+//   },
+//   say:function() {
+//     setTimeout(() => {
+//       console.log(this)
+//     })
+//   }
+// }
+// obj.func()
+// obj.say()
+// var object = {
+//   getName:function(){
+//     return () =>{
+//       console.log(this)
+//     }
+//   }
+// }
+// object.getName()()
+// let name='aaaa'
+// let a = {
+//   name:'11',
+//   b:() => {
+//     console.log(name)
+//   }
+// }
+// a.b() //window
+// function ajax(url) {
+//   return promise = new Promise((resolve,reject)  => {
+//     const client = new XMLHttpRequest()
+//     client.open('GET',url)
+//     client.onreadystatechange = function() {
+//       if(this.readyState !== 4) {
+//         return 
+//       }
+//       if(this.status == 200) {
+//         resolve(this.response)
+//       }
+//     }
+//     client.responseType = 'json'
+//     client.send()
+//   })
+// }
+// ajax('http://localhost:4000/list').then(res => {console.log(res)})
+
+const p1 = new Promise(function(resolve,reject){
+  setTimeout(() => reject(new Error('fail')),3000)
+})
+const p2 = new Promise(function(resolve,reject){
+  setTimeout(() => resolve(p1),1000)
+})
+</script>
