@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { CSSTransition } from 'react-transition-group'
 import { 
   HeaderWrapper,
@@ -11,6 +11,7 @@ import {
   Button
 } from './style'
 import {connect} from 'react-redux'
+import * as actionCreators from './store/actionCreators'
 function Header(props) {
   return  (
     <HeaderWrapper>
@@ -49,22 +50,16 @@ function Header(props) {
 }
 const mapStateToProps = (state) => {
   return {
-    focused:state.focused
+    focused:state.header.get('focused')
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
     handleInputFocus() {
-      const action = {
-        type:'search_focus'
-      }
-      dispatch(action)
+      dispatch(actionCreators.searchFoucs())
     },
     bandleInputBlur() {
-      const action = {
-        type:'bandle_foucs'
-      }
-      dispatch(action)
+      dispatch(actionCreators.searchBlur())
     }
   }
 }
