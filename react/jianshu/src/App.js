@@ -3,8 +3,8 @@ import Header from './common/header'
 import {Provider} from 'react-redux'
 import store from './store/index'
 import { BrowserRouter,Route } from 'react-router-dom'
-import Home from './pages/home'
-import Detail from './pages/detail'
+import Home from './pages/home/index'
+import Detail from './pages/detail/index'
 
 function App() {
   return (

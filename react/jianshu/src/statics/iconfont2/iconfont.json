@@ -1,0 +1,37 @@
+{
+  "id": "1695804",
+  "name": "jian'shu",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1599666",
+      "name": "钻石",
+      "font_class": "classify_zuanleishipin",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "3993664",
+      "name": "赏",
+      "font_class": "shang",
+      "unicode": "e604",
+      "unicode_decimal": 58884
+    },
+    {
+      "icon_id": "5594150",
+      "name": "爱心",
+      "font_class": "weibiaoti-",
+      "unicode": "e601",
+      "unicode_decimal": 58881
+    },
+    {
+      "icon_id": "13454520",
+      "name": "评 论",
+      "font_class": "pinglun",
+      "unicode": "e644",
+      "unicode_decimal": 58948
+    }
+  ]
+}

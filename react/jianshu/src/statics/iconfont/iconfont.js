@@ -9,7 +9,7 @@ export const IconGlobalstyle = createGlobalStyle`
   url('./iconfont.ttf?t=1584015025119') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
   url('./iconfont.svg?t=1584015025119#iconfont') format('svg'); /* iOS 4.1- */
 }
-
+ 
 .iconfont {
   font-family: "iconfont" !important;
   font-size: 16px;
