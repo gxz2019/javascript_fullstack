@@ -4,7 +4,7 @@ class Writer extends Component {
   render() {
     return (
       <WriterWrapper>
-
+        
       </WriterWrapper>
     );
   }

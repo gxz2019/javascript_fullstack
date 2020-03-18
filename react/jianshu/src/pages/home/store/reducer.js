@@ -1,65 +1,38 @@
-
+import * as actionTypes from './actionTypes'
 import { fromJS } from 'immutable'
 const defaultState = fromJS({
-  topicList: [
-    {
-      id: 1,
-      title: '社会热点',
-      img: 'https://upload.jianshu.io/users/upload_avatars/9988193/fc26c109-1ae6-4327-a298-2def343e9cd8.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
-    },
-    {
-      id: 2,
-      title: '手绘',
-      img: 'https://upload.jianshu.io/users/upload_avatars/3950651/acfaa0ce-42fe-424a-b7c8-9a0136fb96ec.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp'
-    }
-  ],
-  articleList: [
-    {
-      "id": 1,
-      "title": "“因为10个口罩，我看到了妻子的另一面，终止了两年的婚外恋”",
-      "desc": "01 作家詹迪·尼尔森曾说：“遇见灵魂伴侣的感觉，就好像是走进一座你曾经住过的房子里——你认识那些家具，认识墙上的画，架上的书，抽屉里的东西：如...",
-      "imgUrl": "https://upload-images.jianshu.io/upload_images/11864358-622c38825ebb854e.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
-    },
-    {
-      "id": 2,
-      "title": "“因为10个口罩，我看到了妻子的另一面，终止了两年的婚外恋”",
-      "desc": "01 作家詹迪·尼尔森曾说：“遇见灵魂伴侣的感觉，就好像是走进一座你曾经住过的房子里——你认识那些家具，认识墙上的画，架上的书，抽屉里的东西：如...",
-      "imgUrl": "https://upload-images.jianshu.io/upload_images/11864358-622c38825ebb854e.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
-    },
-    {
-      "id": 3,
-      "title": "“因为10个口罩，我看到了妻子的另一面，终止了两年的婚外恋”",
-      "desc": "01 作家詹迪·尼尔森曾说：“遇见灵魂伴侣的感觉，就好像是走进一座你曾经住过的房子里——你认识那些家具，认识墙上的画，架上的书，抽屉里的东西：如...",
-      "imgUrl": "https://upload-images.jianshu.io/upload_images/11864358-622c38825ebb854e.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
-    },
-    {
-      "id": 4,
-      "title": "“因为10个口罩，我看到了妻子的另一面，终止了两年的婚外恋”",
-      "desc": "01 作家詹迪·尼尔森曾说：“遇见灵魂伴侣的感觉，就好像是走进一座你曾经住过的房子里——你认识那些家具，认识墙上的画，架上的书，抽屉里的东西：如...",
-      "imgUrl": "https://upload-images.jianshu.io/upload_images/11864358-622c38825ebb854e.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/360/h/240"
-    }
-  ],
-  recommendList: [
-    {
-      "id": 1,
-      "imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-club-aa8bdf19f8cf729a759da42e4a96f366.png"
-    },
-    {
-      "id": 2,
-      "imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-7-1a0222c91694a1f38e610be4bf9669be.png"
-    },
-    {
-      "id": 3,
-      "imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-5-4ba25cf5041931a0ed2062828b4064cb.png"
-    },
-    {
-      "id": 4,
-      "imgUrl": "http://cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
-    }
-  ]
+  topicList:[],
+  articleList: [],
+  recommendList: [],
+  articlePage:1,
+  showScroll:false
 })
+const changeHomeData = (state,action) =>{
+  return state.merge({
+    topicList:fromJS(action.topicList),
+    articleList:fromJS(action.articleList),
+    recommendList:fromJS(action.recommendList)
+  })
+}
+const getMoreData = (state,action) => {
+  return state.merge({
+    articleList:fromJS([...state.get('articleList'),...action.articleList]),
+    articlePage:fromJS(action.page)
+  })
+}
+const toggleScroll = (state,action) => {
+  return state.set('showScroll',action.show)
+}
 
 export default (state = defaultState, action) => {
-
-  return state
+  switch(action.type){
+    case actionTypes.CHANGE_HOME_DATA:
+      return  changeHomeData(state,action)
+    case actionTypes.GET_MORE_DATA:
+      return getMoreData(state,action)
+    case actionTypes.TOGGLE_SCROLL:
+      return toggleScroll(state,action)
+      default:
+        return state
+  }
 }

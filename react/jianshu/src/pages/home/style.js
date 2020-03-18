@@ -58,7 +58,10 @@ export const ListItem = styled.div`
   }
 `
 export const ListContent = styled.div`
-overflow:hidden;
+      overflow:hidden;
+    a{
+      text-decoration:none;
+    }
     h3{
       color:rgb(46,46,46);
       font-size:18px;
@@ -96,5 +99,96 @@ export const WriterWrapper = styled.div`
   height: 300px;
   line-height:300px;
   text-align: center;
+`
+export const LoadMore = styled.div`
+  font-size:15px;
+  height:40px;
+  line-height:40px;
+  text-align: center;
+  color:rgb(255,255,255);
+  background-color:rgb(156,156,156);
+  border-radius:20px;
+  width: 625px;
+  margin:30px 0;
+  cursor:pointer;
+`
+export const Back = styled.div`
+  width: 60px;
+  height: 60px;
+  border: 1px solid #ccc;
+  position:fixed;
+  font-size:16px;
+  right: 30px;
+  bottom: 30px;
+  line-height:60px;
+  text-align: center;
+`
+export const DownloadWrapper = styled.div`
+  width: 278px;
+  height: 82px;
+  border: 1px solid rgb(240,240,240);
+  border-radius:6px;
+  margin-bottom:25px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  img{
+    width: 50px;height:50px;
+    margin-left:20px;
+  }
+  cursor: pointer;
+`
+
+export const DownContent = styled.div`
+  span{
+    display:inline-block;
+    margin-bottom:5px;
+    margin-left:10px;
+  }
+  .span1{
+    font-size:15px;
+    line-height:21.4px;
+    color:rgb(51,51,51);
+  }
+  .span2{
+    font-size:13px;
+    line-height:18.5px;
+    color:rgb(153,153,153)
+  }
+`
+
+export const RqCode = styled.div`
+  position: relative;
+  background-color:#fff;
+  width: 160px;height: 160px;
+  border: 1px solid rgb(240,240,240);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  top:-280px;
+  right:-55px;
+  /* z-index:100; */
+  box-shadow: 5px 5px 5px #888888;
+  img{
+    width:90%;
+    height:90%;
+  }
+  &.Rqcode::before,
+  &.Rqcode::after{
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border-width: 10px 10px;
+    border-style: solid;
+    border-color: #3377aa transparent transparent;
+    bottom: -20px;
+    left: 50%;
+    margin-left: -10px;
+}
+  &.Rqcode::after{
+    border-color: #fff transparent transparent;
+    bottom: -20px;
+}
 `
 

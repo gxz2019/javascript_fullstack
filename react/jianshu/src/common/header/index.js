@@ -12,12 +12,15 @@ import {
 } from './style'
 import {connect} from 'react-redux'
 import * as actionCreators from './store/actionCreators'
+import { Link } from 'react-router-dom'
 function Header(props) {
   return  (
     <HeaderWrapper>
       <Logo />
       <Nav>
-        <NavItem className="left active">首页</NavItem>
+        <NavItem className="left active">
+          <a href='/' className='active'>首页</a>
+        </NavItem>
         <NavItem className="left">下载App</NavItem>
         <NavItem className="right">登录</NavItem>
         <NavItem className="right">
@@ -35,7 +38,7 @@ function Header(props) {
               onFocus={props.handleInputFocus}
               onBlur={props.bandleInputBlur}
             ></NavSearch>
-          </CSSTransition>
+          </CSSTransition> 
           <span className={props.focused ? 'focused iconfont' : 'iconfont'}>&#xe64d;</span>
         </SearchWrapper>
       </Nav>
