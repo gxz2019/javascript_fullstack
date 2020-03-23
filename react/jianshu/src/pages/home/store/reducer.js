@@ -5,7 +5,9 @@ const defaultState = fromJS({
   articleList: [],
   recommendList: [],
   articlePage:1,
-  showScroll:false
+  showScroll:false,
+  authorList:[],
+  num:20,
 })
 const changeHomeData = (state,action) =>{
   return state.merge({
@@ -16,14 +18,16 @@ const changeHomeData = (state,action) =>{
 }
 const getMoreData = (state,action) => {
   return state.merge({
-    articleList:fromJS([...state.get('articleList'),...action.articleList]),
+    articleList:fromJS([...state.get('articleList'),...action.articleList.splice]),
     articlePage:fromJS(action.page)
   })
 }
 const toggleScroll = (state,action) => {
   return state.set('showScroll',action.show)
 }
-
+const getAuthorList = (state,action) => {
+  return state.set('authorList',action.data)
+}
 export default (state = defaultState, action) => {
   switch(action.type){
     case actionTypes.CHANGE_HOME_DATA:
@@ -32,6 +36,8 @@ export default (state = defaultState, action) => {
       return getMoreData(state,action)
     case actionTypes.TOGGLE_SCROLL:
       return toggleScroll(state,action)
+    case actionTypes.GET_AUTHOR_LIST:
+      return getAuthorList(state,action)
       default:
         return state
   }

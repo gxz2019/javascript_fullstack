@@ -38,3 +38,17 @@ export const toggleTopShow = (show) => {
     show:show
   }
 }
+const authorAction = (value) => {
+  return {
+    type:actionTypes.GET_AUTHOR_LIST,
+    data:value
+  }
+}
+export const getAuthorList = () => {
+  return (dispatch) => {
+    axios.get('/api/author.json').then(res => {
+      const list = res.data.data.list;
+      dispatch(authorAction(list))
+    })
+  }
+}

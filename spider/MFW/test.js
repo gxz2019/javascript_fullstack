@@ -14,10 +14,10 @@ function Spider(url,cb) {
       // console.log(html);
       const $ = cheerio.load(html);
       let item = [];
-      $('.hotel_new_list').each(function () {
-        const img = $('.hotel_pic a .dpic img',this).attr('src');
+      $('ul.list li').each(function () {
+        const imgUrl = $('',this).attr('href');
         const title = $('li.hotel_item_name a',this).attr('title');
-        const 
+        
         
         // const hotelName = $('.title h3',this).text();
         // const Ename = $('.title span',this).text();
@@ -31,7 +31,6 @@ function Spider(url,cb) {
         
           item.push({
             img
-            // img,hotelName,Ename,count1,count2,price
           })
         
       })
@@ -40,7 +39,7 @@ function Spider(url,cb) {
   })
 }
 http.createServer((req,res) =>{
-  Spider('https://hotels.ctrip.com/hotel/hangzhou17#ctm_ref=hod_hp_sb_lst',(data) => {
+  Spider('https://www.jianshu.com/',(data) => {
     console.log('data',data)
     res.writeHead(200,{
       'Content-type':'application/json',

@@ -12,7 +12,6 @@ import {
 } from './style'
 import {connect} from 'react-redux'
 import * as actionCreators from './store/actionCreators'
-import { Link } from 'react-router-dom'
 function Header(props) {
   return  (
     <HeaderWrapper>

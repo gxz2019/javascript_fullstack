@@ -92,14 +92,7 @@ export const RecommendItem = styled.div`
   margin-bottom:5px;
 `
 
-export const WriterWrapper = styled.div`
-  width: 278px;
-  border: 1px solid #dcdcdc;
-  border-radius:3px;
-  height: 300px;
-  line-height:300px;
-  text-align: center;
-`
+
 export const LoadMore = styled.div`
   font-size:15px;
   height:40px;
@@ -190,5 +183,63 @@ export const RqCode = styled.div`
     border-color: #fff transparent transparent;
     bottom: -20px;
 }
+`
+export const WriterWrapper = styled.div`
+  width: 278px;
+  /* border: 1px solid #dcdcdc; */
+  border-radius:3px;
+  height: 300px;
+  /* line-height:300px; */
+  /* text-align: center; */
+`
+export const WriteTitle = styled.div`
+  position: relative;
+  span{
+    display:inline-block;
+    font-size:14px;
+    line-height:20px;
+    color:rgb(150,150,150);
+  }
+  .span{
+    position:absolute;
+    right: 0;
+  }
+  
+`
+
+export const AuthorList = styled.div`
+  width:100%;
+  height:55px;
+  display:flex;
+  margin-top:20px;
+  align-items:center;
+  position: relative;
+  img{
+    width: 50px;height: 50px;
+    border-radius:50%;
+  }
+  span{
+    display:block;
+  }
+  span:nth-child(1){
+    font-size:14px;
+    line-height:20px;
+    color:rgb(46,46,46);
+  }
+  span:nth-child(2){
+    font-size:12px;
+    line-height:20px;
+    color:rgb(150,150,150);
+  }
+  span:nth-child(3){
+    color:rgb(65,191,46);
+    position:absolute;
+    right: 0;
+    bottom:50%;
+    font-size:13px;
+  }
+  div{
+    margin-left:10px
+  }
 `
 

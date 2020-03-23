@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div style="width: 200;height: 200px;background-color: red;text-align: center;font-size: 50px;line-height: 200px;">
+  </div>
+  <script>
+    //在进行窗口的resize 、scroll、输入框内容校验等操作的时候，如果处理函数调用的频率无限制，
+    //会加重浏览器的负担，导致用户体验非常糟糕
+    //此时我们可以用debounce(防抖)和节流(throttle)的方式来减少函数调用频率，同时又不影响实际效果
+
+
+    //函数防抖
+    //当持续触发事件时，一定时间段内没有再次触发事件，事件处理函数才会制行一次，如果设定的时间到来
+    //之前，有一次触发事件，就重新开始延时，
+
+    //非立即执行
+    //非立即执行版的意思是触发事件后函数不会立即执行，而是在 n 秒后执行，
+    // 如果在 n 秒内又触发了事件，则会重新计算函数执行时间。
+
+
+    let num = 1;
+    let content = document.getElementsByTagName('div')[0]
+    // content.onmousemove = debounce(count, 1000)
+    // function count() {
+    //   content.innerHTML = num++
+    //   console.log(this)
+    // }
+    // function debounce(func, wait) {
+    //   let timeout;
+    //   return function () {
+    //     let context = this;
+    //     let args = arguments;
+    //     if (timeout) clearTimeout(timeout);
+    //     timeout = setTimeout(() => {func.apply(this)}, wait);
+    //   }
+    // }
+
+
+    //立即执行版本
+    //立即执行版的意思是触发事件后函数会立即执行，然后 n 秒内不触发事件才能继续执行函数的效果。
+    function count() {
+      content.innerHTML = num++
+    }
+    let timeout;
+    function debounce(func,wait) {
+        let context = this;
+        let args = arguments;
+        if(timeout) clearTimeout(timeout);
+        let callNow = !timeout;
+        timeout = setTimeout(() => {
+          timeout = null;
+        },wait)
+        if(callNow) func.apply(context,args)
+      
+    }
+    // content.onmousemove = debounce(count,1000)
+    content.addEventListener('mousemove',() => {
+      debounce(count,1000)
+    })
+
+  </script>
+</body>
+
+</html>
