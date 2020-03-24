@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div style="width: 200;height: 200px;background-color: red;text-align: center;font-size: 50px;line-height: 200px;"></div>
+  <script>
+    //函数节流
+    //所谓节流  就是指连续触发事件但是在n秒中只执行一次函数，
+    //时间戳方式
+    let div = document.getElementsByTagName('div')[0]
+    div.addEventListener('click',throttle(count,1000))
+    let num = 0
+    function count() {
+      div.innerHTML = num++
+    }
+    function throttle(fn,wait) {
+      let canRun = null;
+      return function () {
+        if(canRun == false) return ;
+        canRun = false;
+        setTimeout(() => {
+          fn.call(this,arguments)
+          canRun = true
+        },wait)
+      }
+    }
+  </script>
+</body>
+</html>
