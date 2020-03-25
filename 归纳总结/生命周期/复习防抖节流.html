@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div style="width: 200px;height: 200px;background-color: red;margin: 0 auto;font-size: 20px;"></div>
+  <script>
+    let div = document.getElementsByTagName('div')[0]
+    let num = 0;
+    function count() {
+      div.innerHTML = num++
+    }
+    div.addEventListener('mousemove',debounce(count,500,true))
+    //防抖
+    //什么时防抖？
+    //防抖是当事件触发时，会导致频繁执行函数，增加浏览器的负担，用户体验不好，这时候就要用到防抖
+    //举例子:scroll滑轮滚动、input框检验数据。。。。。
+    //防抖也分非立即执行和立即执行 有什么区别？
+    //非立即执行指的是当事件触发时，不立即执行函数，而是在N秒内没有事件触发时在执行函数。若再次
+    //期间事件触发，则重新计算事件
+    //立即执行防抖指的是当事件触发时，立即执行函数，然后N秒内事件没有再次触发，才能继续执行函数
+    //的效果   --若执行完这次事件，则会立即执行函数，若在N秒内事件再次触发，则重新计时
+    // function debounce(fn,wait,imme){
+    //   let timeout      //利用闭包保存变量timeout
+    //   return function () {
+    //     if(timeout) clearTimeout(timeout)   //如果定时器存在就清除他
+    //     if(imme) {          //imme == true   为立即执行
+    //       let callnow = !timeout;
+    //       timeout = setTimeout(() => {
+    //         timeout = null
+    //       },wait)
+    //       if(callnow) fn.apply(this,arguments)
+    //     }else{
+    //       timeout = setTimeout(() => {
+    //         fn.apply(this,arguments)
+    //       },wait)
+    //     }
+    //   }
+    // }
+      
+
+    //节流
+    //什么是节流？
+    //用途，，当滚动页面时，图片的懒加载
+    //节流指的是当事件连续触发时，执行函数在指定事件内只会执行一次任务
+    function throttle(fn,wait) {
+      let timeout;
+      return function() {
+        if(!timeout) {
+          timeout = setTimeout(() => {
+            fn.apply(this,arguments)
+          })
+        }
+      }
+    }
+
+  </script>
+</body>
+
+</html>
