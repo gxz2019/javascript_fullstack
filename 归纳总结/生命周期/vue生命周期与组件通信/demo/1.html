@@ -1,0 +1,7 @@
+<script>
+  let obj = new Object;
+Object.defineProperty(obj, 'b', {}) // 属性 b 默认值为 'undefined'
+obj.b = 20
+console.log(obj.b) // 依然是 undefined，而且不会报错
+
+</script>

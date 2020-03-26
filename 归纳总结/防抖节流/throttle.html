@@ -18,13 +18,13 @@
       div.innerHTML = num++
     }
     function throttle(fn,wait) {
-      let canRun = null;
+      let run = null;
       return function () {
-        if(canRun == false) return ;
-        canRun = false;
+        if(run == false) return;
+        run = false;
         setTimeout(() => {
           fn.call(this,arguments)
-          canRun = true
+          run = true
         },wait)
       }
     }
