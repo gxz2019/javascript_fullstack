@@ -66,7 +66,7 @@ router.post('/userRegister',async(ctx, next) =>{
     ctx.body = {
       code: '80000',
       mess: '账号、密码、昵称不能为空'
-    }
+    } 
   }
   await userServies.findUser(username)
   .then(async (res) =>{

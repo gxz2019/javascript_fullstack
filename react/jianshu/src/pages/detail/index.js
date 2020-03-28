@@ -7,6 +7,7 @@ class Detail extends Component {
     this.props.getDetail()
   }
   render() {
+    console.log(this.props.match.params.id)
     const { title,content} = this.props
     return (
       <DetailWrapper>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { ListItem, ListContent, ListMeta, LoadMore } from '../style'
 import { connect } from 'react-redux'
 import { getBtnClick } from '../store/actionCreators'
+import { Link } from 'react-router-dom' 
 class List extends Component {
   render() {
     const { num,list} = this.props
@@ -10,7 +11,8 @@ class List extends Component {
         {
           list.slice(0,num).map((i, v) => {
             return (i.get('imgUrl') ?
-              (<ListItem key={v}>
+              <Link to={'/detail/'+v} key={v}>
+                <ListItem >
                 <ListContent>
                   <a href='/detail'>
                     <h3>{i.get('title')}</h3>
@@ -28,7 +30,8 @@ class List extends Component {
                 </ListContent>
                 <img src={i.get('imgUrl')} alt="" />
               </ListItem>
-              ) : null)
+              
+              </Link> : null)
           })
         }
         {

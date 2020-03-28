@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+
+
 export const HomeWrapper = styled.div`
   width: 960px;
   margin:0 auto;
@@ -241,5 +243,9 @@ export const AuthorList = styled.div`
   div{
     margin-left:10px
   }
+`
+
+export const LoginWrapper = styled.div`
+
 `
 

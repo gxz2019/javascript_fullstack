@@ -5,6 +5,7 @@ import store from './store/index'
 import { BrowserRouter,Route } from 'react-router-dom'
 import Home from './pages/home/index'
 import Detail from './pages/detail/index'
+import Login from './pages/login/index'
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
       <Header />
       <BrowserRouter>
         <Route path='/' exact component={Home}></Route>
-        <Route path='/detail' component={Detail}></Route>
+        <Route path='/detail/:id' exact component={Detail}></Route>
+        <Route path='/login' exact component={Login}></Route>
       </BrowserRouter>
     </Provider>
   );
