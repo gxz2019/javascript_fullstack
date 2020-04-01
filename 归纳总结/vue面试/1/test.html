@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+  <div id="demo" >
+    <p v-for="child in children" v-if="child.show">{{child.title}}</p>
+    <!-- <template >
+      <p v-for="child in children" v-if="child.show">{{child.title}}</p>
+    </template> -->
+  </div>
+  <script src="../node_modules/vue/dist/vue.js"></script>
+  <script>
+    //创建实例
+    const app = new Vue({
+      el:'#demo',
+      data() {
+        return {
+          children:[
+            {title:'foo',show:true},{title:'bar',show:false}
+          ],
+          aaa:[
+            {title:'foo',show:true},{title:'bar',show:false}
+          ]
+        }
+      },
+      mounted(){
+        
+      },
+      computed:{
+        isFolder() {
+          return this.children && this.children.length>0  
+        }
+      }
+    })
+    // console.log(app.$options.render)
+    console.log(app._data)
+  </script>
+</body>
+</html>

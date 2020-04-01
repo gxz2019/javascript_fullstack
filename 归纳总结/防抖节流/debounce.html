@@ -29,18 +29,16 @@
     function debounce(fn,wait,imme) {
       let timeout;
       return function() {
-        let context = this;
-        let args = arguments;
         if(timeout) clearTimeout(timeout)
         if(imme == true) {
           let callnow = !timeout;
           timeout = setTimeout(() => {
             timeout = null
           },wait)
-          if(callnow) fn.apply(context,args)
+          if(callnow) fn.apply(this,arguments)
         }else{
           timeout = setTimeout(() => {
-            fn.apply(context,args)
+            fn.apply(this,arguments)
           },wait)
         }
       }

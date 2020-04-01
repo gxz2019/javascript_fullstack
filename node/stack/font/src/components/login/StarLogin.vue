@@ -35,7 +35,7 @@ export default {
         method:'post',
         url:'http://localhost:3000/users/userLogin',
         data:{
-          username:this.username.trim(),
+          username:this.username.trim(), 
           userpwd:this.userpwd.trim()
         }
       }).then((res) => {

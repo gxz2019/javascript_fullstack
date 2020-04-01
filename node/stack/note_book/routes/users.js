@@ -174,7 +174,7 @@ router.post('/findNoteDetailById',async (ctx,next) => {
 })
 //发表笔记
 router.post('/insertNote',async (ctx,next) => {
-  let c_time = utils.getNowFormatDate()
+  let c_time = utils.getNowFormatDate() 
   let m_time = utils.getNowFormatDate()
   let note_content = ctx.request.body.note_content
   let head_img = ctx.request.body.head_img

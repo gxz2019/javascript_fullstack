@@ -15,7 +15,7 @@
     function count() {
       div.innerHTML = num++
     }
-    div.addEventListener('mousemove',debounce(count,500,true))
+    div.addEventListener('mousemove',throttle(count,1000))
     //防抖
     //什么时防抖？
     //防抖是当事件触发时，会导致频繁执行函数，增加浏览器的负担，用户体验不好，这时候就要用到防抖
@@ -49,12 +49,13 @@
     //用途，，当滚动页面时，图片的懒加载
     //节流指的是当事件连续触发时，执行函数在指定事件内只会执行一次任务
     function throttle(fn,wait) {
-      let timeout;
+      let timeout=null;
       return function() {
         if(!timeout) {
           timeout = setTimeout(() => {
             fn.apply(this,arguments)
-          })
+            timeout = null
+          },wait)
         }
       }
     }
