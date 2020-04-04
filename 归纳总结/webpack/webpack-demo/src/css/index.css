@@ -1,0 +1,9 @@
+body{
+  background-color: aquamarine;
+  color: black;
+}
+#img{
+  background-image: url(../images/123.jpg);
+  width:466px;
+  height:453px;
+}

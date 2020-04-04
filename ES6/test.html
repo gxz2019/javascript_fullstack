@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div style="width: 100px;height: 100px;background-color: red;" id="a"></div>
+  <script>
+    // let div = document.getElementById('a')
+    // div.addEventListener('click',() => {
+
+    // })
+    // function foo() {
+    //   var id = 1
+    //   let me = this
+    //   setTimeout(function (){
+    //     console.log(me)
+    //   }, 100);
+    // }
+    // foo()
+
+    function foo() {
+      setTimeout(function(){
+        console.log(this.id)
+      }, 100);
+    }
+    let a = {id:1}
+    foo.call(a)
+  </script>
+</body>
+
+</html>
