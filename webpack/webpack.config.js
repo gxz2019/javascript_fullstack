@@ -1,49 +1,77 @@
 const path = require('path')
-const uglify = require('uglifyjs-webpack-plugin')
 const htmlPlugin = require('html-webpack-plugin')
+const extractTextPlugin = require('extract-text-webpack-plugin')
+
+let website = {
+  publicPath:'http://192.168.0.103:1717/'
+}
 module.exports = {
-  entry:{   //入口
-    index:'./src/index.js',
+  entry:{
+    entry:'./src/entry.js'
   },
-  output:{   //出口
-    path:path.resolve(__dirname,'dist'),   //绝对路径
-    filename:'[name].js'
+  output:{
+    path:path.resolve(__dirname,'dist'),
+    filename:'[name].js',
+    publicPath:website.publicPath
   },
-  module:{   //配置loader  
-    rules:[   //规则
-      {   
-        test:/\.css$/,    //后缀名为css
-        use:[{
-          loader:"style-loader"
-        },{
-          loader:"css-loader"
-        }]
+  module:{
+    rules:[
+      {
+        test:/\.css$/,
+        use:extractTextPlugin.extract({
+          fallback:'style-loader',
+          use:[{
+            loader:'css-loader',
+            options:{
+              importLoaders:1
+            }
+          }, "postcss-loader"]
+        })
       },
       {
         test:/\.(png|jpg|gif)/,
-        use:[{
-          loader:'url-loader',
-          options:{
-            limit:5000
+        use:[
+          {
+            loader:'url-loader',
+            options:{
+              limit:5000,
+              esModule:false,
+              outputPath:'images/'
+            }
           }
-        }]
+        ]
+      },
+      {
+        test:/\.(htm|html)$/i,
+        use:['html-withimg-loader']
+      },
+      {
+        test:/\.less$/,
+        use:extractTextPlugin.extract({
+          fallback:'style-loader',
+          use:[{
+            loader:'css-loader'
+          },{
+            loader:'less-loader'
+          }]
+        })
       }
     ]
   },
-  plugins:[   //插件
-    new uglify(),
+  plugins:[
     new htmlPlugin({
       minify:{
         removeAttributeQuotes:true
       },
       hash:true,
       template:'./src/index.html'
-    })
+    }),
+    new extractTextPlugin('css/index.css')
   ],
-  devServer:{  //生产环境配置基本信息
-    contentBase:path.resolve(__dirname,'dist'),  //打包的文件存放地
-    host:'192.168.0.103',   //ipv网址
-    compress:true,    //是否压缩
-    port:1717   //端口号
+  devServer:{
+    contentBase:path.resolve(__dirname,'dist'),
+    host:'192.168.0.103',
+    compress:true,
+    port:1717
   }
 }

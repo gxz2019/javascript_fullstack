@@ -1,6 +1,5 @@
 import css from './css/index.css'
-// import html from './index.html'
+import less from './css/black.less'
 function hello() {
   alert('hello')
 }
-hello()

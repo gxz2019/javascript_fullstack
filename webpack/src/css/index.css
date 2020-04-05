@@ -1,9 +1,12 @@
 body{
-  background-color: aquamarine;
-  color: black;
+  background-color: red;
+}
+#app{
+  color:black;
 }
 #img{
-  background-image: url(../images/123.jpg);
-  width:466px;
-  height:453px;
+  background-image: url('../images/123.jpg');
+  width: 500px;
+  height: 500px;
+  transform: rotate(45deg);
 }
