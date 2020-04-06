@@ -1,36 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<script>
+  // let s = Symbol()
+  // console.log(typeof s)   //symbol
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
+  // let s1 = Symbol('a')
+  // let s2 = Symbol('b')
+  // console.log(s1 == s2)   //false
 
-<body>
-  <div style="width: 100px;height: 100px;background-color: red;" id="a"></div>
-  <script>
-    // let div = document.getElementById('a')
-    // div.addEventListener('click',() => {
+  // let s1 = Symbol()
+  // let s2 = Symbol()
+  // console.log(s1 == s2)    //false  symbol数据类型表示独一无二的值
 
-    // })
-    // function foo() {
-    //   var id = 1
-    //   let me = this
-    //   setTimeout(function (){
-    //     console.log(me)
-    //   }, 100);
-    // }
-    // foo()
+  // let s1 = Symbol('a')
+  // console.log(s1.toString())   //'Symbol(a)'
 
-    function foo() {
-      setTimeout(function(){
-        console.log(this.id)
-      }, 100);
-    }
-    let a = {id:1}
-    foo.call(a)
-  </script>
-</body>
+  // let s1 = Symbol({a:1})
+  // console.log(s1)
 
-</html>
+  // let s = Symbol('aa')
+  // console.log(String(s))   //'Symbol(aa)'
+
+  // Symbol.prototype.description
+
+  let mySymbol = Symbol() 
+  // let a = {}
+  // a[mySymbol] = 'hello'
+
+  // let a = {
+  //   [mySymbol] : 'hello'
+  // }
+
+  // let a = {};
+  // Object.defineProperty(a,mySymbol,{value : 'hello'})
+
+  
+
+   
+
+
+</script>

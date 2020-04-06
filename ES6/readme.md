@@ -1,18 +1,12 @@
-# let const var
- - 块级作用域
- - 变量提升
- - 暂时性死区
- - 不允许重复声明
-  
-  ## 块级作用域
-  - es5只有函数作用域和块级作用域，没有块级作用域
-  
-# 解构赋值
-  - 数组的解构赋值
-  - 对象的解构赋值
-  - 用途：
-  - 1.交换变量的值
-  - 2.从函数返回多个值
-  - 3.函数参数的定义
-  - 4.提取json的数据
-  - 5.。。。
+## 
+Symbol数据类型
+
+第七种数据类型
+null undefined number string boolean object symbol
+
+作为属性名的Symbol
+
+消除魔术字符串
+
+Object.getOwnPropertySymbols()得到Symbol的key
+Reflect.ownKeys()  可以得到所有
