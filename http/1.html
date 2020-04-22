@@ -1,0 +1,107 @@
+<script>
+  //封装一个单向链表
+  //head  list
+  function LinkedList() {
+    function Node(data) {
+      this.data = data;
+      this.next = null;
+    }
+    this.head = null;
+    this.length = 0
+    //append方法
+    LinkedList.prototype.append = function (data) {
+      //1.创建新节点
+      var node = new Node(data)
+      if (this.head == null) {   //判断是否添加的是第一个节点
+        this.head = node
+      } else {     //
+        var current = this.head
+        while (current.next) {
+          current = current.next
+        }
+        current.next = node
+      }
+      this.length += 1
+    }
+    //toString
+    LinkedList.prototype.toString = function () {
+      var current = this.head;
+      var str = '';
+      while (current) {
+        str += current.data
+        current = current.next
+      }
+      return str
+    }
+    //insert方法
+    LinkedList.prototype.insert = function (position, data) {
+      if (position < 0 || position > this.length) return false;
+      var node = new Node(data)
+      if (position == 0) {
+        node.next = this.head;
+        this.head = node
+      } else {
+        var index = 1;
+        var current = this.head;
+        while (index !== position) {
+          index++
+          current = current.next
+        }
+        node.next = current.next;
+        current.next = node
+        this.length++
+      }
+    }
+    //获取对应位置的元素
+    LinkedList.prototype.get = function (position) {
+      if (position < 0 || position >= this.length) return null;
+      var current = this.head
+      var index = 0
+      while (index !== position) {
+        index++;
+        current = current.next;
+      }
+      return current.data
+    }
+    //返回元素索引
+    LinkedList.prototype.indexOf = function (data) {
+      var current = this.head;
+      var index = 0;
+      while (index < this.length) {
+        if (current.data == data) {
+          return index
+        }
+        current = current.next
+        index++
+      }
+      if (index == this.length) return -1
+    }
+    //修改某位置的元素
+    LinkedList.prototype.update = function (position, data) {
+      if (position < 0 || position >= this.length) return false;
+      var current = this.head;
+      var index = 0;
+      while (index < this.length) {
+        if (index == position) {
+          current.data = data
+          return
+        } else {
+          current = current.next
+          index++
+        }
+      }
+    }
+  }
+  var a = new LinkedList()
+  a.append(2)
+  a.append(3)
+  a.insert(1, 4)
+  a.insert(1, 'abc')
+  console.log(a.toString())
+  console.log(a.get(2))
+  console.log(a.indexOf(4))
+  a.update(1, 'first')
+  console.log(a.toString())
+  
+  console.log(a)
+</script>
